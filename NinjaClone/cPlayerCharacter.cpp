@@ -55,12 +55,12 @@ void cPlayerCharacter::Update(float DeltaSeconds)
         mPlayerAnimator.SetSliding(false);
         if (mIsGrounded)
         {
-            mVelocity += mMoveInputMultGrounded * m_vPlayerInputNormalized;
+            mVelocity += mMoveInputMultGrounded * m_vPlayerInputNormalized * DeltaSeconds;
             mPlayerAnimator.SetRunning(true);
         }
         else
         {
-            mVelocity += mMoveInputMultAirborne * m_vPlayerInputNormalized;
+            mVelocity += mMoveInputMultAirborne * m_vPlayerInputNormalized * DeltaSeconds;
         }
     }
 

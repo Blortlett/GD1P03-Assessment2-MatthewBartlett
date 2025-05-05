@@ -22,6 +22,10 @@ void cEditorDrawTool::SetTool(ToolType type)
 		break;
 	case cEditorDrawTool::ToolType::ToolMode_SpawnPoint:
 		mActiveTool = &mSpawnPlatformTool;
+		break;
+	case cEditorDrawTool::ToolType::ToolMode_LevelExit:
+		mActiveTool = &mLevelExitTool;
+		break;
 	}
 }
 

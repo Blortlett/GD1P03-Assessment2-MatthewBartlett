@@ -7,7 +7,7 @@
 class cLevelExit : public cGameObject
 {
 private:
-	sf::Vector2f mSize = sf::Vector2f(300, 200);
+	sf::Vector2f mSize = sf::Vector2f(30, 20);
 
 	sf::Sprite* mDoorClosedSprite;
 	sf::Sprite* mDoorOpenSprite;
