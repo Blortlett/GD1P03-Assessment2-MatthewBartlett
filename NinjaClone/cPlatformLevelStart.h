@@ -1,0 +1,13 @@
+#pragma once
+#include "cPlatformRect.h"
+#include <SFML/Graphics.hpp>
+
+class cPlatformLevelStart : public cPlatformRect
+{
+private:
+	sf::Vector2f mSize = sf::Vector2f(80.0f, 20.0f);
+	sf::Vector2f mSpawnPoint;
+public:
+	cPlatformLevelStart(sf::Vector2f position);
+	~cPlatformLevelStart() {}
+};
