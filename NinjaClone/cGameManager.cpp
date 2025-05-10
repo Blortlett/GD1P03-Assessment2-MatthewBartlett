@@ -17,11 +17,12 @@ cGameManager::~cGameManager()
 void cGameManager::GameTick()
 {
     RefreshDeltaTime();
-    mPlayerCharacter.Update(mDeltaSeconds);
-    mPlayerCharacter.Draw(mGameWindow);
 
     mPlatformsList.DrawPlatforms(mGameWindow, mDeltaSeconds);
     mPlatformsList.CheckCollisions(mPlayerCharacter);
+
+    mPlayerCharacter.Update(mDeltaSeconds);
+    mPlayerCharacter.Draw(mGameWindow);
 }
 
 void cGameManager::RefreshDeltaTime()

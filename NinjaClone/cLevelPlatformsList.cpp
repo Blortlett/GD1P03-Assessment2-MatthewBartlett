@@ -48,6 +48,7 @@ void cLevelPlatformsList::DrawPlatforms(sf::RenderWindow& window, float deltaTim
 	}
 
 	mLevelExit->Draw(window);
+	mLevelExit->DrawDebug(window);
 
 	if (!cApplicationManager::GetInstance().IsDoorUnlocked())
 	{
@@ -73,9 +74,17 @@ void cLevelPlatformsList::CheckCollisions(cPlayerCharacter& playerCharacter)
 	}
 
 	// Check player collision with game objects
+	// If level not complete and door unlocked and player touching door collider
+	if (!cApplicationManager::GetInstance().IsLevelComplete() && cApplicationManager::GetInstance().IsDoorUnlocked() && mLevelExit->CheckCollideWithPlayer(playerCharacter))
+	{
+		// Set level complete
+		cApplicationManager::GetInstance().SetIsLevelComplete(true);
+	}
+
+	// If door not unlocked and player not colliding with door
 	if (!cApplicationManager::GetInstance().IsDoorUnlocked() && mLevelKey->CheckCollideWithPlayer(playerCharacter))
 	{
-		std::cout << "Key touched by player! :)" << std::endl;
+		// unlock door when player touches key
 		cApplicationManager::GetInstance().SetIsDoorUnlocked(true);
 	}
 }

@@ -4,6 +4,7 @@
 #include "cDebugWidget.h"
 #include "cCharacter.h"
 
+
 class cKeyObject
 {
 private:
@@ -22,7 +23,7 @@ public:
 	void AnimateKey(float deltaSeconds);
 	void Draw(sf::RenderWindow& window);
 	void DrawDebug(sf::RenderWindow& window);
-
-	// Collisioncheck
+	
+	// Collision check
 	bool CheckCollideWithPlayer(cCharacter& character);
 };

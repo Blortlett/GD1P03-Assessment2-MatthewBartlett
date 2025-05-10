@@ -12,6 +12,7 @@ private:
 	bool mIsGameRunning = false;
 	bool mIsMainMenuActive = true;
 	bool mIsDoorUnlocked = false;
+	bool mIsLevelComplete = false;
 	// Sprites- I should have done this for all sprites
 	sf::Texture mLevelExitOpenTex;
 	sf::Texture mLevelExitClosedTex;
@@ -29,11 +30,13 @@ public:
 	bool IsGameRunning() { return mIsGameRunning; }
 	bool IsMainMenuActive() { return mIsMainMenuActive; }
 	bool IsDoorUnlocked() { return mIsDoorUnlocked;  }
+	bool IsLevelComplete() { return mIsLevelComplete;  }
 	// Setters
 	void SetLevelEditorRunning(bool isRunning) { mIsLevelEditorRunning = isRunning; }
 	void SetGameRunning(bool isRunning) { mIsGameRunning = isRunning; }
 	void SetMainMenuActive(bool isActive) { mIsMainMenuActive = isActive; }
 	void SetIsDoorUnlocked(bool isDoorUnlocked) { mIsDoorUnlocked = isDoorUnlocked;  }
+	void SetIsLevelComplete(bool isLevelComplete) { mIsLevelComplete = isLevelComplete;  }
 
 	sf::Sprite* mLevelExitOpenSprite;
 	sf::Sprite* mLevelExitClosedSprite;

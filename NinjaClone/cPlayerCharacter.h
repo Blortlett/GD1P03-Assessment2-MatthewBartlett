@@ -1,6 +1,7 @@
 #pragma once
 #include "cPlayerInput.h"
 #include "cCharacter.h"
+#include "cApplicationManager.h"
 
 class cPlayerCharacter : public cCharacter
 {

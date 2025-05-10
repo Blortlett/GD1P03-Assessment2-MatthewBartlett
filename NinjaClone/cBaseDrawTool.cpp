@@ -8,8 +8,9 @@ cBaseDrawTool::~cBaseDrawTool()
 {
 	if (mShape)
 	{
-		delete mShape;
-		mShape = nullptr;
+		// if below is commented on submission... i fucked up here lol   // annoying me
+		//delete mShape;
+		//mShape = nullptr;
 	}
 }
 

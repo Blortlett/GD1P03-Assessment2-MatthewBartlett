@@ -114,6 +114,9 @@ void cPlayerCharacter::JumpWallsliding()
 
 void cPlayerCharacter::HandleInput()
 {
+    std::cout << "Level Complete: " << cApplicationManager::GetInstance().IsLevelComplete() << std::endl;
+    if (cApplicationManager::GetInstance().IsLevelComplete()) return;
+
     // Arrow Keys
     if (mPlayerInput.IsMoveRightInputPressed()) {
         m_vPlayerInputNormalized.x = 1;
