@@ -19,9 +19,6 @@ void cBoxCollider::Move(float dx, float dy)
 
 bool cBoxCollider::CheckCollision(cBoxCollider& other, sf::Vector2f& direction, float push)
 {
-	/*
-	std::cout << "Collider x: " << mBounds.position.x << "  y: " << mBounds.position.y << std::endl;
-	*/
 	sf::Vector2f otherPosition = other.GetPosition();
 	sf::Vector2f otherHalfSize = other.GetHalfSize();
 	sf::Vector2f thisPosition = GetPosition();

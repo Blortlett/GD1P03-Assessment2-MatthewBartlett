@@ -2,10 +2,10 @@
 
 // Constructor
 cButtonUI::cButtonUI(sf::Vector2f position, sf::Vector2f size)
-    : mPosition(position),
-    mSize(size),
-    isPressed(false),
-    isHovered(false)
+    : mPosition(position)
+    , mSize(size)
+    , isPressed(false)
+    , isHovered(false)
 {
     mButtonShape.setPosition(mPosition);
     mButtonShape.setSize(mSize);
@@ -85,5 +85,5 @@ void cButtonUI::SetPosition(sf::Vector2f position) {
     mPosition = position;
 }
 void cButtonUI::SetSize(sf::Vector2f size) {
-    mPosition = size;
+    mSize = size;
 }

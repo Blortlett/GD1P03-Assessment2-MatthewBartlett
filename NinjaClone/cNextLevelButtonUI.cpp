@@ -1,0 +1,31 @@
+#include "cNextLevelButtonUI.h"
+
+void cNextLevelButtonUI::OnButtonClick()
+{
+	// Reset game variables and load new level
+	mLevelPlatformList.ClearList();
+	cApplicationManager::GetInstance().ResetGameplayVariables();
+
+}
+
+void cNextLevelButtonUI::Draw(sf::RenderWindow& window)
+{
+	window.draw(mButtonShape);
+	window.draw(mButtonText);
+}
+
+cNextLevelButtonUI::cNextLevelButtonUI(cLevelPlatformsList& platformList, cFileInterface& fileInterface)
+	: cButtonUI(sf::Vector2f(1366 / 2, (768 / 2) + 150), sf::Vector2f(300, 100))
+	, mButtonText(cApplicationManager::GetInstance().GetFont(), "Next Level", 50U)
+	, mLevelPlatformList(platformList)
+	, mFileInterface(fileInterface)
+{
+	// Center text
+	mButtonText.setPosition(mPosition);
+	mButtonText.setOrigin(mButtonText.getGlobalBounds().size / 2.0f);
+	mButtonShape.setFillColor(sf::Color::Black);
+}
+
+cNextLevelButtonUI::~cNextLevelButtonUI()
+{
+}

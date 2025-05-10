@@ -20,3 +20,16 @@ cApplicationManager::~cApplicationManager()
 	delete mLevelExitClosedSprite;
 	delete mLevelExitOpenSprite;
 }
+
+const std::string cApplicationManager::GetNextLevelName()
+{
+	mLevelCount++;
+	std::string nextLevelName = mLevelNames[mLevelCount];
+	return nextLevelName;
+}
+
+void cApplicationManager::ResetGameplayVariables()
+{
+	mIsDoorUnlocked = false;
+	mIsLevelComplete = false;
+}

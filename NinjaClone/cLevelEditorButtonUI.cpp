@@ -5,10 +5,7 @@ cLevelEditorButtonUI::cLevelEditorButtonUI(sf::Vector2f position, sf::Vector2f s
 	, mText(mBodyFont, "LEVEL EDITOR", 20U)
 {
 	// get font
-	if (!mBodyFont.openFromFile("Assets/Fonts/TypeLightSans-KV84p.otf"))
-	{
-		std::cerr << "Failed to load title font!" << std::endl;
-	}
+	mBodyFont = cApplicationManager::GetInstance().GetFont();
 	// Do the crap from cMainMenu.cpp
 	mText.setString("LEVEL EDITOR");
 	mText.setCharacterSize(20);

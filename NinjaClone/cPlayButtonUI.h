@@ -16,6 +16,6 @@ public:
 private:
 	cFileInterface& mFileInterface;
 
-	sf::Font mBodyFont;
+	sf::Font& mBodyFont;
 	sf::Text mText;
 };

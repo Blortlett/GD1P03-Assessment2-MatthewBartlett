@@ -3,12 +3,13 @@
 #include "cPlayerCharacter.h"
 #include "cLevelPlatformsList.h"
 #include "cLevelCompleteScreenUI.h"
+#include "cFileInterface.h"
 #include <iostream>
 
 class cGameManager
 {
 public:
-	cGameManager(sf::RenderWindow& window, cPlayerInput& playerInput, cLevelPlatformsList& platformsList);
+	cGameManager(sf::RenderWindow& window, cPlayerInput& playerInput, cLevelPlatformsList& platformsList, cFileInterface& fileInterface);
 	~cGameManager();
 	void GameTick();
 
@@ -18,11 +19,14 @@ private:
 	sf::Time mDeltaTime;
 	float mDeltaSeconds;
 	void RefreshDeltaTime();
+
 	// Render Window
 	sf::RenderWindow& mGameWindow;
+
 	// Player Character
 	cPlayerInput& mPlayerInput;
 	cPlayerCharacter mPlayerCharacter;
+
 	// Platforms
 	cLevelPlatformsList& mPlatformsList;
 

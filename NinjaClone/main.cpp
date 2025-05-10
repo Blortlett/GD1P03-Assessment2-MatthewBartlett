@@ -19,7 +19,7 @@ int main()
     cFileInterface FileInterface(LevelPlatformsList);
     // Create Game managers
     cPlayerInput PlayerInput;
-    cGameManager GameManager(window, PlayerInput, LevelPlatformsList);
+    cGameManager GameManager(window, PlayerInput, LevelPlatformsList, FileInterface);
     // Create Level Editor
     cLevelEditorManager LevelEditor(window, PlayerInput, LevelPlatformsList, FileInterface);
     // Create Main Menu

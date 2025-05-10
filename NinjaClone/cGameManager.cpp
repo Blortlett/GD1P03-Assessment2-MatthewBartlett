@@ -1,12 +1,12 @@
 #include "cGameManager.h"
 
-cGameManager::cGameManager(sf::RenderWindow& window, cPlayerInput& playerInput, cLevelPlatformsList& platformsList)
+cGameManager::cGameManager(sf::RenderWindow& window, cPlayerInput& playerInput, cLevelPlatformsList& platformsList, cFileInterface& fileInterface)
     : mPlayerInput(playerInput)
     , mPlayerCharacter(sf::Vector2f(250, 600), playerInput)
     , mGameWindow(window)
     , mDeltaSeconds(0.0f)
     , mPlatformsList(platformsList)
-    , mLevelCompleteUI(window)
+    , mLevelCompleteUI(window, platformsList, fileInterface)
 {
 
 }

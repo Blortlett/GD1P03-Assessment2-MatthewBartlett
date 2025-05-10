@@ -1,8 +1,9 @@
 #include "cLevelCompleteScreenUI.h"
 
-cLevelCompleteScreenUI::cLevelCompleteScreenUI(sf::RenderWindow& renderWindow)
-	: mLevelCompleteText(cApplicationManager::GetInstance().GetFont(), "Level Complete!" , 20U)
+cLevelCompleteScreenUI::cLevelCompleteScreenUI(sf::RenderWindow& renderWindow, cLevelPlatformsList& levelPlatformList, cFileInterface& fileInterface)
+	: mLevelCompleteText(cApplicationManager::GetInstance().GetFont(), "Level Complete!", 20U)
 	, mRenderWindow(renderWindow)
+	, mNextLevelButton(levelPlatformList, fileInterface)
 {
 	mLevelCompleteText.setFillColor(sf::Color::Black);
 	mLevelCompleteText.setCharacterSize(62);
@@ -17,5 +18,10 @@ cLevelCompleteScreenUI::~cLevelCompleteScreenUI()
 
 void cLevelCompleteScreenUI::Update()
 {
-	mRenderWindow.draw(mLevelCompleteText);
+	//if (cApplicationManager::GetInstance().IsLevelComplete())
+	//{
+		mRenderWindow.draw(mLevelCompleteText);
+		mNextLevelButton.Update(mRenderWindow);
+		mNextLevelButton.Draw(mRenderWindow);
+	//}
 }

@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <string>
 #include <iostream>
 
 class cApplicationManager
@@ -19,6 +20,10 @@ private:
 	sf::Texture mLevelExitClosedTex;
 	// Font
 	sf::Font mGameFont;
+
+	// Level names
+	const std::string mLevelNames[5] = { "Level1", "Level2", "Level3", "Level4", "Level5" };
+	int mLevelCount = 0;
 public:
 	// Get the single instance of the class
 	static cApplicationManager& GetInstance()
@@ -26,6 +31,10 @@ public:
 		static cApplicationManager instance; // Static instance created on first call
 		return instance;
 	}
+
+	// Level Loading
+	const std::string GetNextLevelName();
+	void ResetGameplayVariables();
 
 	// Getters
 	bool IsLevelEditorRunning() { return mIsLevelEditorRunning; }
