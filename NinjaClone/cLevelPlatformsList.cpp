@@ -69,6 +69,10 @@ void cLevelPlatformsList::CheckCollisions(cPlayerCharacter& playerCharacter)
 	}
 
 	// Check player collision with game objects
+	if (mLevelKey && mLevelKey->CheckCollideWithPlayer(playerCharacter))
+	{
+		std::cout << "Key touched by player! :)" << std::endl;
+	}
 }
 
 void cLevelPlatformsList::ClearList()

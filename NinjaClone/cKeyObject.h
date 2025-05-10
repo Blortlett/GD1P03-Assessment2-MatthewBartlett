@@ -9,7 +9,7 @@ class cKeyObject
 private:
 	sf::Vector2f mPosition;
 	sf::Vector2f mKeySize = { 32.0f, 32.0f };
-	cBoxCollider mBoxCollider;
+	cBoxCollider mCollider;
 	cKeyAnimation mKeyAnimation;
 
 	// Debug
@@ -24,5 +24,5 @@ public:
 	void DrawDebug(sf::RenderWindow& window);
 
 	// Collisioncheck
-	bool CheckCollideWithPlayer(cCharacter& character, sf::Vector2f& collisionDirection);
+	bool CheckCollideWithPlayer(cCharacter& character);
 };
