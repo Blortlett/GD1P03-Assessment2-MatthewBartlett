@@ -5,7 +5,7 @@ void cNextLevelButtonUI::OnButtonClick()
 	// Reset game variables and load new level
 	mLevelPlatformList.ClearList();
 	cApplicationManager::GetInstance().ResetGameplayVariables();
-
+	mFileInterface.LoadLevelByName(cApplicationManager::GetInstance().GetNextLevelName());
 }
 
 void cNextLevelButtonUI::Draw(sf::RenderWindow& window)
