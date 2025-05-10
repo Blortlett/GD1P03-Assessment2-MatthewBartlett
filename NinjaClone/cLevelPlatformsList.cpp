@@ -3,6 +3,7 @@
 cLevelPlatformsList::cLevelPlatformsList()
 {
 	mLevelExit = new cLevelExit(sf::Vector2f(-500, -500));
+	mLevelKey = new cKeyObject(sf::Vector2f(-500, -500));
 }
 
 cLevelPlatformsList::~cLevelPlatformsList()
@@ -10,6 +11,9 @@ cLevelPlatformsList::~cLevelPlatformsList()
 	ClearList();
 	delete mLevelExit;
 	mLevelExit = nullptr;
+
+	delete mLevelKey;
+	mLevelKey = nullptr;
 }
 
 void cLevelPlatformsList::AddPlatform(cPlatformRect* platform)
@@ -45,7 +49,7 @@ void cLevelPlatformsList::DrawPlatforms(sf::RenderWindow& window, float deltaTim
 
 	mLevelExit->Draw(window);
 
-	if (mLevelKey) // This is very bad checking this stupid crap every frame... time restrictions made me do it
+	if (!cApplicationManager::GetInstance().IsDoorUnlocked())
 	{
 		mLevelKey->AnimateKey(deltaTime);
 		mLevelKey->Draw(window);
@@ -69,9 +73,10 @@ void cLevelPlatformsList::CheckCollisions(cPlayerCharacter& playerCharacter)
 	}
 
 	// Check player collision with game objects
-	if (mLevelKey && mLevelKey->CheckCollideWithPlayer(playerCharacter))
+	if (!cApplicationManager::GetInstance().IsDoorUnlocked() && mLevelKey->CheckCollideWithPlayer(playerCharacter))
 	{
 		std::cout << "Key touched by player! :)" << std::endl;
+		cApplicationManager::GetInstance().SetIsDoorUnlocked(true);
 	}
 }
 

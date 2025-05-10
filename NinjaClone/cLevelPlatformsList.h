@@ -6,7 +6,7 @@
 #include <vector>
 #include <SFML/Graphics.hpp>
 
-//class cFileInterface;
+class cGameMangager;
 
 class cLevelPlatformsList
 {
@@ -21,6 +21,7 @@ public:
 	void CheckCollisions(cPlayerCharacter& playerCharacter);
 	void ClearList();
 private:
+	// Game objects
 	cLevelExit* mLevelExit;
 	cKeyObject* mLevelKey;
 	std::vector<cPlatformRect*> mPlatformList;
