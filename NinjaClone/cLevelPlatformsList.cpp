@@ -19,6 +19,15 @@ void cLevelPlatformsList::AddPlatform(cPlatformRect* platform)
 	mPlatformList.push_back(platform);
 }
 
+void cLevelPlatformsList::AddLevelKey(cKeyObject* levelKey)
+{
+	if (levelKey)
+	{
+		delete mLevelKey;
+	}
+	mLevelKey = levelKey;
+}
+
 void cLevelPlatformsList::AddLevelExit(cLevelExit* levelExit)
 {
 	if (mLevelExit)
@@ -28,27 +37,38 @@ void cLevelPlatformsList::AddLevelExit(cLevelExit* levelExit)
 	mLevelExit = levelExit;
 }
 
-void cLevelPlatformsList::DrawPlatforms(sf::RenderWindow& window)
+void cLevelPlatformsList::DrawPlatforms(sf::RenderWindow& window, float deltaTime)
 {
 	for (size_t i = 0; i < mPlatformList.size(); ++i) {
 		mPlatformList[i]->Draw(window);
 	}
 
 	mLevelExit->Draw(window);
+
+	if (mLevelKey) // This is very bad checking this stupid crap every frame... time restrictions made me do it
+	{
+		mLevelKey->AnimateKey(deltaTime);
+		mLevelKey->Draw(window);
+		mLevelKey->DrawDebug(window);
+	}
 }
 
 void cLevelPlatformsList::CheckCollisions(cPlayerCharacter& playerCharacter)
 {
+	// Check player collision with all level platforms
 	bool isColliding = false;
 	for (size_t i = 0; i < mPlatformList.size(); ++i) {
 		if (mPlatformList[i]->CheckCollideWithPlayer(playerCharacter, mCollisionDirection))
 			isColliding = true;
 	}
 
+	// Ensure player is not grounded if touching no platforms
 	if (!isColliding)
 	{
 		playerCharacter.SetUngrounded();
 	}
+
+	// Check player collision with game objects
 }
 
 void cLevelPlatformsList::ClearList()

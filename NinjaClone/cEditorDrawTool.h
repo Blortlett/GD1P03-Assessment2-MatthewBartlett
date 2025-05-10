@@ -3,6 +3,7 @@
 #include "cRectPlatformTool.h"
 #include "cSpawnPlatformTool.h"
 #include "cLevelExitTool.h"
+#include "cKeyObjectTool.h"
 #include <SFML/Graphics.hpp>
 #include "cLevelPlatformsList.h"
 #include "cPlayerInput.h"
@@ -14,7 +15,8 @@ public:
         ToolMode_None,
         ToolMode_Rect,
         ToolMode_SpawnPoint,
-        ToolMode_LevelExit
+        ToolMode_LevelExit,
+        ToolMode_LevelKey,
     };
     void SetTool(ToolType type);
     void UpdateCursor(sf::RenderWindow& window, sf::Vector2f mousePos);
@@ -32,6 +34,7 @@ private:
     cRectPlatformTool mRectangleTool;
     cSpawnPlatformTool mSpawnPlatformTool;
     cLevelExitTool mLevelExitTool;
+    cKeyObjectTool mLevelKeyTool;
 
     // DrawGrid
     float mGridSize = 24;

@@ -13,6 +13,7 @@ cAnimationJumping::cAnimationJumping()
 
 cAnimationJumping::~cAnimationJumping()
 {
+
 }
 
 void cAnimationJumping::Animate(sf::Vector2f PlayerPosition, float DeltaSeconds)

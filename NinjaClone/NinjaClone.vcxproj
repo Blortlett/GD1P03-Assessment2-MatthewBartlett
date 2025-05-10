@@ -146,12 +146,15 @@
     <ClCompile Include="cApplicationManager.cpp" />
     <ClCompile Include="cBaseDrawTool.cpp" />
     <ClCompile Include="cButtonUI.cpp" />
+    <ClCompile Include="cDebugWidget.cpp" />
     <ClCompile Include="cEditorDrawTool.cpp" />
     <ClCompile Include="cEditorToolbarUI.cpp" />
     <ClCompile Include="cEmptyPlatformTool.cpp" />
     <ClCompile Include="cFileInterface.cpp" />
     <ClCompile Include="cGameManager.cpp" />
     <ClCompile Include="cGameObject.h" />
+    <ClCompile Include="cKeyObject.cpp" />
+    <ClCompile Include="cKeyObjectTool.cpp" />
     <ClCompile Include="cLevelEditorButtonUI.cpp" />
     <ClCompile Include="cLevelEditorManager.cpp" />
     <ClCompile Include="cLevelExit.cpp" />
@@ -177,8 +180,10 @@
     <ClCompile Include="cRectPlatformToolButton.cpp" />
     <ClCompile Include="cSaveButton.cpp" />
     <ClCompile Include="cSpawnPlatformTool.cpp" />
+    <ClCompile Include="cToolButtonKeyObject.cpp" />
     <ClCompile Include="cToolButtonLevelExit.cpp" />
     <ClCompile Include="cToolButtonSpawnPoint.cpp" />
+    <ClCompile Include="cKeyAnimation.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -194,12 +199,16 @@
     <ClInclude Include="cBoxCollider.h" />
     <ClInclude Include="cButtonUI.h" />
     <ClInclude Include="cCharacter.h" />
+    <ClInclude Include="cDebugWidget.h" />
     <ClInclude Include="cDrawable.h" />
     <ClInclude Include="cEditorDrawTool.h" />
     <ClInclude Include="cEditorToolbarUI.h" />
     <ClInclude Include="cEmptyPlatformTool.h" />
     <ClInclude Include="cFileInterface.h" />
     <ClInclude Include="cGameManager.h" />
+    <ClInclude Include="cKeyAnimation.h" />
+    <ClInclude Include="cKeyObject.h" />
+    <ClInclude Include="cKeyObjectTool.h" />
     <ClInclude Include="cLevelEditorButtonUI.h" />
     <ClInclude Include="cLevelEditorManager.h" />
     <ClInclude Include="cLevelExit.h" />
@@ -216,6 +225,7 @@
     <ClInclude Include="cRectPlatformToolButton.h" />
     <ClInclude Include="cSaveButton.h" />
     <ClInclude Include="cSpawnPlatformTool.h" />
+    <ClInclude Include="cToolButtonKeyObject.h" />
     <ClInclude Include="cToolButtonLevelExit.h" />
     <ClInclude Include="cToolButtonSpawnPoint.h" />
   </ItemGroup>

@@ -20,7 +20,7 @@ void cGameManager::GameTick()
     mPlayerCharacter.Update(mDeltaSeconds);
     mPlayerCharacter.Draw(mGameWindow);
 
-    mPlatformsList.DrawPlatforms(mGameWindow);
+    mPlatformsList.DrawPlatforms(mGameWindow, mDeltaSeconds);
     mPlatformsList.CheckCollisions(mPlayerCharacter);
 }
 

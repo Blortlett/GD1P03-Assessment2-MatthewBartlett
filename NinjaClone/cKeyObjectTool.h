@@ -1,16 +1,16 @@
 #pragma once
-#include "cLevelExit.h"
+#include "cKeyObject.h"
 #include "cBaseDrawTool.h"
 #include "cLevelPlatformsList.h"
 
-class cLevelExitTool : public cBaseDrawTool
+class cKeyObjectTool : public cBaseDrawTool
 {
 private:
-	sf::Vector2f mRectSize = sf::Vector2f(30, 20);
+	sf::Vector2f mRectSize = sf::Vector2f(32, 32);
 	cLevelPlatformsList& mLevelPlatformsList;
 public:
-	cLevelExitTool(cLevelPlatformsList& levelPlatformList);
-	~cLevelExitTool() {}
+	cKeyObjectTool(cLevelPlatformsList& levelPlatformList);
+	~cKeyObjectTool();
 	void UpdateCursor(sf::RenderWindow& window, sf::Vector2f& mousePos) override;
 	void DrawToolToScreen(sf::RenderWindow& window) override;
 	cPlatformRect* CompleteUseTool() override;

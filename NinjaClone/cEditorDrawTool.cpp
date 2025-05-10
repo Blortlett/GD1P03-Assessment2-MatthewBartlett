@@ -6,6 +6,7 @@ cEditorDrawTool::cEditorDrawTool(sf::RenderWindow& mainWindow, cPlayerInput& pla
 	, mPlayerInput(playerInput)
 	, mPlatformsList(platformsList)
 	, mLevelExitTool(platformsList)
+	, mLevelKeyTool(platformsList)
 {
 	SetTool(cEditorDrawTool::ToolType::ToolMode_None);
 }
@@ -25,6 +26,9 @@ void cEditorDrawTool::SetTool(ToolType type)
 		break;
 	case cEditorDrawTool::ToolType::ToolMode_LevelExit:
 		mActiveTool = &mLevelExitTool;
+		break;
+	case cEditorDrawTool::ToolType::ToolMode_LevelKey:
+		mActiveTool = &mLevelKeyTool;
 		break;
 	}
 }

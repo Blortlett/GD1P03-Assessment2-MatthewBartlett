@@ -8,8 +8,8 @@ cBaseDrawTool::~cBaseDrawTool()
 {
 	if (mShape)
 	{
-	delete mShape;
-	mShape = nullptr;
+		delete mShape;
+		mShape = nullptr;
 	}
 }
 

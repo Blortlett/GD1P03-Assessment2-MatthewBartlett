@@ -7,6 +7,7 @@ cEditorToolbarUI::cEditorToolbarUI(sf::RenderWindow& window, cEditorDrawTool& _D
 	, mButtonRectangleTool(sf::Vector2f(15.0f, 15.0f), sf::Vector2f(25.0f, 25.0f), _DrawTool)
 	, mButtonSpawnPointTool(sf::Vector2f(55.0f, 15.0f), sf::Vector2f(25.0f, 25.0f), _DrawTool)
 	, mButtonLevelExitTool(sf::Vector2f(95.0f, 15.0f), sf::Vector2f(25.0f, 25.0f), _DrawTool)
+	, mButtonLevelKeyTool(sf::Vector2f(135.0f, 15.0f), sf::Vector2f(25.0f, 25.0f), _DrawTool)
 	, mSaveButton(sf::Vector2f(15.0f, 226.0f), sf::Vector2f(25.0f, 25.0f), fileInterface, platformsList)
 	, mLoadButton(sf::Vector2f(45.0f, 226.0f), sf::Vector2f(25.0f, 25.0f), fileInterface, platformsList)
 {
@@ -21,6 +22,7 @@ void cEditorToolbarUI::Update()
 	mButtonRectangleTool.Update(mToolbarWindow);
 	mButtonSpawnPointTool.Update(mToolbarWindow);
 	mButtonLevelExitTool.Update(mToolbarWindow);
+	mButtonLevelKeyTool.Update(mToolbarWindow);
 }
 
 void cEditorToolbarUI::Draw() {
@@ -28,6 +30,7 @@ void cEditorToolbarUI::Draw() {
 	mButtonRectangleTool.Draw(mToolbarWindow);
 	mButtonSpawnPointTool.Draw(mToolbarWindow);
 	mButtonLevelExitTool.Draw(mToolbarWindow);
+	mButtonLevelKeyTool.Draw(mToolbarWindow);
 	mSaveButton.Draw(mToolbarWindow);
 	mLoadButton.Draw(mToolbarWindow);
 	mToolbarWindow.display();

@@ -11,5 +11,5 @@ cLevelExit::cLevelExit(sf::Vector2f position)
 
 void cLevelExit::Draw(sf::RenderWindow& renderWindow)
 {
-	renderWindow.draw(*mDoorClosedSprite);
+	renderWindow.draw(*mDoorClosedSprite); // gotta draw the active sprite here not only door closed...
 }

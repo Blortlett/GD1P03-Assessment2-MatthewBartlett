@@ -5,7 +5,7 @@ cLevelExitTool::cLevelExitTool(cLevelPlatformsList& levelPlatformList)
 {
 	mShape = new sf::RectangleShape(mRectSize);
 	mShape->setOrigin(sf::Vector2f(mRectSize / 2.0f));
-	mShape->setFillColor(sf::Color::Blue);
+	mShape->setFillColor(sf::Color::Magenta);
 }
 
 void cLevelExitTool::UpdateCursor(sf::RenderWindow& window, sf::Vector2f& mousePos)

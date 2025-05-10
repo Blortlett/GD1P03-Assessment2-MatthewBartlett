@@ -4,6 +4,7 @@
 #include "cRectPlatformToolButton.h"
 #include "cToolButtonSpawnPoint.h"
 #include "cToolButtonLevelExit.h"
+#include "cToolButtonKeyObject.h"
 #include "cSaveButton.h"
 #include "cLoadButton.h"
 #include "cLevelPlatformsList.h"
@@ -22,6 +23,7 @@ private:
     cRectPlatformToolButton mButtonRectangleTool;
     cToolButtonSpawnPoint mButtonSpawnPointTool;
     cToolButtonLevelExit mButtonLevelExitTool;
+    cToolButtonKeyObject mButtonLevelKeyTool;
     // Save/Load Buttons
     cSaveButton mSaveButton;
     cLoadButton mLoadButton;
