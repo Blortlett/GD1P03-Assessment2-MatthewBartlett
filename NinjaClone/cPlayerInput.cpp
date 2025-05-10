@@ -24,3 +24,13 @@ bool cPlayerInput::IsLeftClickPressed() const
 {
     return sf::Mouse::isButtonPressed(sf::Mouse::Button::Left);
 }
+
+bool cPlayerInput::IsPauseButtonPressed() const
+{
+    return sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Escape);
+}
+
+bool cPlayerInput::IsDebugButtonPressed() const
+{
+    return sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Grave);
+}

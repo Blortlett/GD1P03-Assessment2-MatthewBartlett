@@ -12,6 +12,7 @@ private:
 	// Gamestate vars
 	bool mIsLevelEditorRunning = false;
 	bool mIsGameRunning = false;
+	bool mIsGamePaused = false;
 	bool mIsMainMenuActive = true;
 	bool mIsDoorUnlocked = false;
 	bool mIsLevelComplete = false;
@@ -39,6 +40,7 @@ public:
 	// Getters
 	bool IsLevelEditorRunning() { return mIsLevelEditorRunning; }
 	bool IsGameRunning() { return mIsGameRunning; }
+	bool IsGamePaused() { return mIsGamePaused; }
 	bool IsMainMenuActive() { return mIsMainMenuActive; }
 	bool IsDoorUnlocked() { return mIsDoorUnlocked;  }
 	bool IsLevelComplete() { return mIsLevelComplete;  }
@@ -47,9 +49,13 @@ public:
 	// Setters
 	void SetLevelEditorRunning(bool isRunning) { mIsLevelEditorRunning = isRunning; }
 	void SetGameRunning(bool isRunning) { mIsGameRunning = isRunning; }
+	void SetGamePaused(bool isPaused) { mIsGamePaused = isPaused; }
 	void SetMainMenuActive(bool isActive) { mIsMainMenuActive = isActive; }
 	void SetIsDoorUnlocked(bool isDoorUnlocked) { mIsDoorUnlocked = isDoorUnlocked;  }
 	void SetIsLevelComplete(bool isLevelComplete) { mIsLevelComplete = isLevelComplete;  }
+
+	// Reset level count
+	void ResetLevelProgress();
 
 	sf::Sprite* mLevelExitOpenSprite;
 	sf::Sprite* mLevelExitClosedSprite;

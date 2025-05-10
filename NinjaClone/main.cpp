@@ -5,6 +5,7 @@
 #include "cLevelEditorManager.h"
 #include "cPlayerInput.h"
 #include "cFileInterface.h"
+#include "cPauseMenu.h"
 
 int main()
 {
@@ -24,6 +25,8 @@ int main()
     cLevelEditorManager LevelEditor(window, PlayerInput, LevelPlatformsList, FileInterface);
     // Create Main Menu
     cMainMenu MainMenu(window, FileInterface);
+    // Create PauseMenu
+    cPauseMenu PauseMenu(window, LevelPlatformsList);
 
 
     while (window.isOpen())
@@ -36,10 +39,16 @@ int main()
 
         window.clear();
         window.draw(Background);
-        if (cApplicationManager::GetInstance().IsGameRunning())
-        {
+        GameManager.HandleSystemInputs();
+
+        if (cApplicationManager::GetInstance().IsGameRunning()){
             // Draw / Run game
             GameManager.GameTick();
+        }
+        else // here: IsGameRunning == false;
+        {
+            //Draw only do not update gamestates    /// I kinda wanted to stop time instead of this but ahhh well *shrug* // Shits bit busted because i didnt stop time...
+            GameManager.DrawOnlyTick();
         }
         if (cApplicationManager::GetInstance().IsLevelEditorRunning())
         {
@@ -52,6 +61,12 @@ int main()
             // Draw / Run MainMenu
             MainMenu.Update();
         }
+        if (cApplicationManager::GetInstance().IsGamePaused())
+        {
+            // Draw/update pause menu
+            PauseMenu.Update();
+        }
+        // Draw frame
         window.display();
     }
 

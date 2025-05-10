@@ -18,10 +18,10 @@ cLevelCompleteScreenUI::~cLevelCompleteScreenUI()
 
 void cLevelCompleteScreenUI::Update()
 {
-	//if (cApplicationManager::GetInstance().IsLevelComplete())
-	//{
+	if (cApplicationManager::GetInstance().IsLevelComplete())
+	{
 		mRenderWindow.draw(mLevelCompleteText);
 		mNextLevelButton.Update(mRenderWindow);
 		mNextLevelButton.Draw(mRenderWindow);
-	//}
+	}
 }

@@ -28,6 +28,50 @@ void cGameManager::GameTick()
     mLevelCompleteUI.Update();
 }
 
+void cGameManager::DrawOnlyTick()
+{
+    std::cout << "DrawOnlyTick() :)" << std::endl;
+    mPlatformsList.DrawPlatforms(mGameWindow, mDeltaSeconds);
+    mPlayerCharacter.Draw(mGameWindow);
+}
+
+void cGameManager::HandleSystemInputs()
+{
+    if (cApplicationManager::GetInstance().IsMainMenuActive()) return; // Do not open pause menu at main menu screen
+    // Handle Pause Input. Do not want to be able to hold key
+    if (mPlayerInput.IsPauseButtonPressed() && !mPauseKeyHeld)
+    {
+        if (!cApplicationManager::GetInstance().IsGamePaused())
+        {
+            // pause game
+            cApplicationManager::GetInstance().SetGameRunning(false);
+            cApplicationManager::GetInstance().SetGamePaused(true);
+            mPauseKeyHeld = true;
+        }
+        else // else game is paused so...
+        {
+            // unpause game
+            cApplicationManager::GetInstance().SetGameRunning(true);
+            cApplicationManager::GetInstance().SetGamePaused(false);
+            mPauseKeyHeld = true;
+        }
+    }
+    else if (!mPlayerInput.IsPauseButtonPressed() && mPauseKeyHeld)
+    {
+        mPauseKeyHeld = false;
+    }
+    // Handle Debug Key Input. Do not want to be able to hold key
+    if (mPlayerInput.IsDebugButtonPressed() && !mDebugKeyHeld)
+    {
+        std::cout << "Grave key pressed :)" << std::endl;
+        mDebugKeyHeld = true;
+    }
+    else if(!mPlayerInput.IsDebugButtonPressed() && mDebugKeyHeld)
+    {
+        mDebugKeyHeld = false;
+    }
+}
+
 void cGameManager::RefreshDeltaTime()
 {
     mDeltaTime = mClock.restart();

@@ -9,4 +9,6 @@ public:
     bool IsMoveLeftInputPressed() const;
     bool IsMoveRightInputPressed() const;
     bool IsLeftClickPressed() const;
+    bool IsPauseButtonPressed() const;
+    bool IsDebugButtonPressed() const;
 };

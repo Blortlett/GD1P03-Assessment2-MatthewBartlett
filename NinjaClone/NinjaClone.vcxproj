@@ -173,6 +173,7 @@
     <ClCompile Include="cLoadButton.cpp" />
     <ClCompile Include="cMainMenu.cpp" />
     <ClCompile Include="cNextLevelButtonUI.cpp" />
+    <ClCompile Include="cPauseMenu.cpp" />
     <ClCompile Include="cPlatformLevelStart.cpp" />
     <ClCompile Include="cPlatformRect.cpp" />
     <ClCompile Include="cPlayButtonUI.cpp" />
@@ -180,6 +181,8 @@
     <ClCompile Include="cPlayerInput.cpp" />
     <ClCompile Include="cRectPlatformTool.cpp" />
     <ClCompile Include="cRectPlatformToolButton.cpp" />
+    <ClCompile Include="cResumeButton.cpp" />
+    <ClCompile Include="cReturnToMainMenu.cpp" />
     <ClCompile Include="cSaveButton.cpp" />
     <ClCompile Include="cSpawnPlatformTool.cpp" />
     <ClCompile Include="cToolButtonKeyObject.cpp" />
@@ -220,6 +223,7 @@
     <ClInclude Include="cLoadButton.h" />
     <ClInclude Include="cMainMenu.h" />
     <ClInclude Include="cNextLevelButtonUI.h" />
+    <ClInclude Include="cPauseMenu.h" />
     <ClInclude Include="cPlatformLevelStart.h" />
     <ClInclude Include="cPlatformRect.h" />
     <ClInclude Include="cPlayButtonUI.h" />
@@ -227,6 +231,8 @@
     <ClInclude Include="cPlayerInput.h" />
     <ClInclude Include="cRectPlatformTool.h" />
     <ClInclude Include="cRectPlatformToolButton.h" />
+    <ClInclude Include="cResumeButton.h" />
+    <ClInclude Include="cReturnToMainMenu.h" />
     <ClInclude Include="cSaveButton.h" />
     <ClInclude Include="cSpawnPlatformTool.h" />
     <ClInclude Include="cToolButtonKeyObject.h" />
