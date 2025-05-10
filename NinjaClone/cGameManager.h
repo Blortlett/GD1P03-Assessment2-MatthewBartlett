@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "cPlayerCharacter.h"
 #include "cLevelPlatformsList.h"
+#include "cLevelCompleteScreenUI.h"
 #include <iostream>
 
 class cGameManager
@@ -24,4 +25,7 @@ private:
 	cPlayerCharacter mPlayerCharacter;
 	// Platforms
 	cLevelPlatformsList& mPlatformsList;
+
+	// UI
+	cLevelCompleteScreenUI mLevelCompleteUI;
 };

@@ -155,6 +155,7 @@
     <ClCompile Include="cGameObject.h" />
     <ClCompile Include="cKeyObject.cpp" />
     <ClCompile Include="cKeyObjectTool.cpp" />
+    <ClCompile Include="cLevelCompleteScreenUI.cpp" />
     <ClCompile Include="cLevelEditorButtonUI.cpp" />
     <ClCompile Include="cLevelEditorManager.cpp" />
     <ClCompile Include="cLevelExit.cpp" />
@@ -209,6 +210,7 @@
     <ClInclude Include="cKeyAnimation.h" />
     <ClInclude Include="cKeyObject.h" />
     <ClInclude Include="cKeyObjectTool.h" />
+    <ClInclude Include="cLevelCompleteScreenUI.h" />
     <ClInclude Include="cLevelEditorButtonUI.h" />
     <ClInclude Include="cLevelEditorManager.h" />
     <ClInclude Include="cLevelExit.h" />

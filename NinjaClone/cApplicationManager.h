@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <iostream>
 
 class cApplicationManager
 {
@@ -13,10 +14,11 @@ private:
 	bool mIsMainMenuActive = true;
 	bool mIsDoorUnlocked = false;
 	bool mIsLevelComplete = false;
-	// Sprites- I should have done this for all sprites
+	// Sprites - I should have done this for all sprites
 	sf::Texture mLevelExitOpenTex;
 	sf::Texture mLevelExitClosedTex;
-
+	// Font
+	sf::Font mGameFont;
 public:
 	// Get the single instance of the class
 	static cApplicationManager& GetInstance()
@@ -31,6 +33,8 @@ public:
 	bool IsMainMenuActive() { return mIsMainMenuActive; }
 	bool IsDoorUnlocked() { return mIsDoorUnlocked;  }
 	bool IsLevelComplete() { return mIsLevelComplete;  }
+
+	sf::Font& GetFont() { return mGameFont; }
 	// Setters
 	void SetLevelEditorRunning(bool isRunning) { mIsLevelEditorRunning = isRunning; }
 	void SetGameRunning(bool isRunning) { mIsGameRunning = isRunning; }

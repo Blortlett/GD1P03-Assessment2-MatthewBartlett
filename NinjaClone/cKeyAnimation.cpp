@@ -12,6 +12,7 @@ cKeyAnimation::cKeyAnimation(sf::Vector2f position)
 
     mSprite->setPosition(position);
     SetScale(sf::Vector2f(1, 1));
+    mSprite->setOrigin(mSprite->getLocalBounds().size / 2.0f);
 }
 
 cKeyAnimation::~cKeyAnimation()

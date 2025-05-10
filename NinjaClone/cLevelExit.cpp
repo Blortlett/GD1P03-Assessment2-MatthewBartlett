@@ -20,7 +20,7 @@ void cLevelExit::Draw(sf::RenderWindow& renderWindow)
 	{
 		renderWindow.draw(*mDoorOpenSprite);
 	}
-	else 
+	else
 	{
 		renderWindow.draw(*mDoorClosedSprite);
 	}
