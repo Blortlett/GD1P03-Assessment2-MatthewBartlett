@@ -4,6 +4,7 @@
 #include "cSpawnPlatformTool.h"
 #include "cLevelExitTool.h"
 #include "cKeyObjectTool.h"
+#include "cEnemyMineTool.h"
 #include <SFML/Graphics.hpp>
 #include "cLevelPlatformsList.h"
 #include "cPlayerInput.h"
@@ -37,6 +38,8 @@ private:
     cSpawnPlatformTool mSpawnPlatformTool;
     cLevelExitTool mLevelExitTool;
     cKeyObjectTool mLevelKeyTool;
+    // Enemy Tools
+    cEnemyMineTool mEnemyMineTool;
 
     // DrawGrid
     float mGridSize = 24;

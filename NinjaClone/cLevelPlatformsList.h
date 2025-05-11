@@ -4,6 +4,7 @@
 #include "cKeyObject.h"
 #include "cPlayerCharacter.h"
 #include "cMine.h"
+#include "cMushroom.h"
 #include <vector>
 #include <SFML/Graphics.hpp>
 
@@ -18,7 +19,10 @@ public:
 	void AddPlatform(cPlatformRect* platform);
 	void AddLevelKey(cKeyObject* levelKey);
 	void AddLevelExit(cLevelExit* levelExit);
+	void AddEnemyMine(cMine* enemyMine);
+	void AddEnemyMushroom(cMushroom* enemyMushroom);
 	void DrawPlatforms(sf::RenderWindow& window, float deltaTime);
+	void DrawEnemies(sf::RenderWindow& window, float deltaTime);
 	void CheckCollisions(cPlayerCharacter& playerCharacter);
 	void ClearList();
 private:
@@ -27,5 +31,6 @@ private:
 	cKeyObject* mLevelKey;
 	std::vector<cPlatformRect*> mPlatformList;
 	std::vector<cMine*> mMineList;
+	std::vector<cMushroom*> mMushroomList;
 	sf::Vector2f mCollisionDirection;
 };

@@ -5,6 +5,8 @@
 #include "cToolButtonSpawnPoint.h"
 #include "cToolButtonLevelExit.h"
 #include "cToolButtonKeyObject.h"
+#include "cToolButtonEnemyMine.h"
+#include "cToolButtonEnemyMushroom.h"
 #include "cSaveButton.h"
 #include "cLoadButton.h"
 #include "cLevelPlatformsList.h"
@@ -19,11 +21,14 @@ private:
     cEditorDrawTool& UserDrawTool;
     sf::RenderWindow& mMainWindow;
 
-    // Tool Buttons
+    // Tool Buttons - Level Objects
     cRectPlatformToolButton mButtonRectangleTool;
     cToolButtonSpawnPoint mButtonSpawnPointTool;
     cToolButtonLevelExit mButtonLevelExitTool;
     cToolButtonKeyObject mButtonLevelKeyTool;
+    // Tool Buttons - Enemies
+    cToolButtonEnemyMine mButtonEnemyMineTool;
+    cToolButtonEnemyMushroom mButtonEnemyMushroomTool;
     // Save/Load Buttons
     cSaveButton mSaveButton;
     cLoadButton mLoadButton;

@@ -18,13 +18,15 @@ cGameManager::~cGameManager()
 void cGameManager::GameTick()
 {
     RefreshDeltaTime();
-
+    //Draw Platforms
     mPlatformsList.DrawPlatforms(mGameWindow, mDeltaSeconds);
     mPlatformsList.CheckCollisions(mPlayerCharacter);
-
+    //Draw Enemies
+    mPlatformsList.DrawEnemies(mGameWindow, mDeltaSeconds);
+    //Draw Player
     mPlayerCharacter.Update(mDeltaSeconds);
     mPlayerCharacter.Draw(mGameWindow);
-
+    //Draw/UpdateUI
     mLevelCompleteUI.Update();
 }
 

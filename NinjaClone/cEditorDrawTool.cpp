@@ -7,6 +7,7 @@ cEditorDrawTool::cEditorDrawTool(sf::RenderWindow& mainWindow, cPlayerInput& pla
 	, mPlatformsList(platformsList)
 	, mLevelExitTool(platformsList)
 	, mLevelKeyTool(platformsList)
+	, mEnemyMineTool(platformsList)
 {
 	SetTool(cEditorDrawTool::ToolType::ToolMode_None);
 }
@@ -31,7 +32,7 @@ void cEditorDrawTool::SetTool(ToolType type)
 		mActiveTool = &mLevelKeyTool;
 		break;
 	case cEditorDrawTool::ToolType::ToolMode_EnemyMine:
-		mActiveTool = &mLevelKeyTool;
+		mActiveTool = &mEnemyMineTool;
 		break;
 	case cEditorDrawTool::ToolType::ToolMode_EnemyMushroom:
 		mActiveTool = &mLevelKeyTool;

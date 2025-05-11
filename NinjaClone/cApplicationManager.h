@@ -22,9 +22,9 @@ private:
 	// Textures - I should have done this for all Textures to load sprites from here
 	sf::Texture mLevelExitOpenTex;
 	sf::Texture mLevelExitClosedTex;
-	// Enemy sprites
-	sf::Texture* mMineTexture;
-	sf::Texture* mMushroomManTexture;
+	// Enemy textures
+	sf::Texture mMineTexture;
+	sf::Texture mMushroomManTexture;
 
 	// Font
 	sf::Font mGameFont;
@@ -43,10 +43,6 @@ public:
 	// Level Loading
 	const std::string GetNextLevelName();
 	void ResetGameplayVariables();
-
-	// Get EnemyTextures
-	sf::Texture& GetMineTexture() { return *mMineTexture; }
-	sf::Texture& GetMushroomTexture() { return *mMushroomManTexture; }
 
 	// Gamestate Getters
 	bool IsLevelEditorRunning() { return mIsLevelEditorRunning; }
@@ -70,6 +66,11 @@ public:
 	// Reset level count
 	void ResetLevelProgress();
 
+	// door sprites
 	sf::Sprite* mLevelExitOpenSprite;
 	sf::Sprite* mLevelExitClosedSprite;
+
+	// enemy sprites
+	sf::Sprite* mEnemyMineSprite;
+	sf::Sprite* mEnemyMushroomSprite;
 };

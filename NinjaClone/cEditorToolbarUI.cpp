@@ -8,6 +8,8 @@ cEditorToolbarUI::cEditorToolbarUI(sf::RenderWindow& window, cEditorDrawTool& _D
 	, mButtonSpawnPointTool(sf::Vector2f(55.0f, 15.0f), sf::Vector2f(25.0f, 25.0f), _DrawTool)
 	, mButtonLevelExitTool(sf::Vector2f(95.0f, 15.0f), sf::Vector2f(25.0f, 25.0f), _DrawTool)
 	, mButtonLevelKeyTool(sf::Vector2f(135.0f, 15.0f), sf::Vector2f(25.0f, 25.0f), _DrawTool)
+	, mButtonEnemyMineTool(sf::Vector2f(15.0f, 50.0f), sf::Vector2f(25.0f, 25.0f), _DrawTool)
+	, mButtonEnemyMushroomTool(sf::Vector2f(55.0f, 50.0f), sf::Vector2f(25.0f, 25.0f), _DrawTool)
 	, mSaveButton(sf::Vector2f(15.0f, 226.0f), sf::Vector2f(25.0f, 25.0f), fileInterface, platformsList)
 	, mLoadButton(sf::Vector2f(45.0f, 226.0f), sf::Vector2f(25.0f, 25.0f), fileInterface, platformsList)
 {
@@ -19,19 +21,27 @@ cEditorToolbarUI::cEditorToolbarUI(sf::RenderWindow& window, cEditorDrawTool& _D
 
 void cEditorToolbarUI::Update()
 {
+	// Buttons
 	mButtonRectangleTool.Update(mToolbarWindow);
 	mButtonSpawnPointTool.Update(mToolbarWindow);
 	mButtonLevelExitTool.Update(mToolbarWindow);
 	mButtonLevelKeyTool.Update(mToolbarWindow);
+	mButtonEnemyMineTool.Update(mToolbarWindow);
+	mButtonEnemyMushroomTool.Update(mToolbarWindow);
 }
 
 void cEditorToolbarUI::Draw() {
 	mToolbarWindow.draw(*mUIBackground);
+	// Buttons
 	mButtonRectangleTool.Draw(mToolbarWindow);
 	mButtonSpawnPointTool.Draw(mToolbarWindow);
 	mButtonLevelExitTool.Draw(mToolbarWindow);
 	mButtonLevelKeyTool.Draw(mToolbarWindow);
+	mButtonEnemyMineTool.Draw(mToolbarWindow);
+	mButtonEnemyMushroomTool.Draw(mToolbarWindow);
+
 	mSaveButton.Draw(mToolbarWindow);
 	mLoadButton.Draw(mToolbarWindow);
+
 	mToolbarWindow.display();
 }

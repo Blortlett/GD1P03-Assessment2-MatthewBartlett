@@ -41,6 +41,20 @@ void cLevelPlatformsList::AddLevelExit(cLevelExit* levelExit)
 	mLevelExit = levelExit;
 }
 
+void cLevelPlatformsList::AddEnemyMine(cMine* enemyMine)
+{
+	if (!enemyMine) return;
+	std::cout << "Added mine to list" << std::endl;
+	mMineList.push_back(enemyMine);
+}
+
+void cLevelPlatformsList::AddEnemyMushroom(cMushroom* enemyMushroom)
+{
+	if (!enemyMushroom) return;
+	std::cout << "Added mushroom to list" << std::endl;
+	mMushroomList.push_back(enemyMushroom);
+}
+
 void cLevelPlatformsList::DrawPlatforms(sf::RenderWindow& window, float deltaTime)
 {
 	for (size_t i = 0; i < mPlatformList.size(); ++i) {
@@ -53,6 +67,19 @@ void cLevelPlatformsList::DrawPlatforms(sf::RenderWindow& window, float deltaTim
 	{
 		mLevelKey->AnimateKey(deltaTime);
 		mLevelKey->Draw(window);
+	}
+}
+
+void cLevelPlatformsList::DrawEnemies(sf::RenderWindow& window, float deltaTime)
+{
+	// Draw Mines
+	for (size_t i = 0; i < mMineList.size(); ++i) {
+		mMineList[i]->Draw(window);
+	}
+
+	// Draw Mushrooms
+	for (size_t i = 0; i < mMushroomList.size(); ++i) {
+		mMushroomList[i]->Draw(window);
 	}
 }
 
