@@ -23,6 +23,7 @@ void cGameManager::GameTick()
     mPlatformsList.CheckCollisions(mPlayerCharacter);
     //Draw Enemies
     mPlatformsList.DrawEnemies(mGameWindow, mDeltaSeconds);
+    mPlatformsList.CheckEnemyCollisions(mPlayerCharacter);
     //Draw Player
     mPlayerCharacter.Update(mDeltaSeconds);
     mPlayerCharacter.Draw(mGameWindow);

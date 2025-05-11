@@ -116,7 +116,20 @@ void cLevelPlatformsList::CheckCollisions(cPlayerCharacter& playerCharacter)
 
 void cLevelPlatformsList::CheckEnemyCollisions(cPlayerCharacter& playerCharacter)
 {
+	bool CollisionDetected = false;
 
+	// Check mines
+	for (size_t i = 0; i < mMineList.size(); ++i) {
+		CollisionDetected = mMineList[i]->CheckCollisionWithPlayer(playerCharacter);
+		if (CollisionDetected) break;
+	}
+	if (!CollisionDetected)
+	{
+		// Check mushrooms
+		for (size_t i = 0; i < mMushroomList.size(); ++i) {
+			mMushroomList[i]->CheckCollisionWithPlayer(playerCharacter);
+		}
+	}
 }
 
 void cLevelPlatformsList::ClearList()

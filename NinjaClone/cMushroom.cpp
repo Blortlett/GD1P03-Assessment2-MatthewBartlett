@@ -25,3 +25,9 @@ void cMushroom::Draw(sf::RenderWindow& window)
 	window.draw(mSprite);
 	mDebugWidget.DrawWidget(window);
 }
+
+bool cMushroom::CheckCollisionWithPlayer(cCharacter& character)
+{
+	sf::Vector2f collisionDirection = sf::Vector2f(0, 0); // going to ignore this idgaf about it
+	return mCollider.CheckCollision(character.GetCollider(), collisionDirection, 0.0f);
+}

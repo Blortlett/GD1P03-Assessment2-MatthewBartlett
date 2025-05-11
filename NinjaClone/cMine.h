@@ -2,6 +2,7 @@
 #include "cApplicationManager.h"
 #include "cBoxCollider.h"
 #include "cDebugWidget.h"
+#include "cCharacter.h"
 
 class cMine
 {
@@ -17,4 +18,5 @@ public:
 
 	void Update();
 	void Draw(sf::RenderWindow& window);
+	bool CheckCollisionWithPlayer(cCharacter& character);
 };
