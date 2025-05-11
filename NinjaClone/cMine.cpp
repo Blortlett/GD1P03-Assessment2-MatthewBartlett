@@ -6,12 +6,13 @@ cMine::cMine(sf::Vector2f position)
 	, mDebugWidget(mCollider)
 	, mSprite(cApplicationManager::GetInstance().mEnemyMineSprite)
 {
+	mSprite.setPosition(position);
+	mSprite.setOrigin(mSprite.getLocalBounds().size / 2.0f);
 }
 
 cMine::~cMine()
 {
-	delete mSprite;
-	mSprite = nullptr;
+
 }
 
 void cMine::Update()
@@ -21,6 +22,6 @@ void cMine::Update()
 
 void cMine::Draw(sf::RenderWindow& window)
 {
-	window.draw(*mSprite);
+	window.draw(mSprite);
 	mDebugWidget.DrawWidget(window);
 }

@@ -6,13 +6,13 @@ cMushroom::cMushroom(sf::Vector2f position)
 	, mDebugWidget(mCollider)
 	, mSprite(cApplicationManager::GetInstance().mEnemyMushroomSprite)
 {
-
+	mSprite.setPosition(position);
+	mSprite.setOrigin(mSprite.getLocalBounds().size / 2.0f);
 }
 
 cMushroom::~cMushroom()
 {
-	delete mSprite;
-	mSprite = nullptr;
+
 }
 
 void cMushroom::Update()
@@ -22,6 +22,6 @@ void cMushroom::Update()
 
 void cMushroom::Draw(sf::RenderWindow& window)
 {
-	window.draw(*mSprite);
+	window.draw(mSprite);
 	mDebugWidget.DrawWidget(window);
 }

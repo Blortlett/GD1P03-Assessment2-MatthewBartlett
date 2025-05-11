@@ -41,6 +41,7 @@ public:
 	}
 
 	// Level Loading
+	const std::string GetCurrentLevelName();
 	const std::string GetNextLevelName();
 	void ResetGameplayVariables();
 
@@ -71,6 +72,6 @@ public:
 	sf::Sprite* mLevelExitClosedSprite;
 
 	// enemy sprites
-	sf::Sprite* mEnemyMineSprite;
-	sf::Sprite* mEnemyMushroomSprite;
+	sf::Sprite mEnemyMineSprite;
+	sf::Sprite mEnemyMushroomSprite;
 };

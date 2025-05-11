@@ -6,7 +6,7 @@
 class cMushroom
 {
 private:
-	sf::Sprite* mSprite;
+	sf::Sprite mSprite;
 	sf::Vector2f mPosition;
 	cBoxCollider mCollider;
 	cDebugWidget mDebugWidget;

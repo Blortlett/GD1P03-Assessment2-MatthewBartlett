@@ -1,6 +1,8 @@
 #include "cApplicationManager.h"
 
 cApplicationManager::cApplicationManager()
+	: mEnemyMineSprite(mMineTexture)
+	, mEnemyMushroomSprite(mMushroomManTexture)
 {
 	// Get object sprites
 	mLevelExitClosedTex.loadFromFile("Assets/Sprites/LevelBlocks/LevelExitClosed.png");
@@ -8,9 +10,9 @@ cApplicationManager::cApplicationManager()
 	mLevelExitOpenTex.loadFromFile("Assets/Sprites/LevelBlocks/LevelExitOpen.png");
 	mLevelExitOpenSprite = new sf::Sprite(mLevelExitOpenTex);
 	mMineTexture.loadFromFile("Assets/Sprites/Enemies/Mine.png");
-	mEnemyMineSprite = new sf::Sprite(mMineTexture);
+	mEnemyMineSprite = sf::Sprite(mMineTexture);
 	mMushroomManTexture.loadFromFile("Assets/Sprites/Enemies/Mushroom.png");
-	mEnemyMushroomSprite = new sf::Sprite(mMushroomManTexture);
+	mEnemyMushroomSprite = sf::Sprite(mMushroomManTexture);
 
 	// get font
 	if (!mGameFont.openFromFile("Assets/Fonts/TypeLightSans-KV84p.otf"))
@@ -23,6 +25,11 @@ cApplicationManager::~cApplicationManager()
 {
 	delete mLevelExitClosedSprite;
 	delete mLevelExitOpenSprite;
+}
+
+const std::string cApplicationManager::GetCurrentLevelName()
+{
+	return mLevelNames[mLevelCount];
 }
 
 const std::string cApplicationManager::GetNextLevelName()

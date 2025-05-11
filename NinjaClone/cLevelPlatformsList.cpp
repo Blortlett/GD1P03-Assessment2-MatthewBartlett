@@ -44,7 +44,7 @@ void cLevelPlatformsList::AddLevelExit(cLevelExit* levelExit)
 void cLevelPlatformsList::AddEnemyMine(cMine* enemyMine)
 {
 	if (!enemyMine) return;
-	std::cout << "Added mine to list" << std::endl;
+	std::cout << "Added mine to list. List size: " << mMineList.size() << std::endl;
 	mMineList.push_back(enemyMine);
 }
 
@@ -112,6 +112,11 @@ void cLevelPlatformsList::CheckCollisions(cPlayerCharacter& playerCharacter)
 		// unlock door when player touches key
 		cApplicationManager::GetInstance().SetIsDoorUnlocked(true);
 	}
+}
+
+void cLevelPlatformsList::CheckEnemyCollisions(cPlayerCharacter& playerCharacter)
+{
+
 }
 
 void cLevelPlatformsList::ClearList()
