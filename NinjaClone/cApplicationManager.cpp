@@ -7,6 +7,8 @@ cApplicationManager::cApplicationManager()
 	mLevelExitClosedSprite = new sf::Sprite(mLevelExitClosedTex);
 	mLevelExitOpenTex.loadFromFile("Assets/Sprites/LevelBlocks/LevelExitOpen.png");
 	mLevelExitOpenSprite = new sf::Sprite(mLevelExitOpenTex);
+	mMineTexture->loadFromFile("Assets/Sprites/Enemies/Mine.png");
+	mMushroomManTexture->loadFromFile("Assets/Sprites/Enemies/Mushroom.png");
 
 	// get font
 	if (!mGameFont.openFromFile("Assets/Fonts/TypeLightSans-KV84p.otf"))

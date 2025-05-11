@@ -3,6 +3,7 @@
 #include "cLevelExit.h"
 #include "cKeyObject.h"
 #include "cPlayerCharacter.h"
+#include "cMine.h"
 #include <vector>
 #include <SFML/Graphics.hpp>
 
@@ -25,5 +26,6 @@ private:
 	cLevelExit* mLevelExit;
 	cKeyObject* mLevelKey;
 	std::vector<cPlatformRect*> mPlatformList;
+	std::vector<cMine*> mMineList;
 	sf::Vector2f mCollisionDirection;
 };

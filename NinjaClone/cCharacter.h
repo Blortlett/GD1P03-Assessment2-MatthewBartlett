@@ -2,6 +2,7 @@
 #include "cGameObject.h"
 #include "cAnimator.h"
 #include "cBoxCollider.h"
+#include "cApplicationManager.h"
 
 enum eCharacterType {
 	TYPE_BLANK,

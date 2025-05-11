@@ -15,7 +15,8 @@ cLevelExit::cLevelExit(sf::Vector2f position)
 
 void cLevelExit::Draw(sf::RenderWindow& renderWindow)
 {
-	// Fucking ugly doing this every while loop of game... Time restrictions has me caring little for it
+	mDebugWidget.DrawWidget(renderWindow);
+	// Ugly doing this every while loop of game... Time restrictions has me caring little for it so i done it all over the place and made shit uggz g
 	if (cApplicationManager::GetInstance().IsDoorUnlocked())
 	{
 		renderWindow.draw(*mDoorOpenSprite);
@@ -24,12 +25,6 @@ void cLevelExit::Draw(sf::RenderWindow& renderWindow)
 	{
 		renderWindow.draw(*mDoorClosedSprite);
 	}
-}
-
-void cLevelExit::DrawDebug(sf::RenderWindow& renderWindow)
-{
-	mDebugWidget.UpdateWidget();
-	mDebugWidget.DrawWidget(renderWindow);
 }
 
 bool cLevelExit::CheckCollideWithPlayer(cCharacter& character)

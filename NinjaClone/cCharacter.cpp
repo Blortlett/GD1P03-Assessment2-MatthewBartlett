@@ -69,6 +69,7 @@ void cCharacter::CharacterPhysicsUpdate(float _DeltaSeconds)
 
 void cCharacter::DrawDebug(sf::RenderWindow& renderWindow)
 {
+	if (!cApplicationManager::GetInstance().IsDebugModeActive()) return;
 	mDebugColliderShape.setPosition(mCollider.mBounds.position);
 	mDebugPositionShape.setPosition(mPosition);
 	renderWindow.draw(mDebugColliderShape); // draw collider

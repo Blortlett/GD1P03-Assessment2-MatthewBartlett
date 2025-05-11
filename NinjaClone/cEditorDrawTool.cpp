@@ -30,6 +30,13 @@ void cEditorDrawTool::SetTool(ToolType type)
 	case cEditorDrawTool::ToolType::ToolMode_LevelKey:
 		mActiveTool = &mLevelKeyTool;
 		break;
+	case cEditorDrawTool::ToolType::ToolMode_EnemyMine:
+		mActiveTool = &mLevelKeyTool;
+		break;
+	case cEditorDrawTool::ToolType::ToolMode_EnemyMushroom:
+		mActiveTool = &mLevelKeyTool;
+		break;
+
 	}
 }
 

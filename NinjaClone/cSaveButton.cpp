@@ -20,7 +20,6 @@ cSaveButton::~cSaveButton()
 
 void cSaveButton::OnButtonClick()
 {
-	std::cout << "Save Button Clicked!" << std::endl;
 	// Save the platform list
 	mFileInterface.SaveLevelDialog();
 }

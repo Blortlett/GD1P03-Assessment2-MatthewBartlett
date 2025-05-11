@@ -90,6 +90,7 @@ void cPlayerCharacter::Draw(sf::RenderWindow& renderWindow)
 {
     //DrawDebug(renderWindow);
     mPlayerAnimator.Draw(renderWindow);
+    cCharacter::DrawDebug(renderWindow);
 }
 
 void cPlayerCharacter::Jump()

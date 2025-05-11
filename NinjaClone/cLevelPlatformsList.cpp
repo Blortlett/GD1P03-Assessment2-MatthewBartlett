@@ -48,13 +48,11 @@ void cLevelPlatformsList::DrawPlatforms(sf::RenderWindow& window, float deltaTim
 	}
 
 	mLevelExit->Draw(window);
-	mLevelExit->DrawDebug(window);
 
 	if (!cApplicationManager::GetInstance().IsDoorUnlocked())
 	{
 		mLevelKey->AnimateKey(deltaTime);
 		mLevelKey->Draw(window);
-		mLevelKey->DrawDebug(window);
 	}
 }
 

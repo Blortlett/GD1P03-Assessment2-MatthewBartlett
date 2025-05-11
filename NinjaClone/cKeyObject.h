@@ -22,7 +22,6 @@ public:
 	// Graphics functions
 	void AnimateKey(float deltaSeconds);
 	void Draw(sf::RenderWindow& window);
-	void DrawDebug(sf::RenderWindow& window);
 	
 	// Collision check
 	bool CheckCollideWithPlayer(cCharacter& character);

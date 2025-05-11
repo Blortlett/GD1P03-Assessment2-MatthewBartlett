@@ -30,7 +30,6 @@ void cGameManager::GameTick()
 
 void cGameManager::DrawOnlyTick()
 {
-    std::cout << "DrawOnlyTick() :)" << std::endl;
     mPlatformsList.DrawPlatforms(mGameWindow, mDeltaSeconds);
     mPlayerCharacter.Draw(mGameWindow);
 }
@@ -63,7 +62,8 @@ void cGameManager::HandleSystemInputs()
     // Handle Debug Key Input. Do not want to be able to hold key
     if (mPlayerInput.IsDebugButtonPressed() && !mDebugKeyHeld)
     {
-        std::cout << "Grave key pressed :)" << std::endl;
+        bool debugModeActive = cApplicationManager::GetInstance().IsDebugModeActive();
+        cApplicationManager::GetInstance().SetIsDebugModeActive(!debugModeActive);
         mDebugKeyHeld = true;
     }
     else if(!mPlayerInput.IsDebugButtonPressed() && mDebugKeyHeld)

@@ -21,11 +21,6 @@ void cKeyObject::AnimateKey(float deltaSeconds)
 void cKeyObject::Draw(sf::RenderWindow& window)
 {
 	mKeyAnimation.Draw(window);
-}
-
-void cKeyObject::DrawDebug(sf::RenderWindow& window)
-{
-	mDebugWidget.UpdateWidget();
 	mDebugWidget.DrawWidget(window);
 }
 

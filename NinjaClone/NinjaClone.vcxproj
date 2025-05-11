@@ -172,6 +172,7 @@
     <ClCompile Include="cLevelPlatformsList.cpp" />
     <ClCompile Include="cLoadButton.cpp" />
     <ClCompile Include="cMainMenu.cpp" />
+    <ClCompile Include="cMine.cpp" />
     <ClCompile Include="cNextLevelButtonUI.cpp" />
     <ClCompile Include="cPauseMenu.cpp" />
     <ClCompile Include="cPlatformLevelStart.cpp" />
@@ -222,6 +223,7 @@
     <ClInclude Include="cLevelPlatformsList.h" />
     <ClInclude Include="cLoadButton.h" />
     <ClInclude Include="cMainMenu.h" />
+    <ClInclude Include="cMine.h" />
     <ClInclude Include="cNextLevelButtonUI.h" />
     <ClInclude Include="cPauseMenu.h" />
     <ClInclude Include="cPlatformLevelStart.h" />

@@ -23,5 +23,7 @@ void cDebugWidget::UpdateWidget()
 
 void cDebugWidget::DrawWidget(sf::RenderWindow& window)
 {
+	if (!cApplicationManager::GetInstance().IsDebugModeActive()) return;
+	UpdateWidget();
 	window.draw(mColliderGraphic);
 }

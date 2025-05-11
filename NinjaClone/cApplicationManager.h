@@ -9,16 +9,23 @@ private:
 	// Private constructor/destructor to prevent non singleton use
 	cApplicationManager();
 	~cApplicationManager();
-	// Gamestate vars
+
+	// Gamestate global vars			// I hear this is a bad idea? Antipattern?
 	bool mIsLevelEditorRunning = false;
 	bool mIsGameRunning = false;
 	bool mIsGamePaused = false;
 	bool mIsMainMenuActive = true;
 	bool mIsDoorUnlocked = false;
 	bool mIsLevelComplete = false;
-	// Sprites - I should have done this for all sprites
+	bool mIsDebugModeActive = false;
+
+	// Textures - I should have done this for all Textures to load sprites from here
 	sf::Texture mLevelExitOpenTex;
 	sf::Texture mLevelExitClosedTex;
+	// Enemy sprites
+	sf::Texture* mMineTexture;
+	sf::Texture* mMushroomManTexture;
+
 	// Font
 	sf::Font mGameFont;
 
@@ -37,13 +44,18 @@ public:
 	const std::string GetNextLevelName();
 	void ResetGameplayVariables();
 
-	// Getters
+	// Get EnemyTextures
+	sf::Texture& GetMineTexture() { return *mMineTexture; }
+	sf::Texture& GetMushroomTexture() { return *mMushroomManTexture; }
+
+	// Gamestate Getters
 	bool IsLevelEditorRunning() { return mIsLevelEditorRunning; }
 	bool IsGameRunning() { return mIsGameRunning; }
 	bool IsGamePaused() { return mIsGamePaused; }
 	bool IsMainMenuActive() { return mIsMainMenuActive; }
 	bool IsDoorUnlocked() { return mIsDoorUnlocked;  }
 	bool IsLevelComplete() { return mIsLevelComplete;  }
+	bool IsDebugModeActive() { return mIsDebugModeActive;  }
 
 	sf::Font& GetFont() { return mGameFont; }
 	// Setters
@@ -53,6 +65,7 @@ public:
 	void SetMainMenuActive(bool isActive) { mIsMainMenuActive = isActive; }
 	void SetIsDoorUnlocked(bool isDoorUnlocked) { mIsDoorUnlocked = isDoorUnlocked;  }
 	void SetIsLevelComplete(bool isLevelComplete) { mIsLevelComplete = isLevelComplete;  }
+	void SetIsDebugModeActive(bool isDebugModeActive) { mIsDebugModeActive = isDebugModeActive;  }
 
 	// Reset level count
 	void ResetLevelProgress();

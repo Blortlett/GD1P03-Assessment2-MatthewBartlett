@@ -24,7 +24,6 @@ public:
 
 	// Draw Graphics
 	void Draw(sf::RenderWindow& renderWindow) override;
-	void DrawDebug(sf::RenderWindow& renderWindow);
 
 	// Collision check
 	bool CheckCollideWithPlayer(cCharacter& character);

@@ -17,6 +17,8 @@ public:
         ToolMode_SpawnPoint,
         ToolMode_LevelExit,
         ToolMode_LevelKey,
+        ToolMode_EnemyMine,
+        ToolMode_EnemyMushroom,
     };
     void SetTool(ToolType type);
     void UpdateCursor(sf::RenderWindow& window, sf::Vector2f mousePos);
