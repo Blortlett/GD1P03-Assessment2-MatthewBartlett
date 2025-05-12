@@ -130,6 +130,9 @@ void cLevelPlatformsList::CheckEnemyCollisions(cPlayerCharacter& playerCharacter
 			mMushroomList[i]->CheckCollisionWithPlayer(playerCharacter);
 		}
 	}
+	if (CollisionDetected) {
+		cApplicationManager::GetInstance().SetIsPlayerDead(true);
+	}
 }
 
 void cLevelPlatformsList::ClearList()

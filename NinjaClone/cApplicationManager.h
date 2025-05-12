@@ -18,6 +18,7 @@ private:
 	bool mIsDoorUnlocked = false;
 	bool mIsLevelComplete = false;
 	bool mIsDebugModeActive = false;
+	bool mIsPlayerDead = false;
 
 	// Textures - I should have done this for all Textures to load sprites from here
 	sf::Texture mLevelExitOpenTex;
@@ -53,6 +54,7 @@ public:
 	bool IsDoorUnlocked() { return mIsDoorUnlocked;  }
 	bool IsLevelComplete() { return mIsLevelComplete;  }
 	bool IsDebugModeActive() { return mIsDebugModeActive;  }
+	bool IsPlayerDead() { return mIsPlayerDead;  }
 
 	sf::Font& GetFont() { return mGameFont; }
 	// Setters
@@ -63,6 +65,7 @@ public:
 	void SetIsDoorUnlocked(bool isDoorUnlocked) { mIsDoorUnlocked = isDoorUnlocked;  }
 	void SetIsLevelComplete(bool isLevelComplete) { mIsLevelComplete = isLevelComplete;  }
 	void SetIsDebugModeActive(bool isDebugModeActive) { mIsDebugModeActive = isDebugModeActive;  }
+	void SetIsPlayerDead(bool isPlayerDead) { mIsPlayerDead = isPlayerDead;  }
 
 	// Reset level count
 	void ResetLevelProgress();
