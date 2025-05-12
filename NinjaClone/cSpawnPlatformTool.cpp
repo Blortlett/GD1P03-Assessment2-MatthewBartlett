@@ -5,7 +5,7 @@ cSpawnPlatformTool::cSpawnPlatformTool(cLevelPlatformsList& levelPlatformList)
 {
 	mShape = new sf::RectangleShape(mRectSize);
 	mShape->setOrigin(sf::Vector2f(mRectSize / 2.0f));
-	mShape->setFillColor(sf::Color::Black);
+	mShape->setFillColor(sf::Color::Green);
 }
 
 void cSpawnPlatformTool::UpdateCursor(sf::RenderWindow& window, sf::Vector2f& mousePos)

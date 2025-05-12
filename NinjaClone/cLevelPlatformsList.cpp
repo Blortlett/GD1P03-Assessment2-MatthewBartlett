@@ -53,14 +53,23 @@ void cLevelPlatformsList::AddLevelExit(cLevelExit* levelExit)
 void cLevelPlatformsList::AddEnemyMine(cMine* enemyMine)
 {
 	if (!enemyMine) return;
-	std::cout << "Added mine to list. List size: " << mMineList.size() << std::endl;
 	mMineList.push_back(enemyMine);
+}
+
+void cLevelPlatformsList::AddBouncySquare(cBouncySquare* bouncySquare)
+{
+	if (!bouncySquare) return;
+	mBouncySquareList.push_back(bouncySquare);
 }
 
 void cLevelPlatformsList::DrawPlatforms(sf::RenderWindow& window, float deltaTime)
 {
 	for (size_t i = 0; i < mPlatformList.size(); ++i) {
 		mPlatformList[i]->Draw(window);
+	}
+
+	for (size_t i = 0; i < mBouncySquareList.size(); ++i) {
+		mBouncySquareList[i]->Draw(window);
 	}
 
 	if (mPlayerSpawn) {
@@ -92,6 +101,12 @@ void cLevelPlatformsList::CheckCollisions(cPlayerCharacter& playerCharacter)
 	bool isColliding = false;
 	for (size_t i = 0; i < mPlatformList.size(); ++i) {
 		if (mPlatformList[i]->CheckCollideWithPlayer(playerCharacter, mCollisionDirection))
+			isColliding = true;
+	}
+
+	// Check player collisions with bouncy squares
+	for (size_t i = 0; i < mBouncySquareList.size(); ++i) {
+		if (mBouncySquareList[i]->CheckCollideWithPlayer(playerCharacter, mCollisionDirection))
 			isColliding = true;
 	}
 

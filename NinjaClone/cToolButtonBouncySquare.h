@@ -2,11 +2,11 @@
 #include "cButtonUI.h"
 #include "cEditorDrawTool.h"
 
-class cRectPlatformToolButton : public cButtonUI
+class cToolButtonBouncySquare : public cButtonUI
 {
 public:
-    cRectPlatformToolButton(sf::Vector2f position, sf::Vector2f size, cEditorDrawTool& tool);
-    ~cRectPlatformToolButton();
+    cToolButtonBouncySquare(sf::Vector2f position, sf::Vector2f size, cEditorDrawTool& tool);
+    ~cToolButtonBouncySquare();
     void OnButtonClick() override;
     void Draw(sf::RenderWindow& window) override;
 private:

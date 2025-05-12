@@ -9,8 +9,8 @@ cLoadButton::cLoadButton(sf::Vector2f position, sf::Vector2f size, cFileInterfac
 	mLoadIconTexture.loadFromFile("Assets/Sprites/UI/Toolbar/LoadIcon.png");
 	mUIIcon = new sf::Sprite(mLoadIconTexture);
 	// Set position
-	mUIIcon->setOrigin(sf::Vector2f(mUIIcon->getLocalBounds().size.x / 2, mUIIcon->getLocalBounds().size.y / 2));
-	mUIIcon->setPosition(sf::Vector2f(position.x + (size.x / 2), position.y + (size.y / 2)));
+	mUIIcon->setOrigin(mUIIcon->getLocalBounds().size / 2.0f);
+	mUIIcon->setPosition(position);
 }
 
 cLoadButton::~cLoadButton()

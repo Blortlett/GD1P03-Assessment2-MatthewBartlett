@@ -20,7 +20,6 @@ void cEnemyMineTool::DrawToolToScreen(sf::RenderWindow& window)
 
 cPlatformRect* cEnemyMineTool::CompleteUseTool()
 {
-	std::cout << "Tool position x: " << mShape->getPosition().x << "    y: " << mShape->getPosition().y << std::endl;
 	cMine* enemyMine = new cMine(mShape->getPosition());
 	mLevelPlatformsList.AddEnemyMine(enemyMine);
 	return nullptr;

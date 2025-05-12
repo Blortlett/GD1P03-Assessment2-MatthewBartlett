@@ -5,6 +5,7 @@
 #include "cLevelExitTool.h"
 #include "cKeyObjectTool.h"
 #include "cEnemyMineTool.h"
+#include "cBouncySquareTool.h"
 #include <SFML/Graphics.hpp>
 #include "cLevelPlatformsList.h"
 #include "cPlayerInput.h"
@@ -19,7 +20,7 @@ public:
         ToolMode_LevelExit,
         ToolMode_LevelKey,
         ToolMode_EnemyMine,
-        ToolMode_EnemyMushroom,
+        ToolMode_BouncySquare,
     };
     void SetTool(ToolType type);
     void UpdateCursor(sf::RenderWindow& window, sf::Vector2f mousePos);
@@ -35,6 +36,7 @@ private:
     // Editor Tools
     cEmptyPlatformTool mEmptyTool;
     cRectPlatformTool mRectangleTool;
+    cBouncySquareTool mBouncySquareTool;
     cSpawnPlatformTool mSpawnPlatformTool;
     cLevelExitTool mLevelExitTool;
     cKeyObjectTool mLevelKeyTool;

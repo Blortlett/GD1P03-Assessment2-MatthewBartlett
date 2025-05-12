@@ -8,7 +8,9 @@ public:
     cToolButtonKeyObject(sf::Vector2f position, sf::Vector2f size, cEditorDrawTool& tool);
     ~cToolButtonKeyObject();
     void OnButtonClick() override;
+    void Draw(sf::RenderWindow& window) override;
 private:
     cEditorDrawTool& mUserDrawTool;
-    sf::RectangleShape mUIIcon;
+    sf::Texture mIconTexture;
+    sf::Sprite* mUIIcon;
 };

@@ -145,6 +145,8 @@
   <ItemGroup>
     <ClCompile Include="cApplicationManager.cpp" />
     <ClCompile Include="cBaseDrawTool.cpp" />
+    <ClCompile Include="cBouncySquare.cpp" />
+    <ClCompile Include="cBouncySquareTool.cpp" />
     <ClCompile Include="cButtonUI.cpp" />
     <ClCompile Include="cDebugWidget.cpp" />
     <ClCompile Include="cEditorDrawTool.cpp" />
@@ -188,6 +190,7 @@
     <ClCompile Include="cReturnToMainMenu.cpp" />
     <ClCompile Include="cSaveButton.cpp" />
     <ClCompile Include="cSpawnPlatformTool.cpp" />
+    <ClCompile Include="cToolButtonBouncySquare.cpp" />
     <ClCompile Include="cToolButtonEnemyMine.cpp" />
     <ClCompile Include="cToolButtonKeyObject.cpp" />
     <ClCompile Include="cToolButtonLevelExit.cpp" />
@@ -205,6 +208,8 @@
     <ClInclude Include="cAnimator.h" />
     <ClInclude Include="cApplicationManager.h" />
     <ClInclude Include="cBaseDrawTool.h" />
+    <ClInclude Include="cBouncySquare.h" />
+    <ClInclude Include="cBouncySquareTool.h" />
     <ClInclude Include="cBoxCollider.h" />
     <ClInclude Include="cButtonUI.h" />
     <ClInclude Include="cCharacter.h" />
@@ -242,6 +247,7 @@
     <ClInclude Include="cReturnToMainMenu.h" />
     <ClInclude Include="cSaveButton.h" />
     <ClInclude Include="cSpawnPlatformTool.h" />
+    <ClInclude Include="cToolButtonBouncySquare.h" />
     <ClInclude Include="cToolButtonEnemyMine.h" />
     <ClInclude Include="cToolButtonKeyObject.h" />
     <ClInclude Include="cToolButtonLevelExit.h" />

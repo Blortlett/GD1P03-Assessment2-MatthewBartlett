@@ -5,6 +5,7 @@
 #include "cKeyObject.h"
 #include "cPlayerCharacter.h"
 #include "cMine.h"
+#include "cBouncySquare.h"
 #include <vector>
 #include <SFML/Graphics.hpp>
 
@@ -21,6 +22,7 @@ public:
 	void AddLevelKey(cKeyObject* levelKey);
 	void AddLevelExit(cLevelExit* levelExit);
 	void AddEnemyMine(cMine* enemyMine);
+	void AddBouncySquare(cBouncySquare* bouncySquare);
 	void DrawPlatforms(sf::RenderWindow& window, float deltaTime);
 	void DrawEnemies(sf::RenderWindow& window, float deltaTime);
 	void CheckCollisions(cPlayerCharacter& playerCharacter);
@@ -34,6 +36,7 @@ private:
 	cKeyObject* mLevelKey;
 	cPlatformLevelStart* mPlayerSpawn;
 	std::vector<cPlatformRect*> mPlatformList;
+	std::vector<cBouncySquare*> mBouncySquareList;
 	std::vector<cMine*> mMineList;
 	sf::Vector2f mCollisionDirection;
 };

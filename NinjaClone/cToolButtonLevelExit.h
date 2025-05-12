@@ -1,4 +1,5 @@
 #pragma once
+#include "cApplicationManager.h"
 #include "cButtonUI.h"
 #include "cEditorDrawTool.h"
 
@@ -8,7 +9,9 @@ public:
     cToolButtonLevelExit(sf::Vector2f position, sf::Vector2f size, cEditorDrawTool& tool);
     ~cToolButtonLevelExit();
     void OnButtonClick() override;
+    void Draw(sf::RenderWindow& window) override;
 private:
     cEditorDrawTool& mUserDrawTool;
-    sf::RectangleShape mUIIcon;
+    sf::Texture mIconTexture;
+    sf::Sprite* mUIIcon;
 };

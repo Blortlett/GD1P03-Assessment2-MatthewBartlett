@@ -6,6 +6,7 @@
 #include "cToolButtonLevelExit.h"
 #include "cToolButtonKeyObject.h"
 #include "cToolButtonEnemyMine.h"
+#include "cToolButtonBouncySquare.h"
 #include "cSaveButton.h"
 #include "cLoadButton.h"
 #include "cLevelPlatformsList.h"
@@ -25,6 +26,7 @@ private:
     cToolButtonSpawnPoint mButtonSpawnPointTool;
     cToolButtonLevelExit mButtonLevelExitTool;
     cToolButtonKeyObject mButtonLevelKeyTool;
+    cToolButtonBouncySquare mButtonBouncySquareTool;
     // Tool Buttons - Enemies
     cToolButtonEnemyMine mButtonEnemyMineTool;
     // Save/Load Buttons
