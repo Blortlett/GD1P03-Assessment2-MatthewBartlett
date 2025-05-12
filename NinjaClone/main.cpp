@@ -41,15 +41,25 @@ int main()
         window.draw(Background);
         GameManager.HandleSystemInputs();
 
-        if (cApplicationManager::GetInstance().IsGameRunning()){
-            // Draw / Run game
-            GameManager.GameTick();
-        }
-        else // here: IsGameRunning == false;
+        if (cApplicationManager::GetInstance().IsPlayerDead())
         {
-            //Draw only do not update gamestates    /// I kinda wanted to stop time instead of this but ahhh well *shrug* // Shits bit busted because i didnt stop time...
-            GameManager.DrawOnlyTick();
+            // Render death here... then reset game.
+            GameManager.DrawDeathTick();
         }
+        else 
+        { // Normal game takes place...
+        
+            if (cApplicationManager::GetInstance().IsGameRunning()){
+                // Draw / Run game
+                GameManager.GameTick();
+            }
+            else // here: IsGameRunning == false;
+            {
+                //Draw only do not update gamestates    /// I kinda wanted to stop time instead of this but ahhh well *shrug* // Shits bit busted because i didnt stop time...
+                GameManager.DrawOnlyTick();
+            }
+        }
+
         if (cApplicationManager::GetInstance().IsLevelEditorRunning())
         {
             // Draw / Run level editor

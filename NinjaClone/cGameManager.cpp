@@ -37,6 +37,32 @@ void cGameManager::DrawOnlyTick()
     mPlayerCharacter.Draw(mGameWindow);
 }
 
+void cGameManager::DrawDeathTick()
+{
+    RefreshDeltaTime();
+    mDeathScreenTimer += mDeltaSeconds;
+    mDeathFlashTimer += mDeltaSeconds;
+    if (mDeathScreenTimer >= mDeathScreenTimeMax)
+    {
+        // Respawn player and reset game variables
+        cApplicationManager::GetInstance().ResetGameplayVariables();
+        mDeathScreenTimer = 0.f;
+    }
+    if (mDeathFlashTimer >= mDeathFlashTimeMax)
+    {
+        // Toggle Draw character
+        mDrawCharacterOnDeath = !mDrawCharacterOnDeath;
+        mDeathFlashTimer = 0.f;
+    }
+    // Draw character on death - if supposed to
+    if (mDrawCharacterOnDeath)
+    {
+        mPlayerCharacter.Draw(mGameWindow);
+    }
+    mPlatformsList.DrawEnemies(mGameWindow, mDeltaSeconds);
+    mPlatformsList.DrawPlatforms(mGameWindow, mDeltaSeconds);
+}
+
 void cGameManager::HandleSystemInputs()
 {
     if (cApplicationManager::GetInstance().IsMainMenuActive()) return; // Do not open pause menu at main menu screen
@@ -80,3 +106,8 @@ void cGameManager::RefreshDeltaTime()
     mDeltaTime = mClock.restart();
     mDeltaSeconds = mDeltaTime.asSeconds();
 }
+
+void cGameManager::RespawnPlayer()
+{
+}
+

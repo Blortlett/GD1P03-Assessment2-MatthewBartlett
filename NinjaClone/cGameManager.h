@@ -15,6 +15,7 @@ public:
 	// GameTick types
 	void GameTick();
 	void DrawOnlyTick();
+	void DrawDeathTick();
 	// System only inputs
 	void HandleSystemInputs();
 
@@ -24,6 +25,12 @@ private:
 	sf::Time mDeltaTime;
 	float mDeltaSeconds;
 	void RefreshDeltaTime();
+	// Death screen timer variables
+	float mDeathScreenTimer = 0;
+	float mDeathFlashTimer = 0;
+	float mDeathScreenTimeMax = 3; // Death screen timer
+	float mDeathFlashTimeMax = .4; // alternate flashing timer
+	bool mDrawCharacterOnDeath = true;
 
 	// InputVariables
 	bool mPauseKeyHeld = false;
@@ -41,4 +48,8 @@ private:
 
 	// UI
 	cLevelCompleteScreenUI mLevelCompleteUI;
+
+
+	// Respawn Player
+	void RespawnPlayer();
 };
