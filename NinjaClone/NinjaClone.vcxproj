@@ -174,7 +174,6 @@
     <ClCompile Include="cLoadButton.cpp" />
     <ClCompile Include="cMainMenu.cpp" />
     <ClCompile Include="cMine.cpp" />
-    <ClCompile Include="cMushroom.cpp" />
     <ClCompile Include="cNextLevelButtonUI.cpp" />
     <ClCompile Include="cPauseMenu.cpp" />
     <ClCompile Include="cPlatformLevelStart.cpp" />
@@ -182,6 +181,7 @@
     <ClCompile Include="cPlayButtonUI.cpp" />
     <ClCompile Include="cPlayerCharacter.cpp" />
     <ClCompile Include="cPlayerInput.cpp" />
+    <ClCompile Include="cRaycaster.cpp" />
     <ClCompile Include="cRectPlatformTool.cpp" />
     <ClCompile Include="cRectPlatformToolButton.cpp" />
     <ClCompile Include="cResumeButton.cpp" />
@@ -189,7 +189,6 @@
     <ClCompile Include="cSaveButton.cpp" />
     <ClCompile Include="cSpawnPlatformTool.cpp" />
     <ClCompile Include="cToolButtonEnemyMine.cpp" />
-    <ClCompile Include="cToolButtonEnemyMushroom.cpp" />
     <ClCompile Include="cToolButtonKeyObject.cpp" />
     <ClCompile Include="cToolButtonLevelExit.cpp" />
     <ClCompile Include="cToolButtonSpawnPoint.cpp" />
@@ -229,7 +228,6 @@
     <ClInclude Include="cLoadButton.h" />
     <ClInclude Include="cMainMenu.h" />
     <ClInclude Include="cMine.h" />
-    <ClInclude Include="cMushroom.h" />
     <ClInclude Include="cNextLevelButtonUI.h" />
     <ClInclude Include="cPauseMenu.h" />
     <ClInclude Include="cPlatformLevelStart.h" />
@@ -237,6 +235,7 @@
     <ClInclude Include="cPlayButtonUI.h" />
     <ClInclude Include="cPlayerCharacter.h" />
     <ClInclude Include="cPlayerInput.h" />
+    <ClInclude Include="cRaycaster.h" />
     <ClInclude Include="cRectPlatformTool.h" />
     <ClInclude Include="cRectPlatformToolButton.h" />
     <ClInclude Include="cResumeButton.h" />
@@ -244,7 +243,6 @@
     <ClInclude Include="cSaveButton.h" />
     <ClInclude Include="cSpawnPlatformTool.h" />
     <ClInclude Include="cToolButtonEnemyMine.h" />
-    <ClInclude Include="cToolButtonEnemyMushroom.h" />
     <ClInclude Include="cToolButtonKeyObject.h" />
     <ClInclude Include="cToolButtonLevelExit.h" />
     <ClInclude Include="cToolButtonSpawnPoint.h" />

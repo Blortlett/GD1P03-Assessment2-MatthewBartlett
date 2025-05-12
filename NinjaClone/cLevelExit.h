@@ -27,4 +27,6 @@ public:
 
 	// Collision check
 	bool CheckCollideWithPlayer(cCharacter& character);
+
+	sf::Vector2f GetPosition() { return mPosition; }
 };

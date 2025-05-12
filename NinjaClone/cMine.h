@@ -19,4 +19,6 @@ public:
 	void Update();
 	void Draw(sf::RenderWindow& window);
 	bool CheckCollisionWithPlayer(cCharacter& character);
+
+	sf::Vector2f GetPosition() { return mPosition; }
 };

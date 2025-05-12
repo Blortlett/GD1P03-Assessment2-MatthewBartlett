@@ -74,3 +74,19 @@ bool cBoxCollider::CheckCollision(cBoxCollider& other, sf::Vector2f& direction, 
 	}
 	return false;
 }
+
+bool cBoxCollider::CheckCollisionPoint(sf::Vector2f pointCollision)
+{
+	sf::Vector2f thisPosition = GetPosition();
+	sf::Vector2f thisHalfSize = GetHalfSize();
+
+	float deltaX = pointCollision.x - thisPosition.x;
+	float deltaY = pointCollision.y - thisPosition.y;
+
+	if (deltaX < 0.0f && deltaY < 0.0f)
+	{
+		return true;
+	}
+
+	return false;
+}

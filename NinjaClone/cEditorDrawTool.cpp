@@ -44,6 +44,14 @@ void cEditorDrawTool::SetTool(ToolType type)
 
 void cEditorDrawTool::UpdateCursor(sf::RenderWindow& window, sf::Vector2f toolPosition)
 {
+	// Right Click to delete platform
+	if (mPlayerInput.IsRightClickPressed() && window.hasFocus())
+	{
+		sf::Vector2f mousePos = sf::Vector2f(sf::Mouse::getPosition(window));
+		mPlatformsList.TryDeletePlatform(mousePos);
+	}
+
+	// Left Click
 	if (mPlayerInput.IsLeftClickPressed() && window.hasFocus())
 	{
 		UseTool(toolPosition);

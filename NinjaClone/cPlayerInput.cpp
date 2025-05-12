@@ -25,6 +25,11 @@ bool cPlayerInput::IsLeftClickPressed() const
     return sf::Mouse::isButtonPressed(sf::Mouse::Button::Left);
 }
 
+bool cPlayerInput::IsRightClickPressed() const
+{
+    return sf::Mouse::isButtonPressed(sf::Mouse::Button::Right);
+}
+
 bool cPlayerInput::IsPauseButtonPressed() const
 {
     return sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Escape);

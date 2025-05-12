@@ -57,13 +57,6 @@ void cLevelPlatformsList::AddEnemyMine(cMine* enemyMine)
 	mMineList.push_back(enemyMine);
 }
 
-void cLevelPlatformsList::AddEnemyMushroom(cMushroom* enemyMushroom)
-{
-	if (!enemyMushroom) return;
-	std::cout << "Added mushroom to list" << std::endl;
-	mMushroomList.push_back(enemyMushroom);
-}
-
 void cLevelPlatformsList::DrawPlatforms(sf::RenderWindow& window, float deltaTime)
 {
 	for (size_t i = 0; i < mPlatformList.size(); ++i) {
@@ -74,7 +67,9 @@ void cLevelPlatformsList::DrawPlatforms(sf::RenderWindow& window, float deltaTim
 		mPlayerSpawn->Draw(window);
 	}
 
-	mLevelExit->Draw(window);
+	if (mLevelExit) {
+		mLevelExit->Draw(window);
+	}
 
 	if (!cApplicationManager::GetInstance().IsDoorUnlocked())
 	{
@@ -88,11 +83,6 @@ void cLevelPlatformsList::DrawEnemies(sf::RenderWindow& window, float deltaTime)
 	// Draw Mines
 	for (size_t i = 0; i < mMineList.size(); ++i) {
 		mMineList[i]->Draw(window);
-	}
-
-	// Draw Mushrooms
-	for (size_t i = 0; i < mMushroomList.size(); ++i) {
-		mMushroomList[i]->Draw(window);
 	}
 }
 
@@ -127,6 +117,17 @@ void cLevelPlatformsList::CheckCollisions(cPlayerCharacter& playerCharacter)
 	}
 }
 
+void cLevelPlatformsList::TryDeletePlatform(sf::Vector2f pointCollision)
+{
+	for (size_t i = 0; i < mPlatformList.size(); ++i) {
+		if (mPlatformList[i]->CheckCollideWithPoint(pointCollision))
+		{
+			delete mPlatformList[i];
+			mPlatformList.erase(mPlatformList.begin() + i);
+		}
+	}
+}
+
 void cLevelPlatformsList::CheckEnemyCollisions(cPlayerCharacter& playerCharacter)
 {
 	bool CollisionDetected = false;
@@ -136,13 +137,7 @@ void cLevelPlatformsList::CheckEnemyCollisions(cPlayerCharacter& playerCharacter
 		CollisionDetected = mMineList[i]->CheckCollisionWithPlayer(playerCharacter);
 		if (CollisionDetected) break;
 	}
-	if (!CollisionDetected)
-	{
-		// Check mushrooms
-		for (size_t i = 0; i < mMushroomList.size(); ++i) {
-			mMushroomList[i]->CheckCollisionWithPlayer(playerCharacter);
-		}
-	}
+
 	if (CollisionDetected) {
 		cApplicationManager::GetInstance().SetIsPlayerDead(true);
 	}

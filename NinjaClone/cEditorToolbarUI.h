@@ -6,7 +6,6 @@
 #include "cToolButtonLevelExit.h"
 #include "cToolButtonKeyObject.h"
 #include "cToolButtonEnemyMine.h"
-#include "cToolButtonEnemyMushroom.h"
 #include "cSaveButton.h"
 #include "cLoadButton.h"
 #include "cLevelPlatformsList.h"
@@ -28,7 +27,6 @@ private:
     cToolButtonKeyObject mButtonLevelKeyTool;
     // Tool Buttons - Enemies
     cToolButtonEnemyMine mButtonEnemyMineTool;
-    cToolButtonEnemyMushroom mButtonEnemyMushroomTool;
     // Save/Load Buttons
     cSaveButton mSaveButton;
     cLoadButton mLoadButton;
