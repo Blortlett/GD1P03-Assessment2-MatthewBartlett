@@ -5,6 +5,7 @@ cEditorDrawTool::cEditorDrawTool(sf::RenderWindow& mainWindow, cPlayerInput& pla
 	, mActiveTool(nullptr)
 	, mPlayerInput(playerInput)
 	, mPlatformsList(platformsList)
+	, mSpawnPlatformTool(platformsList)
 	, mLevelExitTool(platformsList)
 	, mLevelKeyTool(platformsList)
 	, mEnemyMineTool(platformsList)

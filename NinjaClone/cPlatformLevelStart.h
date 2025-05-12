@@ -2,7 +2,7 @@
 #include "cPlatformRect.h"
 #include <SFML/Graphics.hpp>
 
-class cPlatformLevelStart : public cPlatformRect
+class cPlatformLevelStart : public cPlatformRect  // Bad practice - extending a class that I will be creating objects of
 {
 private:
 	sf::Vector2f mSize = sf::Vector2f(80.0f, 20.0f);
@@ -10,4 +10,6 @@ private:
 public:
 	cPlatformLevelStart(sf::Vector2f position);
 	~cPlatformLevelStart() {}
+
+	sf::Vector2f GetSpawnPoint();
 };

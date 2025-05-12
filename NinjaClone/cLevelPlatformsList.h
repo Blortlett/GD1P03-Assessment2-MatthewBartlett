@@ -1,5 +1,6 @@
 #pragma once
 #include "cPlatformRect.h"
+#include "cPlatformLevelStart.h"
 #include "cLevelExit.h"
 #include "cKeyObject.h"
 #include "cPlayerCharacter.h"
@@ -17,6 +18,7 @@ public:
 	cLevelPlatformsList();
 	~cLevelPlatformsList();
 	void AddPlatform(cPlatformRect* platform);
+	void AddPlayerSpawn(cPlatformLevelStart* playerSpawn);
 	void AddLevelKey(cKeyObject* levelKey);
 	void AddLevelExit(cLevelExit* levelExit);
 	void AddEnemyMine(cMine* enemyMine);
@@ -26,10 +28,12 @@ public:
 	void CheckCollisions(cPlayerCharacter& playerCharacter);
 	void CheckEnemyCollisions(cPlayerCharacter& playerCharacter);
 	void ClearList();
+	sf::Vector2f GetPlayerSpawnPos();
 private:
 	// Game objects
 	cLevelExit* mLevelExit;
 	cKeyObject* mLevelKey;
+	cPlatformLevelStart* mPlayerSpawn;
 	std::vector<cPlatformRect*> mPlatformList;
 	std::vector<cMine*> mMineList;
 	std::vector<cMushroom*> mMushroomList;

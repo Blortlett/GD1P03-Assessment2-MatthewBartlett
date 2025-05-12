@@ -1,6 +1,7 @@
 #include "cSpawnPlatformTool.h"
 
-cSpawnPlatformTool::cSpawnPlatformTool()
+cSpawnPlatformTool::cSpawnPlatformTool(cLevelPlatformsList& levelPlatformList)
+	: mLevelPlatformsList(levelPlatformList)
 {
 	mShape = new sf::RectangleShape(mRectSize);
 	mShape->setOrigin(sf::Vector2f(mRectSize / 2.0f));
@@ -19,7 +20,9 @@ void cSpawnPlatformTool::DrawToolToScreen(sf::RenderWindow& window)
 
 cPlatformRect* cSpawnPlatformTool::CompleteUseTool()
 {
-	return new cPlatformLevelStart(mShape->getPosition());
+	cPlatformLevelStart* SpawnPlatform = new cPlatformLevelStart(mShape->getPosition());
+	mLevelPlatformsList.AddPlayerSpawn(SpawnPlatform);
+	return nullptr;
 }
 
 void cSpawnPlatformTool::UseTool(sf::Vector2f& mousePos)

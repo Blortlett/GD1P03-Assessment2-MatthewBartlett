@@ -23,6 +23,15 @@ void cLevelPlatformsList::AddPlatform(cPlatformRect* platform)
 	mPlatformList.push_back(platform);
 }
 
+void cLevelPlatformsList::AddPlayerSpawn(cPlatformLevelStart* playerSpawn)
+{
+	if (mPlayerSpawn)
+	{
+		delete mPlayerSpawn;
+	}
+	mPlayerSpawn = playerSpawn;
+}
+
 void cLevelPlatformsList::AddLevelKey(cKeyObject* levelKey)
 {
 	if (levelKey)
@@ -59,6 +68,10 @@ void cLevelPlatformsList::DrawPlatforms(sf::RenderWindow& window, float deltaTim
 {
 	for (size_t i = 0; i < mPlatformList.size(); ++i) {
 		mPlatformList[i]->Draw(window);
+	}
+
+	if (mPlayerSpawn) {
+		mPlayerSpawn->Draw(window);
 	}
 
 	mLevelExit->Draw(window);
@@ -142,4 +155,9 @@ void cLevelPlatformsList::ClearList()
 		delete platform;
 	}
 	mPlatformList.clear();
+}
+
+sf::Vector2f cLevelPlatformsList::GetPlayerSpawnPos()
+{
+	return mPlayerSpawn->GetSpawnPoint();
 }

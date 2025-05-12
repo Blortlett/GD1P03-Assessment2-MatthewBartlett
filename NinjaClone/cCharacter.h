@@ -61,6 +61,9 @@ public:
 	bool IsGrounded() const { return mIsGrounded; }
 	void OnCollision(sf::Vector2f direction);
 
+	void MovePlayerCharacterPosition(sf::Vector2f position);
+	void KillVelocity();
+
 
 	// Collision
 	cBoxCollider& GetCollider() { return mCollider; }

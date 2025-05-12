@@ -105,6 +105,17 @@ void cCharacter::OnCollision(sf::Vector2f direction)
 	}
 }
 
+void cCharacter::MovePlayerCharacterPosition(sf::Vector2f position)
+{
+	mPosition = position;
+	mCollider.MoveColliderPosition(position + mColliderOffset);
+}
+
+void cCharacter::KillVelocity()
+{
+	mVelocity = sf::Vector2f(0, 0);
+}
+
 void cCharacter::SetWallsliding()
 {
 	if (!mIsGrounded)

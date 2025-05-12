@@ -17,6 +17,11 @@ void cBoxCollider::Move(float dx, float dy)
 	mBounds.position.y += dy;
 }
 
+void cBoxCollider::MoveColliderPosition(sf::Vector2f position)
+{
+	mBounds.position = position;
+}
+
 bool cBoxCollider::CheckCollision(cBoxCollider& other, sf::Vector2f& direction, float push)
 {
 	sf::Vector2f otherPosition = other.GetPosition();

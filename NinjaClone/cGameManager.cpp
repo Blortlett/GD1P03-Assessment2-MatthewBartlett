@@ -45,7 +45,7 @@ void cGameManager::DrawDeathTick()
     if (mDeathScreenTimer >= mDeathScreenTimeMax)
     {
         // Respawn player and reset game variables
-        cApplicationManager::GetInstance().ResetGameplayVariables();
+        RespawnPlayer();
         mDeathScreenTimer = 0.f;
     }
     if (mDeathFlashTimer >= mDeathFlashTimeMax)
@@ -109,5 +109,9 @@ void cGameManager::RefreshDeltaTime()
 
 void cGameManager::RespawnPlayer()
 {
+    cApplicationManager::GetInstance().ResetGameplayVariables();
+    sf::Vector2f spawnPos = mPlatformsList.GetPlayerSpawnPos();
+    mPlayerCharacter.KillVelocity();
+    mPlayerCharacter.MovePlayerCharacterPosition(spawnPos);
 }
 

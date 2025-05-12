@@ -9,7 +9,7 @@ public:
 	~cBoxCollider();
 
 	void Move(float dx, float dy);
-
+	void MoveColliderPosition(sf::Vector2f position);
 	bool CheckCollision(cBoxCollider& other, sf::Vector2f& direction, float push);
 	sf::FloatRect GetBounds() { return mBounds; }
 	sf::Vector2f GetPosition() { return mBounds.position; }
