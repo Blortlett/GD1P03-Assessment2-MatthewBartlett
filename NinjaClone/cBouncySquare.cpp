@@ -52,3 +52,8 @@ void cBouncySquare::Draw(sf::RenderWindow& window)
 		mDebugWidget.DrawWidget(window);
 	}
 }
+
+sf::Vector2f cBouncySquare::GetPosition()
+{
+	return mPosition;
+}
