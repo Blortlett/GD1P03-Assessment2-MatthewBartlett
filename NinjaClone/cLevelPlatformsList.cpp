@@ -106,8 +106,9 @@ void cLevelPlatformsList::CheckCollisions(cPlayerCharacter& playerCharacter)
 
 	// Check player collisions with bouncy squares
 	for (size_t i = 0; i < mBouncySquareList.size(); ++i) {
-		if (mBouncySquareList[i]->CheckCollideWithPlayer(playerCharacter, mCollisionDirection))
+		if (mBouncySquareList[i]->CheckCollideWithPlayer(playerCharacter)) // didnt wanna chuck in the same collision direction
 			isColliding = true;
+		mBouncySquareList[i]->Update();
 	}
 
 	// Ensure player is not grounded if touching no platforms

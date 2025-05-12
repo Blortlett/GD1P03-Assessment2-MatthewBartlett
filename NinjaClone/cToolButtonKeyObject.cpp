@@ -15,6 +15,7 @@ cToolButtonKeyObject::cToolButtonKeyObject(sf::Vector2f position, sf::Vector2f s
 
 cToolButtonKeyObject::~cToolButtonKeyObject()
 {
+	delete mUIIcon;
 }
 
 void cToolButtonKeyObject::OnButtonClick() {
