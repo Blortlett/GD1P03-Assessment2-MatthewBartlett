@@ -18,14 +18,14 @@ cBouncySquare::~cBouncySquare()
 {
 }
 
-bool cBouncySquare::CheckCollideWithPlayer(cPlayerCharacter& playerCharacter)  // I dont think we want this collision direction
+bool cBouncySquare::CheckCollideWithPlayer(cPlayerCharacter& playerCharacter)  // got rid of cPlatformList's mCollisionDirection
 {
 	sf::Vector2f collisionDirection;
 	// Check platform collision with player
 	if (mCollider.CheckCollision(playerCharacter.GetCollider(), collisionDirection, 0.0f))
 	{
 		// If collision, tell player object:
-		//playerCharacter.OnCollision(collisionDirection);
+		playerCharacter.OnCollision(collisionDirection);
 		return true;
 	}
 	return false;
@@ -40,7 +40,7 @@ bool cBouncySquare::CheckCollideWithPoint(sf::Vector2f point)
 
 void cBouncySquare::Update()
 {
-	mVelocity = mCollider.GetPosition() - mPosition;
+	mVelocity = (mCollider.GetPosition() - mPosition) / 2.f;
 	mCollider.MoveColliderPosition(mCollider.GetPosition() - mVelocity);
 }
 

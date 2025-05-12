@@ -94,7 +94,7 @@ void cCharacter::OnCollision(sf::Vector2f direction)
 	if (direction.y < 0.0f)
 	{
 		// Collision on the bottom
-		//mVelocity.y = 0.0f;
+		mVelocity.y = 0.0f;
 		mIsGrounded = true;
 		mPlayerAnimator.EndFall();
 	}
