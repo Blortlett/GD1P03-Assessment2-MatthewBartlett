@@ -33,7 +33,9 @@ bool cPlatformRect::CheckCollideWithPlayer(cCharacter& character, sf::Vector2f& 
 
 bool cPlatformRect::CheckCollideWithPoint(sf::Vector2f point)
 {
-	return mBoxCollider.CheckCollisionPoint(point);
+	sf::Vector2f newPoint = point;
+	newPoint += mBoxCollider.GetHalfSize();
+	return mBoxCollider.CheckCollisionPoint(newPoint);
 }
 
 void cPlatformRect::EditorInitPosition()
