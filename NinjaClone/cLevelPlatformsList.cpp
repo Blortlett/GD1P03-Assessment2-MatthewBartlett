@@ -161,11 +161,33 @@ void cLevelPlatformsList::CheckEnemyCollisions(cPlayerCharacter& playerCharacter
 
 void cLevelPlatformsList::ClearList()
 {
+	// Clear Level Exit
+	delete mLevelExit;
+	mLevelExit = nullptr;
+	// Clear Level Key
+	delete mLevelKey;
+	mLevelKey = nullptr;
+	// Clear Level Spawn
+	delete mPlayerSpawn;
+	mPlayerSpawn = nullptr;
+
 	// Delete each platform object and clear the vector
 	for (cPlatformRect* platform : mPlatformList) {
 		delete platform;
 	}
 	mPlatformList.clear();
+
+	// Delete each bouncy square object and clear the vector
+	for (cBouncySquare* bouncySquare : mBouncySquareList) {
+		delete bouncySquare;
+	}
+	mBouncySquareList.clear();
+
+	// Delete each Mine object and clear the vector
+	for (cMine* mine : mMineList) {
+		delete mine;
+	}
+	mMineList.clear();
 }
 
 sf::Vector2f cLevelPlatformsList::GetPlayerSpawnPos()

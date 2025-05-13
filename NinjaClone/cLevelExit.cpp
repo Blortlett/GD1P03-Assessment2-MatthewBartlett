@@ -11,6 +11,8 @@ cLevelExit::cLevelExit(sf::Vector2f position)
 	
 	mDoorClosedSprite->setOrigin(mDoorClosedSprite->getLocalBounds().size / 2.0f);
 	mDoorOpenSprite->setOrigin(mDoorOpenSprite->getLocalBounds().size / 2.0f);
+
+	mPosition = position;
 }
 
 void cLevelExit::Draw(sf::RenderWindow& renderWindow)
