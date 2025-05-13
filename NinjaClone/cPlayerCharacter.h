@@ -11,6 +11,7 @@ public:
 	void Update(float DeltaSeconds);
 	void Draw(sf::RenderWindow& renderWindow);
 	void SetUngrounded(); // Called from cLevelPlatformList.cpp
+	void KillInput();
 
 
 

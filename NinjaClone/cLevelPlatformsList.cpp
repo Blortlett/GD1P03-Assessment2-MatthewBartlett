@@ -125,7 +125,7 @@ void cLevelPlatformsList::CheckCollisions(cPlayerCharacter& playerCharacter)
 	{
 		// Set level complete
 		cApplicationManager::GetInstance().SetIsLevelComplete(true);
-		playerCharacter.KillVelocity();
+		playerCharacter.KillInput();
 	}
 
 	// If door not unlocked and player not colliding with door

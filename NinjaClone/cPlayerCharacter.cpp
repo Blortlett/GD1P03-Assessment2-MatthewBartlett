@@ -147,6 +147,11 @@ void cPlayerCharacter::HandleInput()
     }
 }
 
+void cPlayerCharacter::KillInput()
+{
+    m_vPlayerInputNormalized = sf::Vector2f(0.f,0.f);
+}
+
 void cPlayerCharacter::SetUngrounded()
 {
     mIsGrounded = false;
