@@ -12,4 +12,5 @@ public:
 	~cPlatformLevelStart() {}
 
 	sf::Vector2f GetSpawnPoint();
+	sf::Vector2f GetPosition();
 };

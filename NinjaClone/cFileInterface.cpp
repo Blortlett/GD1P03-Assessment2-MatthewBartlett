@@ -235,7 +235,7 @@ void cFileInterface::SavePlatformsToJson(rapidjson::Document& doc, rapidjson::Do
 void cFileInterface::SavePlayerSpawnToJson(rapidjson::Document& doc, rapidjson::Document::AllocatorType& allocator) {
     if (mLevelPlatformList.mPlayerSpawn) {
         rapidjson::Value spawnObj(rapidjson::kObjectType);
-        sf::Vector2f position = mLevelPlatformList.mPlayerSpawn->GetSpawnPoint();
+        sf::Vector2f position = mLevelPlatformList.mPlayerSpawn->GetPosition();
 
         spawnObj.AddMember("x", position.x, allocator);
         spawnObj.AddMember("y", position.y, allocator);
