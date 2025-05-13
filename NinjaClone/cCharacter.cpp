@@ -38,18 +38,6 @@ void cCharacter::CharacterPhysicsUpdate(float _DeltaSeconds)
 		mIsGrounded = true;
 	}
 
-	// Clamp x position to keep player inside screen
-	if (mCollider.mBounds.position.x < 64)
-	{
-		mCollider.mBounds.position.x = 64;
-		mVelocity.x = 0;
-	}
-	else if (mCollider.mBounds.position.x > 1302)
-	{
-		mCollider.mBounds.position.x = 1302;
-		mVelocity.x = 0;
-	}
-
 	// Clamp velocity to max velocities
 	if (mVelocity.x > mMaxVelocity.x) { mVelocity.x = mMaxVelocity.x; }
 	if (mVelocity.x < (-1 * mMaxVelocity.x)) { mVelocity.x = (-1 * mMaxVelocity.x); }
