@@ -1,6 +1,6 @@
 #include "cMainMenu.h"
 
-cMainMenu::cMainMenu(sf::RenderWindow& renderWindow, cFileInterface& fileInterface)
+cMainMenu::cMainMenu(sf::RenderWindow& renderWindow, cFileInterface& fileInterface, cGameManager& gameManager, cLevelPlatformsList& platformList)
 	: mText(mTitleFont, "NINJA", 30U)
 	, mRenderWindow(renderWindow)
 	, mFileInterface(fileInterface)
@@ -8,12 +8,15 @@ cMainMenu::cMainMenu(sf::RenderWindow& renderWindow, cFileInterface& fileInterfa
 	, mPlayButtonUI(
 		mPlayButtonPosition,
 		mButtonSize,
-		mFileInterface
+		mFileInterface,
+		gameManager
 	),
 	// Level Edit Button
 	mLevelEditorButtonUI(
 		mLevelEditorButtonPosition,
-		mButtonSize
+		mButtonSize,
+		gameManager,
+		fileInterface
 	)
 {
 	// get font

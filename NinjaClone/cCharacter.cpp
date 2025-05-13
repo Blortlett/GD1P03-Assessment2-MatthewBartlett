@@ -104,6 +104,11 @@ void cCharacter::KillVelocity()
 	mVelocity = sf::Vector2f(0, 0);
 }
 
+void cCharacter::KillInput()
+{
+
+}
+
 void cCharacter::SetWallsliding()
 {
 	if (!mIsGrounded)

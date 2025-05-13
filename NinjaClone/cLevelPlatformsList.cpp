@@ -4,6 +4,8 @@ cLevelPlatformsList::cLevelPlatformsList()
 {
 	mLevelExit = new cLevelExit(sf::Vector2f(-500, -500));
 	mLevelKey = new cKeyObject(sf::Vector2f(-500, -500));
+
+	ClearList();
 }
 
 cLevelPlatformsList::~cLevelPlatformsList()
@@ -123,6 +125,7 @@ void cLevelPlatformsList::CheckCollisions(cPlayerCharacter& playerCharacter)
 	{
 		// Set level complete
 		cApplicationManager::GetInstance().SetIsLevelComplete(true);
+		playerCharacter.KillVelocity();
 	}
 
 	// If door not unlocked and player not colliding with door
@@ -163,13 +166,13 @@ void cLevelPlatformsList::ClearList()
 {
 	// Clear Level Exit
 	delete mLevelExit;
-	mLevelExit = nullptr;
+	mLevelExit = new cLevelExit(sf::Vector2f(-500, -500));
 	// Clear Level Key
 	delete mLevelKey;
-	mLevelKey = nullptr;
+	mLevelKey = new cKeyObject(sf::Vector2f(-500, -500));
 	// Clear Level Spawn
 	delete mPlayerSpawn;
-	mPlayerSpawn = nullptr;
+	mPlayerSpawn = new cPlatformLevelStart(sf::Vector2f(-500, -500));
 
 	// Delete each platform object and clear the vector
 	for (cPlatformRect* platform : mPlatformList) {
@@ -192,5 +195,11 @@ void cLevelPlatformsList::ClearList()
 
 sf::Vector2f cLevelPlatformsList::GetPlayerSpawnPos()
 {
-	return mPlayerSpawn->GetSpawnPoint();
+	if (mPlayerSpawn)
+		if (mPlayerSpawn->GetSpawnPoint().x < 0.f && mPlayerSpawn->GetSpawnPoint().y < 0.f)
+			return sf::Vector2f(1366, 768) / 2.f; // spawn off screen
+		else 
+			return mPlayerSpawn->GetSpawnPoint(); // legal spawn, return position
+	else
+		return sf::Vector2f(1366, 768) / 2.f; // no spawn point
 }

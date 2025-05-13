@@ -24,7 +24,7 @@ int main()
     // Create Level Editor
     cLevelEditorManager LevelEditor(window, PlayerInput, LevelPlatformsList, FileInterface);
     // Create Main Menu
-    cMainMenu MainMenu(window, FileInterface);
+    cMainMenu MainMenu(window, FileInterface, GameManager, LevelPlatformsList);
     // Create PauseMenu
     cPauseMenu PauseMenu(window, LevelPlatformsList);
 

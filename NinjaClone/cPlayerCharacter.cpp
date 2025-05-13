@@ -2,7 +2,7 @@
 
 const sf::Vector2f cPlayerCharacter::PLAYER_SIZE = sf::Vector2f(24, 32);
 const sf::Vector2f cPlayerCharacter::PLAYER_COLLIDER_OFFSET = sf::Vector2f(0, -16);
-const sf::FloatRect cPlayerCharacter::PLAYER_BOUNDS = sf::FloatRect(PLAYER_COLLIDER_OFFSET, PLAYER_SIZE);
+const sf::FloatRect cPlayerCharacter::PLAYER_BOUNDS = sf::FloatRect(sf::Vector2f(1366, 768) / 2.f, PLAYER_SIZE); /// FloatRectPosition controls player spawn... JANK!
 const sf::Vector2f cPlayerCharacter::PLAYER_MAX_VELOCITY = sf::Vector2f(350, 700);
 
 cPlayerCharacter::cPlayerCharacter(sf::Vector2f _position, cPlayerInput& playerInput)

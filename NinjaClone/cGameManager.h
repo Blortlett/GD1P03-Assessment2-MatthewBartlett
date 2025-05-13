@@ -18,6 +18,8 @@ public:
 	void DrawDeathTick();
 	// System only inputs
 	void HandleSystemInputs();
+	// Respawn Player
+	void RespawnPlayer();
 
 private:
 	// Clock & DeltaTime
@@ -50,6 +52,4 @@ private:
 	cLevelCompleteScreenUI mLevelCompleteUI;
 
 
-	// Respawn Player
-	void RespawnPlayer();
 };

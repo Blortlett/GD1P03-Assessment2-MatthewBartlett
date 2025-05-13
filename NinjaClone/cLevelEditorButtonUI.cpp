@@ -1,8 +1,10 @@
 #include "cLevelEditorButtonUI.h"
 
-cLevelEditorButtonUI::cLevelEditorButtonUI(sf::Vector2f position, sf::Vector2f size)
+cLevelEditorButtonUI::cLevelEditorButtonUI(sf::Vector2f position, sf::Vector2f size, cGameManager& gameManager, cFileInterface& fileInterface)
 	: cButtonUI(position, size)
 	, mText(mBodyFont, "LEVEL EDITOR", 20U)
+	, mGameManager(gameManager)
+	, mFileInterface(fileInterface)
 {
 	// get font
 	mBodyFont = cApplicationManager::GetInstance().GetFont();
@@ -25,7 +27,7 @@ void cLevelEditorButtonUI::OnButtonClick()
 	cApplicationManager::GetInstance().SetMainMenuActive(false);
 	cApplicationManager::GetInstance().SetLevelEditorRunning(true);
 	cApplicationManager::GetInstance().SetGameRunning(true);
-
+	mFileInterface.LoadLevelByName("BlankLevel");
 }
 
 void cLevelEditorButtonUI::Draw(sf::RenderWindow& window)

@@ -3,13 +3,15 @@
 #include "cPlayButtonUI.h"
 #include "cLevelEditorButtonUI.h"
 #include "cFileInterface.h"
+#include "cGameManager.h"
+#include "cLevelPlatformsList.h"
 #include <iostream>
 
 
 class cMainMenu
 {
 public:
-	cMainMenu(sf::RenderWindow& renderWindow, cFileInterface& fileInterface);
+	cMainMenu(sf::RenderWindow& renderWindow, cFileInterface& fileInterface, cGameManager& gameManager, cLevelPlatformsList& platformList);
 	~cMainMenu();
 	void Update();
 	bool mIsActive = true;

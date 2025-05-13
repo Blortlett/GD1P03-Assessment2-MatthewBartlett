@@ -1,10 +1,11 @@
 #include "cPlayButtonUI.h"
 
-cPlayButtonUI::cPlayButtonUI(sf::Vector2f position, sf::Vector2f size, cFileInterface& fileInterface)
+cPlayButtonUI::cPlayButtonUI(sf::Vector2f position, sf::Vector2f size, cFileInterface& fileInterface, cGameManager& gameManager)
 	: cButtonUI(position, size)
 	, mText(mBodyFont, "PLAY", 6U)
 	, mFileInterface(fileInterface)
 	, mBodyFont(cApplicationManager::GetInstance().GetFont())
+	, mGameManager(gameManager)
 {
 	// get font
 	mBodyFont = cApplicationManager::GetInstance().GetFont();
@@ -22,6 +23,7 @@ void cPlayButtonUI::OnButtonClick()
 	mFileInterface.LoadLevelByName("Level1");
 	cApplicationManager::GetInstance().SetGameRunning(true);
 	cApplicationManager::GetInstance().SetMainMenuActive(false);
+	mGameManager.RespawnPlayer();
 }
 
 void cPlayButtonUI::Draw(sf::RenderWindow& window)

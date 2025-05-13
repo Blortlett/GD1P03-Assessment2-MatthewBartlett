@@ -65,6 +65,7 @@ public:
 	void KillVelocity();
 
 
+
 	// Collision
 	cBoxCollider& GetCollider() { return mCollider; }
 };
