@@ -1,4 +1,6 @@
 #include "cNextLevelButtonUI.h"
+#include "cGameManager.h"
+
 
 void cNextLevelButtonUI::OnButtonClick()
 {

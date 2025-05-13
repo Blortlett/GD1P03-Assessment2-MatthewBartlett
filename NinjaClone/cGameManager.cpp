@@ -1,4 +1,5 @@
 #include "cGameManager.h"
+#include "cLevelCompleteScreenUI.h"
 
 cGameManager::cGameManager(sf::RenderWindow& window, cPlayerInput& playerInput, cLevelPlatformsList& platformsList, cFileInterface& fileInterface)
     : mPlayerInput(playerInput)
@@ -6,13 +7,13 @@ cGameManager::cGameManager(sf::RenderWindow& window, cPlayerInput& playerInput, 
     , mGameWindow(window)
     , mDeltaSeconds(0.0f)
     , mPlatformsList(platformsList)
-    , mLevelCompleteUI(window, platformsList, fileInterface, *this)
 {
-
+    mLevelCompleteUI = new cLevelCompleteScreenUI(window, platformsList, fileInterface, *this);
 }
 
 cGameManager::~cGameManager()
 {
+    delete mLevelCompleteUI;
 }
 
 void cGameManager::GameTick()
@@ -28,7 +29,7 @@ void cGameManager::GameTick()
     mPlayerCharacter.Update(mDeltaSeconds);
     mPlayerCharacter.Draw(mGameWindow);
     //Draw/UpdateUI
-    mLevelCompleteUI.Update();
+    mLevelCompleteUI->Update();
 }
 
 void cGameManager::DrawOnlyTick()

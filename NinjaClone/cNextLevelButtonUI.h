@@ -3,7 +3,7 @@
 #include "cApplicationManager.h"
 #include "cLevelPlatformsList.h"
 #include "cFileInterface.h"
-#include "cGameManager.h"
+class cGameManager;
 
 class cNextLevelButtonUI : public cButtonUI
 {
