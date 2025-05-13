@@ -3,6 +3,7 @@
 #include <string>
 #include <iostream>
 
+
 class cApplicationManager
 {
 private:
@@ -20,6 +21,7 @@ private:
 	bool mIsDebugModeActive = false;
 	bool mIsPlayerDead = false;
 
+
 	// Textures - I should have done this for all Textures to load sprites from here
 	sf::Texture mLevelExitOpenTex;
 	sf::Texture mLevelExitClosedTex;
@@ -31,8 +33,11 @@ private:
 	sf::Font mGameFont;
 
 	// Level names
-	const std::string mLevelNames[5] = { "Level1", "Level2", "Level3", "Level4", "Level5" };
+	const std::string mLevelNames[5] = { "Level1" , "Level2", "Level3", "Level4", "Level5" };
+	const int mMaxLevel = 5;	//////// mLevelNames.Size() wants to fuck me around
+
 	int mLevelCount = 0;
+
 public:
 	// Get the single instance of the class
 	static cApplicationManager& GetInstance()
@@ -77,4 +82,8 @@ public:
 	// enemy sprites
 	sf::Sprite mEnemyMineSprite;
 	sf::Sprite mEnemyMushroomSprite;
+
+	// Game won variables
+	bool mIsGameComplete = false;
+	bool IsGameWon();
 };

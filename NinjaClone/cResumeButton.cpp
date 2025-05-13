@@ -6,6 +6,7 @@ cResumeButton::cResumeButton()
 {
 	// Center text
 	mText.setPosition(mPosition);
+	mText.setCharacterSize(20);
 	mText.setOrigin(mText.getGlobalBounds().size / 2.0f);
 	mText.setFillColor(sf::Color::Black);
 }

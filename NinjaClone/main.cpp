@@ -6,6 +6,7 @@
 #include "cPlayerInput.h"
 #include "cFileInterface.h"
 #include "cPauseMenu.h"
+#include "cGameWinUI.h"
 
 int main()
 {
@@ -27,6 +28,7 @@ int main()
     cMainMenu MainMenu(window, FileInterface, GameManager, LevelPlatformsList);
     // Create PauseMenu
     cPauseMenu PauseMenu(window, LevelPlatformsList);
+    cGameWinUI GameWinUI(window, LevelPlatformsList);
 
 
     while (window.isOpen())
@@ -76,6 +78,10 @@ int main()
             // Draw/update pause menu
             PauseMenu.Update();
         }
+
+        // update win screen here
+        GameWinUI.Update();
+
         // Draw frame
         window.display();
     }

@@ -35,16 +35,8 @@ const std::string cApplicationManager::GetCurrentLevelName()
 const std::string cApplicationManager::GetNextLevelName()
 {
 	mLevelCount++;
-	if (mLevelCount < mLevelNames->size())
-	{
-		std::string nextLevelName = mLevelNames[mLevelCount];
-		return nextLevelName;
-	}
-	else
-	{
-		// Call win screen here?
-
-	}
+	std::string nextLevelName = mLevelNames[mLevelCount];
+	return nextLevelName;
 }
 
 void cApplicationManager::ResetGameplayVariables()
@@ -57,4 +49,9 @@ void cApplicationManager::ResetGameplayVariables()
 void cApplicationManager::ResetLevelProgress()
 {
 	mLevelCount = 0;
+}
+
+bool cApplicationManager::IsGameWon()
+{
+	return mLevelCount + 1 >= mMaxLevel;
 }

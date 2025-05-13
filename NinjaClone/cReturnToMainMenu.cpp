@@ -7,6 +7,7 @@ cReturnToMainMenu::cReturnToMainMenu(cLevelPlatformsList& platformsList)
 {
 	// Center text
 	mText.setPosition(mPosition);
+	mText.setCharacterSize(20);
 	mText.setOrigin(mText.getGlobalBounds().size / 2.0f);
 	mText.setFillColor(sf::Color::Black);
 }
@@ -19,6 +20,7 @@ void cReturnToMainMenu::OnButtonClick()
 {
 	// Delete Active Level
 	mPlatformsList.ClearList();
+	cApplicationManager::GetInstance().ResetLevelProgress();
 	cApplicationManager::GetInstance().SetGameRunning(false);
 	cApplicationManager::GetInstance().SetGamePaused(false);
 	cApplicationManager::GetInstance().SetMainMenuActive(true);

@@ -1,7 +1,7 @@
 #include "cMainMenu.h"
 
 cMainMenu::cMainMenu(sf::RenderWindow& renderWindow, cFileInterface& fileInterface, cGameManager& gameManager, cLevelPlatformsList& platformList)
-	: mText(mTitleFont, "NINJA", 30U)
+	: mText(mTitleFont, "NINJA", 7U)
 	, mRenderWindow(renderWindow)
 	, mFileInterface(fileInterface)
 	// Play Button

@@ -22,6 +22,7 @@ cNextLevelButtonUI::cNextLevelButtonUI(cLevelPlatformsList& platformList, cFileI
 {
 	// Center text
 	mButtonText.setPosition(mPosition);
+	mButtonText.setCharacterSize(20);
 	mButtonText.setOrigin(mButtonText.getGlobalBounds().size / 2.0f);
 	mButtonShape.setFillColor(sf::Color::Black);
 }

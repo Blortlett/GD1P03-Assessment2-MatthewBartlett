@@ -50,6 +50,4 @@ private:
 
 	// UI
 	cLevelCompleteScreenUI mLevelCompleteUI;
-
-
 };

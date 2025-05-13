@@ -124,11 +124,19 @@ void cLevelPlatformsList::CheckCollisions(cPlayerCharacter& playerCharacter)
 	if (!cApplicationManager::GetInstance().IsLevelComplete() && cApplicationManager::GetInstance().IsDoorUnlocked() && mLevelExit->CheckCollideWithPlayer(playerCharacter))
 	{
 		// Set level complete
-		cApplicationManager::GetInstance().SetIsLevelComplete(true);
-		playerCharacter.KillInput();
+		if (cApplicationManager::GetInstance().IsGameWon())
+		{
+			// Win the game here
+			cApplicationManager::GetInstance().mIsGameComplete = true;
+		}
+		else // Load next level
+		{
+			cApplicationManager::GetInstance().SetIsLevelComplete(true);
+			playerCharacter.KillInput();
+		}
 	}
 
-	// If door not unlocked and player not colliding with door
+	// If door not unlocked and player touches key
 	if (!cApplicationManager::GetInstance().IsDoorUnlocked() && mLevelKey->CheckCollideWithPlayer(playerCharacter))
 	{
 		// unlock door when player touches key

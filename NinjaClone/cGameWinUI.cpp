@@ -1,5 +1,22 @@
 #include "cGameWinUI.h"
 
-cGameWinUI::cGameWinUI(sf::RenderWindow& renderWindow, cGameManager& gameManager, cLevelPlatformsList& platformList)
+cGameWinUI::cGameWinUI(sf::RenderWindow& renderWindow, cLevelPlatformsList& platformList)
+	: mRenderWindow(renderWindow)
+	, mReturnToMenuButton(platformList)
+	, mText(cApplicationManager::GetInstance().GetFont(), "YOU WIN!", 10U)
 {
+	mText.setFillColor(sf::Color::Black);
+	mText.setCharacterSize(42);
+	mText.setPosition(mTitlePosition);
+	mText.setOrigin(mText.getGlobalBounds().size / 2.0f);
+}
+
+void cGameWinUI::Update()
+{
+	if (cApplicationManager::GetInstance().mIsGameComplete)
+	{
+		mRenderWindow.draw(mText);
+		mReturnToMenuButton.Update(mRenderWindow);
+		mReturnToMenuButton.Draw(mRenderWindow);
+	}
 }
