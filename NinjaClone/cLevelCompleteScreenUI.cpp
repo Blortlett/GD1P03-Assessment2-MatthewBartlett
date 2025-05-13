@@ -1,9 +1,9 @@
 #include "cLevelCompleteScreenUI.h"
 
-cLevelCompleteScreenUI::cLevelCompleteScreenUI(sf::RenderWindow& renderWindow, cLevelPlatformsList& levelPlatformList, cFileInterface& fileInterface)
+cLevelCompleteScreenUI::cLevelCompleteScreenUI(sf::RenderWindow& renderWindow, cLevelPlatformsList& levelPlatformList, cFileInterface& fileInterface, cGameManager& gameManager)
 	: mLevelCompleteText(cApplicationManager::GetInstance().GetFont(), "Level Complete!", 20U)
 	, mRenderWindow(renderWindow)
-	, mNextLevelButton(levelPlatformList, fileInterface)
+	, mNextLevelButton(levelPlatformList, fileInterface, gameManager)
 {
 	mLevelCompleteText.setFillColor(sf::Color::Black);
 	mLevelCompleteText.setCharacterSize(62);

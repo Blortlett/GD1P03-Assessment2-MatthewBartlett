@@ -3,6 +3,7 @@
 #include "cApplicationManager.h"
 #include "cLevelPlatformsList.h"
 #include "cFileInterface.h"
+#include "cGameManager.h"
 
 class cNextLevelButtonUI : public cButtonUI
 {
@@ -11,11 +12,12 @@ private:
 
 	cLevelPlatformsList& mLevelPlatformList;
 	cFileInterface& mFileInterface;
+	cGameManager& mGameManager;
 
 public:
 	void OnButtonClick() override;
 	void Draw(sf::RenderWindow& window) override;
 
-	cNextLevelButtonUI(cLevelPlatformsList& platformList, cFileInterface& fileInterface);
+	cNextLevelButtonUI(cLevelPlatformsList& platformList, cFileInterface& fileInterface, cGameManager& gameManager);
 	~cNextLevelButtonUI();
 };

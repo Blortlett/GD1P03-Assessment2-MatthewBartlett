@@ -3,6 +3,7 @@
 #include "cNextLevelButtonUI.h"
 #include "cLevelPlatformsList.h"
 #include "cFileInterface.h"
+#include "cGameManager.h"
 
 class cLevelCompleteScreenUI
 {
@@ -14,7 +15,7 @@ private:
 	bool mIsActive = false;
 
 public:
-	cLevelCompleteScreenUI(sf::RenderWindow& renderWindow, cLevelPlatformsList& levelPlatformList, cFileInterface& fileInterface);
+	cLevelCompleteScreenUI(sf::RenderWindow& renderWindow, cLevelPlatformsList& levelPlatformList, cFileInterface& fileInterface, cGameManager& gameManager);
 	~cLevelCompleteScreenUI();
 
 	void Update();

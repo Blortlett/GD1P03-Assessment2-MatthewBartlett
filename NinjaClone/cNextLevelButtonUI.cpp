@@ -6,6 +6,7 @@ void cNextLevelButtonUI::OnButtonClick()
 	mLevelPlatformList.ClearList();
 	cApplicationManager::GetInstance().ResetGameplayVariables();
 	mFileInterface.LoadLevelByName(cApplicationManager::GetInstance().GetNextLevelName());
+	mGameManager.RespawnPlayer();
 }
 
 void cNextLevelButtonUI::Draw(sf::RenderWindow& window)
@@ -14,11 +15,12 @@ void cNextLevelButtonUI::Draw(sf::RenderWindow& window)
 	window.draw(mButtonText);
 }
 
-cNextLevelButtonUI::cNextLevelButtonUI(cLevelPlatformsList& platformList, cFileInterface& fileInterface)
+cNextLevelButtonUI::cNextLevelButtonUI(cLevelPlatformsList& platformList, cFileInterface& fileInterface, cGameManager& gameManager)
 	: cButtonUI(sf::Vector2f(1366 / 2, (768 / 2) + 150), sf::Vector2f(300, 100))
 	, mButtonText(cApplicationManager::GetInstance().GetFont(), "Next Level", 50U)
 	, mLevelPlatformList(platformList)
 	, mFileInterface(fileInterface)
+	, mGameManager(gameManager)
 {
 	// Center text
 	mButtonText.setPosition(mPosition);

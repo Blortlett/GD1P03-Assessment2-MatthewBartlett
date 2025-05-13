@@ -6,7 +6,7 @@ cGameManager::cGameManager(sf::RenderWindow& window, cPlayerInput& playerInput, 
     , mGameWindow(window)
     , mDeltaSeconds(0.0f)
     , mPlatformsList(platformsList)
-    , mLevelCompleteUI(window, platformsList, fileInterface)
+    , mLevelCompleteUI(window, platformsList, fileInterface, *this)
 {
 
 }
@@ -33,6 +33,7 @@ void cGameManager::GameTick()
 
 void cGameManager::DrawOnlyTick()
 {
+    RefreshDeltaTime();
     mPlatformsList.DrawPlatforms(mGameWindow, mDeltaSeconds);
     mPlayerCharacter.Draw(mGameWindow);
 }
