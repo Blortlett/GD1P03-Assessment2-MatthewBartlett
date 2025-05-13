@@ -1,5 +1,6 @@
 #pragma once
 #include "cPlatformRect.h"
+#include "cApplicationManager.h"
 #include <SFML/Graphics.hpp>
 
 class cPlatformLevelStart : public cPlatformRect  // Bad practice - extending a class that I will be creating objects of

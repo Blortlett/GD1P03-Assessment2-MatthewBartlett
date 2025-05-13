@@ -4,7 +4,7 @@ cPlatformLevelStart::cPlatformLevelStart(sf::Vector2f position)
 	: cPlatformRect(sf::FloatRect(position, sf::Vector2f(80.0f, 20.0f)))
 {
 	sf::Vector2f spawnPos = position;
-	spawnPos.y += 40.f;
+	spawnPos.y -= 40.f;
 	mSpawnPoint = spawnPos;
 	mBody.setPosition(position);
 	mBody.setSize(mSize);

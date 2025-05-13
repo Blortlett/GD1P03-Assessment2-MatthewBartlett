@@ -44,6 +44,7 @@ void cApplicationManager::ResetGameplayVariables()
 	mIsDoorUnlocked = false;
 	mIsLevelComplete = false;
 	mIsPlayerDead = false;
+	mIsGameComplete = false;
 }
 
 void cApplicationManager::ResetLevelProgress()
