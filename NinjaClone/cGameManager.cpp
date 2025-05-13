@@ -36,6 +36,7 @@ void cGameManager::DrawOnlyTick()
 {
     RefreshDeltaTime();
     mPlatformsList.DrawPlatforms(mGameWindow, mDeltaSeconds);
+    mPlatformsList.DrawEnemies(mGameWindow, mDeltaSeconds);
     mPlayerCharacter.Draw(mGameWindow);
 }
 
@@ -61,8 +62,8 @@ void cGameManager::DrawDeathTick()
     {
         mPlayerCharacter.Draw(mGameWindow);
     }
-    mPlatformsList.DrawEnemies(mGameWindow, mDeltaSeconds);
     mPlatformsList.DrawPlatforms(mGameWindow, mDeltaSeconds);
+    mPlatformsList.DrawEnemies(mGameWindow, mDeltaSeconds);
 }
 
 void cGameManager::HandleSystemInputs()

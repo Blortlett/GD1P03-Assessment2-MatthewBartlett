@@ -51,7 +51,8 @@ int main()
         else 
         { // Normal game takes place...
         
-            if (cApplicationManager::GetInstance().IsGameRunning()){
+            if (cApplicationManager::GetInstance().IsGameRunning())
+            {
                 // Draw / Run game
                 GameManager.GameTick();
             }

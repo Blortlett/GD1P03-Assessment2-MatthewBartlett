@@ -69,14 +69,14 @@ void cCharacter::OnCollision(sf::Vector2f direction)
 	if (direction.x < 0.0f)
 	{
 		// Collision on the left
-		mVelocity.x = 0.0f;
+		mVelocity.x = 1.0f;
 		SetWallsliding();
 
 	}
 	else if (direction.x > 0.0f)
 	{
 		// Collision on the right
-		mVelocity.x = 0.0f;
+		mVelocity.x = -1.0f;
 		SetWallsliding();
 	}
 	if (direction.y < 0.0f)

@@ -11,7 +11,7 @@ private:
 	cApplicationManager();
 	~cApplicationManager();
 
-	// Gamestate global vars			// I hear this is a bad idea? Antipattern?
+	// Gamestate global vars			// I hear this is a bad idea? Lol this whole game is an antipattern
 	bool mIsLevelEditorRunning = false;
 	bool mIsGameRunning = false;
 	bool mIsGamePaused = false;
