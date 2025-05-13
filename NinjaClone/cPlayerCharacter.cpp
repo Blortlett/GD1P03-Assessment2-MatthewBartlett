@@ -154,9 +154,13 @@ void cPlayerCharacter::KillInput()
 
 void cPlayerCharacter::SetUngrounded()
 {
-    mIsGrounded = false;
-    mIsTouchingWall = false;
-    mIsWallsliding = false;
+    if (mVelocity.y > 0)
+    {
+        mIsGrounded = false;
+        mIsTouchingWall = false;
+        mIsWallsliding = false;
+        mPlayerAnimator.StartFall();
+    }
 }
 
 

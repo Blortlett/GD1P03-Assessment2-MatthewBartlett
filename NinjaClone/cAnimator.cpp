@@ -37,11 +37,18 @@ void cAnimator::FaceRight()
 
 void cAnimator::BeginJump()
 {
+    mJumpingAnimation.mIsJumpPeakReached = false;
     mCurrentAnimation = &mJumpingAnimation;
 }
 
 void cAnimator::JumpPeak()
 {
+    mJumpingAnimation.mIsJumpPeakReached = true;
+}
+
+void cAnimator::StartFall()
+{
+    mCurrentAnimation = &mJumpingAnimation;
     mJumpingAnimation.mIsJumpPeakReached = true;
 }
 

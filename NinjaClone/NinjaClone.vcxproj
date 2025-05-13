@@ -156,6 +156,7 @@
     <ClCompile Include="cFileInterface.cpp" />
     <ClCompile Include="cGameManager.cpp" />
     <ClCompile Include="cGameObject.h" />
+    <ClCompile Include="cGameWinUI.cpp" />
     <ClCompile Include="cKeyObject.cpp" />
     <ClCompile Include="cKeyObjectTool.cpp" />
     <ClCompile Include="cLevelCompleteScreenUI.cpp" />
@@ -221,6 +222,7 @@
     <ClInclude Include="cEnemyMineTool.h" />
     <ClInclude Include="cFileInterface.h" />
     <ClInclude Include="cGameManager.h" />
+    <ClInclude Include="cGameWinUI.h" />
     <ClInclude Include="cKeyAnimation.h" />
     <ClInclude Include="cKeyObject.h" />
     <ClInclude Include="cKeyObjectTool.h" />

@@ -18,6 +18,7 @@ public:
 	void FaceRight();
 	void BeginJump();
 	void JumpPeak();
+	void StartFall();
 	void EndFall();
 	void SetRunning(bool isRunning);
 	void SetSliding(bool isSliding);
