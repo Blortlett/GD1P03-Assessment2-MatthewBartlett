@@ -157,10 +157,11 @@ void cPlayerCharacter::HandleInput()
         mPlayerAnimator.BeginJump();
         JumpWallsliding();
     }
-    else if (!mPlayerInput.IsJumpInputPressed() && mJumpKeyHeld && mVelocity.y < 0)
+    else if (!mPlayerInput.IsJumpInputPressed() && mJumpKeyHeld)
     {
-        mVelocity.y = mVelocity.y * .7f;
         mJumpKeyHeld = false;
+        if (mVelocity.y < 0)
+            mVelocity.y = mVelocity.y * .7f;
     }
 }
 

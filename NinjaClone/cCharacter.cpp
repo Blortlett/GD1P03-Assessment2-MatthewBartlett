@@ -64,7 +64,7 @@ void cCharacter::DrawDebug(sf::RenderWindow& renderWindow)
 }
 
 void cCharacter::OnCollision(sf::Vector2f direction)
-{
+{ // Handle collision differently depending on direction
 	if (direction.x < 0.0f)
 	{
 		// Collision on the left

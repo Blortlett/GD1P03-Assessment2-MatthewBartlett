@@ -39,8 +39,6 @@ private:
 	//Level Count
 	int LevelCount = 1;
 
-	
-
 public:
 	// Get the single instance of the class
 	static cAudioPlayer& GetInstance()
