@@ -87,7 +87,10 @@ int main()
         }
 
         // update win screen here
-        GameWinUI.Update();
+        if (cApplicationManager::GetInstance().IsGameWon())
+        {
+            GameWinUI.Update();
+        }
 
         // Draw frame
         window.display();

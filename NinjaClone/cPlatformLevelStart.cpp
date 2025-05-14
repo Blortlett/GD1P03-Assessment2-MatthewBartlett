@@ -1,7 +1,7 @@
 #include "cPlatformLevelStart.h"
 
 cPlatformLevelStart::cPlatformLevelStart(sf::Vector2f position)
-	: cPlatformRect(sf::FloatRect(position, sf::Vector2f(80.0f, 20.0f)))
+	: mPosition(position)
 {
 	sf::Vector2f spawnPos = position;
 	spawnPos.y -= 40.f;
@@ -13,6 +13,11 @@ cPlatformLevelStart::cPlatformLevelStart(sf::Vector2f position)
 	mBody.setFillColor(sf::Color::Green);
 }
 
+void cPlatformLevelStart::Draw(sf::RenderWindow& window)
+{
+	window.draw(mBody);
+}
+
 sf::Vector2f cPlatformLevelStart::GetSpawnPoint()
 {
 	return mSpawnPoint;
@@ -22,3 +27,4 @@ sf::Vector2f cPlatformLevelStart::GetPosition()
 {
 	return mPosition;
 }
+

@@ -3,7 +3,6 @@
 #include "cBaseDrawTool.h"
 #include "cLevelPlatformsList.h"
 
-
 class cSpawnPlatformTool : public cBaseDrawTool
 {
 private:
