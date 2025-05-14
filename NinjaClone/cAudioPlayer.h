@@ -17,6 +17,7 @@ private:
 	sf::Music MusicLevel3;
 	sf::Music MusicLevel4;
 	sf::Music MusicLevel5;
+	sf::Music MusicEditor;
 
 	// Sound Effects
 	//Buffers
@@ -57,6 +58,7 @@ public:
 	//   -= MUSIC FUNCTIONS =-
 	// Swap Tunes
 	void PlayMenuMusic();
+	void PlayEditorMusic();
 	void PlayFirstLevelMusic();
 	void PlayLevelMusic();
 	// Pause/Play music

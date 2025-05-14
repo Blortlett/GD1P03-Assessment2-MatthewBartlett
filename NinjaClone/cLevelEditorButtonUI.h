@@ -1,6 +1,7 @@
 #pragma once
 #include "cButtonUI.h"
 #include "cApplicationManager.h"
+#include "cAudioPlayer.h"
 #include "cGameManager.h"
 #include "cFileInterface.h"
 #include "cEditorToolbarUI.h"

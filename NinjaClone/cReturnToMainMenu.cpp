@@ -26,6 +26,7 @@ void cReturnToMainMenu::OnButtonClick()
 	cApplicationManager::GetInstance().SetGameRunning(false);
 	cApplicationManager::GetInstance().SetGamePaused(false);
 	cApplicationManager::GetInstance().SetMainMenuActive(true);
+	cApplicationManager::GetInstance().SetLevelEditorRunning(false);
 	cAudioPlayer::GetInstance().PlayMenuMusic();
 }
 

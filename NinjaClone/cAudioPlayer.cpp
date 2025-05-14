@@ -26,6 +26,7 @@ cAudioPlayer::cAudioPlayer()
 	MusicLevel3.openFromFile("Assets/Audio/Music/DavidKBD - InterstellarPack - 04 - Horsehead Nebula.ogg");
 	MusicLevel4.openFromFile("Assets/Audio/Music/DavidKBD - InterstellarPack - 05 - Forgotten Station.ogg");
 	MusicLevel5.openFromFile("Assets/Audio/Music/DavidKBD - InterstellarPack - 06 - Hope on the Horizon.ogg");
+	MusicEditor.openFromFile("Assets/Audio/Music/Gymnopedie No.1.ogg");
 	PlayMenuMusic();
 }
 
@@ -62,6 +63,16 @@ void cAudioPlayer::PlayMenuMusic()
 	if (IsMusicMuted) return; // Dont bother if music is muted
 	StopMusic();
 	CurrentMusic = &MenuMusic;
+	CurrentMusic->setVolume(MusicVolume);
+	CurrentMusic->play();
+}
+
+void cAudioPlayer::PlayEditorMusic()
+{
+	if (IsMusicMuted) return; // Dont bother if music is muted
+	StopMusic();
+	CurrentMusic = &MusicEditor;
+	CurrentMusic->setVolume(700.f);
 	CurrentMusic->play();
 }
 

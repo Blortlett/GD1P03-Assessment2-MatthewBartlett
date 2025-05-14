@@ -30,6 +30,7 @@ void cLevelEditorButtonUI::OnButtonClick()
 	cApplicationManager::GetInstance().SetGameRunning(true);
 	mFileInterface.LoadLevelByName("BlankLevel");
 	mEditorToolbar.OpenToolbar();
+	cAudioPlayer::GetInstance().PlayEditorMusic();
 }
 
 void cLevelEditorButtonUI::Draw(sf::RenderWindow& window)
