@@ -8,6 +8,8 @@
 #include "cPauseMenu.h"
 #include "cGameWinUI.h"
 
+#include "cAudioPlayer.h"
+
 int main()
 {
     // Background texture
@@ -30,9 +32,13 @@ int main()
     cPauseMenu PauseMenu(window, LevelPlatformsList);
     cGameWinUI GameWinUI(window, LevelPlatformsList);
 
+    // Music object
+    cAudioPlayer::GetInstance().PlayMenuMusic();
+    //cAudioPlayer AudioPlayer;
 
     while (window.isOpen())
     {
+
         while (const std::optional event = window.pollEvent())
         {
             if (event->is<sf::Event::Closed>())

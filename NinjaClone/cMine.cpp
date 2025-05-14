@@ -29,5 +29,11 @@ void cMine::Draw(sf::RenderWindow& window)
 bool cMine::CheckCollisionWithPlayer(cCharacter& character)
 {
 	sf::Vector2f collisionDirection = sf::Vector2f(0, 0); // going to ignore this idgaf about it
-	return mCollider.CheckCollision(character.GetCollider(), collisionDirection, 1.0f);
+	if (mCollider.CheckCollision(character.GetCollider(), collisionDirection, 1.0f))
+	{
+		cAudioPlayer::GetInstance().SFXPlayExplosion();
+		return true;
+	}
+	else
+		return false;
 }

@@ -9,6 +9,7 @@ void cNextLevelButtonUI::OnButtonClick()
 	cApplicationManager::GetInstance().ResetGameplayVariables();
 	mFileInterface.LoadLevelByName(cApplicationManager::GetInstance().GetNextLevelName());
 	mGameManager.RespawnPlayer();
+	cAudioPlayer::GetInstance().PlayLevelMusic();
 }
 
 void cNextLevelButtonUI::Draw(sf::RenderWindow& window)

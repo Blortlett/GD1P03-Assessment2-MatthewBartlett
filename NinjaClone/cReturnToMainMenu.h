@@ -2,6 +2,7 @@
 #include "cButtonUI.h"
 #include "cApplicationManager.h"
 #include "cLevelPlatformsList.h"
+#include "cAudioPlayer.h"
 
 class cReturnToMainMenu : public cButtonUI
 {

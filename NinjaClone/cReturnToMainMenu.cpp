@@ -24,6 +24,7 @@ void cReturnToMainMenu::OnButtonClick()
 	cApplicationManager::GetInstance().SetGameRunning(false);
 	cApplicationManager::GetInstance().SetGamePaused(false);
 	cApplicationManager::GetInstance().SetMainMenuActive(true);
+	cAudioPlayer::GetInstance().PlayMenuMusic();
 }
 
 void cReturnToMainMenu::Draw(sf::RenderWindow& window)

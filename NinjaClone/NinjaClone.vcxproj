@@ -144,6 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="cApplicationManager.cpp" />
+    <ClCompile Include="cAudioPlayer.cpp" />
     <ClCompile Include="cBaseDrawTool.cpp" />
     <ClCompile Include="cBouncySquare.cpp" />
     <ClCompile Include="cBouncySquareTool.cpp" />
@@ -208,6 +209,7 @@
     <ClInclude Include="cAnimationWallslide.h" />
     <ClInclude Include="cAnimator.h" />
     <ClInclude Include="cApplicationManager.h" />
+    <ClInclude Include="cAudioPlayer.h" />
     <ClInclude Include="cBaseDrawTool.h" />
     <ClInclude Include="cBouncySquare.h" />
     <ClInclude Include="cBouncySquareTool.h" />

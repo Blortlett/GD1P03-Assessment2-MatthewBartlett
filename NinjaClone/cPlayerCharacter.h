@@ -2,6 +2,7 @@
 #include "cPlayerInput.h"
 #include "cCharacter.h"
 #include "cApplicationManager.h"
+#include "cAudioPlayer.h"
 
 class cPlayerCharacter : public cCharacter
 {

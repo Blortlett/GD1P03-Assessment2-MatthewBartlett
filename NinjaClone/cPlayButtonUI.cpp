@@ -24,6 +24,7 @@ void cPlayButtonUI::OnButtonClick()
 	cApplicationManager::GetInstance().SetMainMenuActive(false);
 	cApplicationManager::GetInstance().SetGameRunning(true);
 	mGameManager.RespawnPlayer();
+	cAudioPlayer::GetInstance().PlayFirstLevelMusic();
 }
 
 void cPlayButtonUI::Draw(sf::RenderWindow& window)

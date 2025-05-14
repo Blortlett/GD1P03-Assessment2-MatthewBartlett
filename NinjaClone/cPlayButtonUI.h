@@ -2,6 +2,7 @@
 #include "cButtonUI.h"
 #include "cFileInterface.h"
 #include "cApplicationManager.h"
+#include "cAudioPlayer.h"
 #include "cGameManager.h"
 
 

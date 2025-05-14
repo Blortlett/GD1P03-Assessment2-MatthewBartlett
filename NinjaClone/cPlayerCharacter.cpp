@@ -106,11 +106,13 @@ void cPlayerCharacter::Jump()
 {
     mIsGrounded = false;
     //mVelocity.y -= mJumpImpulse;
-    mVelocity.y -= sqrtf(2.0f * mGravity * mJumpImpulse); // someone said this was good?
+    mVelocity.y -= sqrtf(2.0f * mGravity * mJumpImpulse); // someone said this was good? wrong use case here...
+    cAudioPlayer::GetInstance().SFXPlayJump();
 }
 
 void cPlayerCharacter::JumpWallsliding()
 {
+    cAudioPlayer::GetInstance().SFXPlayJump();
     mIsTouchingWall = false;
     mIsWallsliding = false;
     if (mVelocity.y < 0)
