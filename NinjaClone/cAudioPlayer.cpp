@@ -70,7 +70,7 @@ void cAudioPlayer::PlayFirstLevelMusic()
 	StopMusic();
 	LevelCount = 1;
 	CurrentMusic = &MusicLevel1;
-	CurrentMusic->setVolume(10.f); // TAKE THIS OUT
+	CurrentMusic->setVolume(MusicVolume);
 	CurrentMusic->play();
 }
 

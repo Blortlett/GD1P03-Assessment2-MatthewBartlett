@@ -3,12 +3,19 @@
 cFileInterface::cFileInterface(cLevelPlatformsList& platformList)
     : mLevelPlatformList(platformList)
 {
-
+    // Initialize COM at startup to avoid initializing/uninitializing for each dialog
+    HRESULT hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
+    if (FAILED(hr)) {
+        std::cerr << "Failed to initialize COM during object creation. HRESULT: 0x"
+            << std::hex << hr << std::dec << std::endl;
+        // We won't throw here, but file dialogs might not work
+    }
 }
 
 cFileInterface::~cFileInterface()
 {
-
+    // Clean up COM on destruction
+    CoUninitialize();
 }
 
 void cFileInterface::SaveLevelDialog() {
@@ -36,17 +43,12 @@ void cFileInterface::LoadLevelByName(const std::string& levelName) {
 }
 
 bool cFileInterface::ShowFileSaveDialog(std::wstring& outFilePath, const wchar_t* fileTypeDesc, const wchar_t* fileTypeExt) {
-    // Initialize COM
-    HRESULT hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
-    if (FAILED(hr)) {
-        std::cerr << "Failed to initialize COM" << std::endl;
-        return false;
-    }
+    // COM should already be initialized in constructor, no need to initialize again
 
     bool result = false;
     // Create Save File Dialog
     IFileSaveDialog* pFileSave = nullptr;
-    hr = CoCreateInstance(CLSID_FileSaveDialog, NULL, CLSCTX_ALL,
+    HRESULT hr = CoCreateInstance(CLSID_FileSaveDialog, NULL, CLSCTX_ALL,
         IID_IFileSaveDialog, (void**)&pFileSave);
 
     if (SUCCEEDED(hr)) {
@@ -76,23 +78,21 @@ bool cFileInterface::ShowFileSaveDialog(std::wstring& outFilePath, const wchar_t
         }
         pFileSave->Release();
     }
+    else {
+        std::cerr << "Failed to create FileSaveDialog. HRESULT: 0x"
+            << std::hex << hr << std::dec << std::endl;
+    }
 
-    CoUninitialize();
     return result;
 }
 
 bool cFileInterface::ShowFileOpenDialog(std::wstring& outFilePath, const wchar_t* fileTypeDesc, const wchar_t* fileTypeExt) {
-    // Initialize COM
-    HRESULT hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
-    if (FAILED(hr)) {
-        std::cerr << "Failed to initialize COM" << std::endl;
-        return false;
-    }
+    // COM should already be initialized in constructor, no need to initialize again
 
     bool result = false;
     // Create Open File Dialog
     IFileOpenDialog* pFileOpen = nullptr;
-    hr = CoCreateInstance(CLSID_FileOpenDialog, NULL, CLSCTX_ALL,
+    HRESULT hr = CoCreateInstance(CLSID_FileOpenDialog, NULL, CLSCTX_ALL,
         IID_IFileOpenDialog, (void**)&pFileOpen);
 
     if (SUCCEEDED(hr)) {
@@ -122,8 +122,11 @@ bool cFileInterface::ShowFileOpenDialog(std::wstring& outFilePath, const wchar_t
         }
         pFileOpen->Release();
     }
+    else {
+        std::cerr << "Failed to create FileOpenDialog. HRESULT: 0x"
+            << std::hex << hr << std::dec << std::endl;
+    }
 
-    CoUninitialize();
     return result;
 }
 

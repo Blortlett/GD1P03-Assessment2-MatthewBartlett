@@ -20,7 +20,7 @@ cPlayButtonUI::cPlayButtonUI(sf::Vector2f position, sf::Vector2f size, cFileInte
 
 void cPlayButtonUI::OnButtonClick()
 {
-	mFileInterface.LoadLevelByName("Level1");
+	mFileInterface.LoadLevelByName("Level4");
 	cApplicationManager::GetInstance().SetMainMenuActive(false);
 	cApplicationManager::GetInstance().SetGameRunning(true);
 	mGameManager.RespawnPlayer();

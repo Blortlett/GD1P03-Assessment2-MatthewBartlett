@@ -22,6 +22,8 @@ cPlatformRect* cSpawnPlatformTool::CompleteUseTool()
 {
 	cPlatformLevelStart* SpawnPlatform = new cPlatformLevelStart(mShape->getPosition());
 	mLevelPlatformsList.AddPlayerSpawn(SpawnPlatform);
+	std::cout << "x: " << mShape->getPosition().x << "y: " << mShape->getPosition().y << std::endl;
+	std::cout << "x: " << SpawnPlatform->GetPosition().x << "y: " << SpawnPlatform->GetPosition().y << std::endl;
 	return nullptr;
 }
 
