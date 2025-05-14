@@ -36,32 +36,32 @@ bool cButtonUI::IsMouseOver(sf::RenderWindow& window) {
 }
 
 // Is button clicked?
-bool cButtonUI::IsButtonClicked(sf::RenderWindow& window) {
+bool cButtonUI::IsButtonClicked() {
     return sf::Mouse::isButtonPressed(sf::Mouse::Button::Left);
 }
 
 // Update Button
 void cButtonUI::Update(sf::RenderWindow& window) {
     if (IsMouseOver(window)) {
-        // Button is hovered - may be clicked aswell
+        if (isPressed && !IsButtonClicked())
+        {
+            OnButtonClick();
+        }
         isHovered = true;
-        if (IsButtonClicked(window)) {
-            // Button is clicked
+        if (IsButtonClicked()) {
             mButtonShape.setFillColor(mClickColor);
             if (!isPressed)
             {
                 isPressed = true;
-                OnButtonClick();
+                //OnButtonClick();
             }
         }
         else {
-            // Button is hovered and not clicked...
             mButtonShape.setFillColor(mHoverColor);
             isPressed = false;
         }
     }
     else {
-        // Button is not hovered
         mButtonShape.setFillColor(mDefaultColor);
         isHovered = false;
         isPressed = false;

@@ -17,7 +17,7 @@ public:
     cButtonUI(sf::Vector2f position, sf::Vector2f size);
     virtual ~cButtonUI() = default;
     bool IsMouseOver(sf::RenderWindow& window);
-    bool IsButtonClicked(sf::RenderWindow& window);
+    bool IsButtonClicked();
     void Update(sf::RenderWindow& window);
     virtual void Draw(sf::RenderWindow& window);
 
