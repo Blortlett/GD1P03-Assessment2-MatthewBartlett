@@ -3,6 +3,7 @@
 #include "cAnimator.h"
 #include "cBoxCollider.h"
 #include "cApplicationManager.h"
+#include "cAudioPlayer.h"
 
 enum eCharacterType {
 	TYPE_BLANK,

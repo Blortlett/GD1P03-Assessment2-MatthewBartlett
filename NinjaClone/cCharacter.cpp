@@ -70,13 +70,14 @@ void cCharacter::OnCollision(sf::Vector2f direction)
 		// Collision on the left
 		mVelocity.x = 1.0f;
 		SetWallsliding();
-
+		//cAudioPlayer::GetInstance().SFXPlayLandFall();
 	}
 	else if (direction.x > 0.0f)
 	{
 		// Collision on the right
 		mVelocity.x = -1.0f;
 		SetWallsliding();
+		//cAudioPlayer::GetInstance().SFXPlayLandFall();
 	}
 	if (direction.y < 0.0f)
 	{
@@ -84,6 +85,7 @@ void cCharacter::OnCollision(sf::Vector2f direction)
 		mVelocity.y = 0.0f;
 		mIsGrounded = true;
 		mPlayerAnimator.EndFall();
+		//cAudioPlayer::GetInstance().SFXPlayLandFall();
 	}
 	if (direction.y > 0.0f)
 	{

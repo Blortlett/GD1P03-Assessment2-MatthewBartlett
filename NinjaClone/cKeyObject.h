@@ -3,6 +3,7 @@
 #include "cKeyAnimation.h"
 #include "cDebugWidget.h"
 #include "cCharacter.h"
+#include "cAudioPlayer.h"
 
 
 class cKeyObject
