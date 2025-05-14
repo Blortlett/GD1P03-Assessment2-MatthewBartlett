@@ -12,6 +12,5 @@ public:
     void Draw(sf::RenderWindow& window) override;
 private:
     cEditorDrawTool& mUserDrawTool;
-    sf::Texture mIconTexture;
-    sf::Sprite* mUIIcon;
+    sf::Sprite mUIIcon;
 };

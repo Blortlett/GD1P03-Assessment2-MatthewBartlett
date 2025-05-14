@@ -4,18 +4,15 @@ cSaveButton::cSaveButton(sf::Vector2f position, sf::Vector2f size, cFileInterfac
 	: cButtonUI(position, size)
 	, mFileInterface(_userFileInterface)
 	, mPlatformList(platformList)
+	, mUIIcon(cApplicationManager::GetInstance().mSaveIcon)
 {
-	// load image
-	mSaveIconTexture.loadFromFile("Assets/Sprites/UI/Toolbar/SaveIcon.png");
-	mUIIcon = new sf::Sprite(mSaveIconTexture);
 	// set position
-	mUIIcon->setOrigin(mUIIcon->getLocalBounds().size / 2.0f);
-	mUIIcon->setPosition(position);
+	mUIIcon.setOrigin(mUIIcon.getLocalBounds().size / 2.0f);
+	mUIIcon.setPosition(position);
 }
 
 cSaveButton::~cSaveButton()
 {
-	delete mUIIcon;
 }
 
 void cSaveButton::OnButtonClick()
@@ -29,5 +26,5 @@ void cSaveButton::Draw(sf::RenderWindow& window)
 	cButtonUI::Update(window);
 	// Draw Button to screen
 	cButtonUI::Draw(window);
-	//window.draw(*mUIIcon);
+	window.draw(mUIIcon);
 }

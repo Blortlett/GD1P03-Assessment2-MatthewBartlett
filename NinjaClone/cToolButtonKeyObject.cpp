@@ -3,19 +3,18 @@
 cToolButtonKeyObject::cToolButtonKeyObject(sf::Vector2f position, sf::Vector2f size, cEditorDrawTool& tool)
 	: cButtonUI(position, size)
 	, mUserDrawTool(tool)
+	, mUIIcon(cApplicationManager::GetInstance().mKeyIcon)
 {
-	mIconTexture.loadFromFile("Assets/Sprites/UI/Toolbar/Key.png");
-	mUIIcon = new sf::Sprite(mIconTexture);
+	
 
-	mUIIcon->setPosition(position);
-	mUIIcon->setScale(sf::Vector2f(.7f,.7f));
-	mUIIcon->setOrigin(mUIIcon->getLocalBounds().size / 2.0f);
+	mUIIcon.setPosition(position);
+	mUIIcon.setScale(sf::Vector2f(.7f,.7f));
+	mUIIcon.setOrigin(mUIIcon.getLocalBounds().size / 2.0f);
 
 }
 
 cToolButtonKeyObject::~cToolButtonKeyObject()
 {
-	delete mUIIcon;
 }
 
 void cToolButtonKeyObject::OnButtonClick() {
@@ -25,5 +24,5 @@ void cToolButtonKeyObject::OnButtonClick() {
 void cToolButtonKeyObject::Draw(sf::RenderWindow& window)
 {
 	window.draw(mButtonShape);
-	//window.draw(*mUIIcon);
+	window.draw(mUIIcon);
 }

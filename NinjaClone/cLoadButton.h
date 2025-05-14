@@ -1,4 +1,5 @@
 #pragma once
+#include "cApplicationManager.h"
 #include "cButtonUI.h"
 #include "cFileInterface.h"
 #include "cLevelPlatformsList.h"
@@ -15,6 +16,5 @@ private:
 	cFileInterface& mFileInterface;
 	cLevelPlatformsList& mPlatformList;
 
-	sf::Texture mLoadIconTexture; // Load Texture
-	sf::Sprite* mUIIcon; // create sprite from above
+	sf::Sprite mUIIcon;
 };

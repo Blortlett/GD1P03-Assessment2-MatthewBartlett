@@ -3,6 +3,9 @@
 cApplicationManager::cApplicationManager()
 	: mEnemyMineSprite(mMineTexture)
 	, mEnemyMushroomSprite(mMushroomManTexture)
+	, mLoadIcon(mLoadIconTexture)
+	, mSaveIcon(mSaveIconTexture)
+	, mKeyIcon(mKeyIconTexture)
 {
 	// Get object sprites
 	mLevelExitClosedTex.loadFromFile("Assets/Sprites/LevelBlocks/LevelExitClosed.png");
@@ -13,6 +16,12 @@ cApplicationManager::cApplicationManager()
 	mEnemyMineSprite = sf::Sprite(mMineTexture);
 	mMushroomManTexture.loadFromFile("Assets/Sprites/Enemies/Mushroom.png");
 	mEnemyMushroomSprite = sf::Sprite(mMushroomManTexture);
+	mLoadIconTexture.loadFromFile("Assets/Sprites/UI/Toolbar/LoadIcon.png");
+	mLoadIcon = sf::Sprite(mLoadIconTexture);
+	mSaveIconTexture.loadFromFile("Assets/Sprites/UI/Toolbar/SaveIcon.png");
+	mSaveIcon = sf::Sprite(mSaveIconTexture);
+	mKeyIconTexture.loadFromFile("Assets/Sprites/UI/Toolbar/Key.png");
+	mKeyIcon = sf::Sprite(mKeyIconTexture);
 
 	// get font
 	if (!mGameFont.openFromFile("Assets/Fonts/TypeLightSans-KV84p.otf"))

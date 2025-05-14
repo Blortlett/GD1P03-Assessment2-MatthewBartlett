@@ -16,5 +16,5 @@ private:
 	cLevelPlatformsList& mPlatformList;
 
 	sf::Texture mSaveIconTexture; // Load Texture
-	sf::Sprite* mUIIcon; // create sprite from above
+	sf::Sprite mUIIcon; // create sprite from above
 };

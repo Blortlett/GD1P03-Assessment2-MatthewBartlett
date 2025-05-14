@@ -3,17 +3,15 @@
 cToolButtonLevelExit::cToolButtonLevelExit(sf::Vector2f position, sf::Vector2f size, cEditorDrawTool& tool)
 	: cButtonUI(position, size)
 	, mUserDrawTool(tool)
+	, mUIIcon(*cApplicationManager::GetInstance().mLevelExitClosedSprite)
 {
-	mIconTexture.loadFromFile("Assets/Sprites/LevelBlocks/LevelExitClosed.png");
-	mUIIcon = new sf::Sprite(mIconTexture);
-	mUIIcon->setPosition(position);
-	mUIIcon->setScale(sf::Vector2f(.25f, .25f));
-	mUIIcon->setOrigin(mUIIcon->getLocalBounds().size / 2.0f);
+	mUIIcon.setPosition(position);
+	mUIIcon.setScale(sf::Vector2f(.25f, .25f));
+	mUIIcon.setOrigin(mUIIcon.getLocalBounds().size / 2.0f);
 }
 
 cToolButtonLevelExit::~cToolButtonLevelExit()
 {
-	delete mUIIcon;
 }
 
 void cToolButtonLevelExit::OnButtonClick() {
@@ -23,6 +21,5 @@ void cToolButtonLevelExit::OnButtonClick() {
 void cToolButtonLevelExit::Draw(sf::RenderWindow& window)
 {
 	window.draw(mButtonShape);
-	//if (mUIIcon) // dodgy fix
-		//window.draw(*mUIIcon);
+	window.draw(mUIIcon);
 }

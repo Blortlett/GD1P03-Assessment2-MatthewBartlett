@@ -28,6 +28,10 @@ private:
 	// Enemy textures
 	sf::Texture mMineTexture;
 	sf::Texture mMushroomManTexture;
+	// UI icons
+	sf::Texture mLoadIconTexture;
+	sf::Texture mSaveIconTexture;
+	sf::Texture mKeyIconTexture;
 
 	// Font
 	sf::Font mGameFont;
@@ -82,6 +86,12 @@ public:
 	// enemy sprites
 	sf::Sprite mEnemyMineSprite;
 	sf::Sprite mEnemyMushroomSprite;
+
+	//UIicons
+	sf::Sprite mLoadIcon;
+	sf::Sprite mSaveIcon;
+	sf::Sprite mKeyIcon;
+
 
 	// Game won variables
 	bool mIsGameComplete = false;
