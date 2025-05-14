@@ -28,4 +28,8 @@ private:
 	cPlayerInput& mPlayerInput;
 	sf::Vector2f m_vPlayerInputNormalized;
 	bool mJumpKeyHeld = false;
+
+	float normalize(float value) {
+		return (value > 0) ? 1 : (value < 0) ? -1 : 0;
+	}
 };

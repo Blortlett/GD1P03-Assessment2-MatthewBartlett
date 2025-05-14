@@ -29,6 +29,7 @@ protected:
 	// Dampen Movment
 	float mMoveInputMultGrounded = 250.0f; // .8 without delta time
 	float mMoveInputMultAirborne = 150.0f; // .3 without delta time
+	float mSlowMoveInputGrounded = 600.0f; // .3 without delta time
 	float mVelocityDampGrounded = 3;
 	float mVelocityDampAirborne = .5;
 	float mVelocityDeadzone = 15;

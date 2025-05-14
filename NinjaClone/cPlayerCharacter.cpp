@@ -28,7 +28,8 @@ void cPlayerCharacter::Update(float DeltaSeconds)
     HandleInput();
 
     // No Input
-    if (mIsGrounded && m_vPlayerInputNormalized.x == 0) {
+    if (mIsGrounded && m_vPlayerInputNormalized.x == 0) 
+    {
         mPlayerAnimator.SetSliding(true);
         // Velocity deadzone
         if (std::abs(mVelocity.x) < mVelocityDeadzone) {
@@ -55,8 +56,16 @@ void cPlayerCharacter::Update(float DeltaSeconds)
         mPlayerAnimator.SetSliding(false);
         if (mIsGrounded)
         {
-            mVelocity += mMoveInputMultGrounded * m_vPlayerInputNormalized * DeltaSeconds;
-            mPlayerAnimator.SetRunning(true);
+            if (normalize(mVelocity.x) != m_vPlayerInputNormalized.x)
+            {
+                mPlayerAnimator.SetSliding(true); // if input opptosite to velocity, then set sliding
+                mVelocity += mSlowMoveInputGrounded * m_vPlayerInputNormalized * DeltaSeconds;
+            }
+            else
+            {
+                mPlayerAnimator.SetRunning(true); // else set running animation
+                mVelocity += mMoveInputMultGrounded * m_vPlayerInputNormalized * DeltaSeconds;
+            }
         }
         else
         {
@@ -104,7 +113,13 @@ void cPlayerCharacter::JumpWallsliding()
 {
     mIsTouchingWall = false;
     mIsWallsliding = false;
-    mVelocity.y = -sqrtf(2.0f * mGravity * mWallslideJumpImpulse.y);
+    if (mVelocity.y < 0)
+    {
+        // Player moving up, add jump to up force
+        mVelocity.y += -sqrtf(2.0f * mGravity * mWallslideJumpImpulse.y);
+    }
+    else // Player moving down, set jump force
+        mVelocity.y = -sqrtf(2.0f * mGravity * mWallslideJumpImpulse.y);
     if (mIsFacingRight) {
         mVelocity.x = -mWallslideJumpImpulse.x;
     }

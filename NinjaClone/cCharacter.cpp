@@ -22,7 +22,6 @@ cCharacter::~cCharacter()
 
 void cCharacter::CharacterPhysicsUpdate(float _DeltaSeconds)
 {
-
 	// Add Gravity to Velocity
 	mVelocity.y += mGravity * _DeltaSeconds;
 	// Add velocity to collider position
