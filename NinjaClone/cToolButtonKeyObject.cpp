@@ -25,5 +25,5 @@ void cToolButtonKeyObject::OnButtonClick() {
 void cToolButtonKeyObject::Draw(sf::RenderWindow& window)
 {
 	window.draw(mButtonShape);
-	window.draw(*mUIIcon);
+	//window.draw(*mUIIcon);
 }

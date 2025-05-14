@@ -23,5 +23,6 @@ void cToolButtonLevelExit::OnButtonClick() {
 void cToolButtonLevelExit::Draw(sf::RenderWindow& window)
 {
 	window.draw(mButtonShape);
-	window.draw(*mUIIcon);
+	//if (mUIIcon) // dodgy fix
+		//window.draw(*mUIIcon);
 }

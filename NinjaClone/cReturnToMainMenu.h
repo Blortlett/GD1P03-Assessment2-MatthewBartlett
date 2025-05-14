@@ -3,14 +3,19 @@
 #include "cApplicationManager.h"
 #include "cLevelPlatformsList.h"
 #include "cAudioPlayer.h"
+#include "cEditorToolbarUI.h"
 
 class cReturnToMainMenu : public cButtonUI
 {
 private:
-	sf::Text mText;
+	// Existing items
+	cEditorToolbarUI& mEditorUI;
 	cLevelPlatformsList& mPlatformsList;
+
+	// Button items
+	sf::Text mText;
 public:
-	cReturnToMainMenu(cLevelPlatformsList& platformsList);
+	cReturnToMainMenu(cLevelPlatformsList& platformsList, cEditorToolbarUI& editorToolbar);
 	~cReturnToMainMenu();
 
 	void OnButtonClick() override;

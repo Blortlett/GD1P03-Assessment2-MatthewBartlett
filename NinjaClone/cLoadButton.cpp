@@ -29,5 +29,5 @@ void cLoadButton::Draw(sf::RenderWindow& window)
 	cButtonUI::Update(window);
 	// Draw Button to screen
 	cButtonUI::Draw(window);
-	window.draw(*mUIIcon);
+	//window.draw(*mUIIcon);
 }

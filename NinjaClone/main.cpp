@@ -27,10 +27,10 @@ int main()
     // Create Level Editor
     cLevelEditorManager LevelEditor(window, PlayerInput, LevelPlatformsList, FileInterface);
     // Create Main Menu
-    cMainMenu MainMenu(window, FileInterface, GameManager, LevelPlatformsList);
+    cMainMenu MainMenu(window, FileInterface, GameManager, LevelPlatformsList, LevelEditor.GetToolbarUI());
     // Create PauseMenu
-    cPauseMenu PauseMenu(window, LevelPlatformsList);
-    cGameWinUI GameWinUI(window, LevelPlatformsList);
+    cPauseMenu PauseMenu(window, LevelPlatformsList, LevelEditor.GetToolbarUI());
+    cGameWinUI GameWinUI(window, LevelPlatformsList, LevelEditor.GetToolbarUI());
 
     // Music object
     cAudioPlayer::GetInstance().PlayMenuMusic();

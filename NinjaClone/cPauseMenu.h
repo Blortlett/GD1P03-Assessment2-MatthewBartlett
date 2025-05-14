@@ -3,6 +3,7 @@
 #include "cLevelPlatformsList.h"
 #include "cResumeButton.h"
 #include "cReturnToMainMenu.h"
+#include "cEditorToolbarUI.h"
 
 class cPauseMenu
 {
@@ -16,7 +17,7 @@ private:
 	cReturnToMainMenu mMainMenuButton;
 
 public:
-	cPauseMenu(sf::RenderWindow& window, cLevelPlatformsList& platformList);
+	cPauseMenu(sf::RenderWindow& window, cLevelPlatformsList& platformList, cEditorToolbarUI& editorToolbar);
 	~cPauseMenu();
 
 	bool mIsActive = false;

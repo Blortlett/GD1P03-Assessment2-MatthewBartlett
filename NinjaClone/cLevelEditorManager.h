@@ -10,6 +10,8 @@ public:
 	cLevelEditorManager(sf::RenderWindow& mainWindow, cPlayerInput& playerInput, cLevelPlatformsList& platformsList, cFileInterface& fileInterface);
 	~cLevelEditorManager();
 
+	cEditorToolbarUI& GetToolbarUI() { return mToolbar; }
+
 	void Update();
 	void Draw();
 private:

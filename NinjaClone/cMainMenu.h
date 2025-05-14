@@ -5,13 +5,14 @@
 #include "cFileInterface.h"
 #include "cGameManager.h"
 #include "cLevelPlatformsList.h"
+#include "cEditorToolbarUI.h"
 #include <iostream>
 
 
 class cMainMenu
 {
 public:
-	cMainMenu(sf::RenderWindow& renderWindow, cFileInterface& fileInterface, cGameManager& gameManager, cLevelPlatformsList& platformList);
+	cMainMenu(sf::RenderWindow& renderWindow, cFileInterface& fileInterface, cGameManager& gameManager, cLevelPlatformsList& platformList, cEditorToolbarUI& editorToolbar);
 	~cMainMenu();
 	void Update();
 	bool mIsActive = true;

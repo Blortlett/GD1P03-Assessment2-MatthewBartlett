@@ -1,8 +1,8 @@
 #include "cGameWinUI.h"
 
-cGameWinUI::cGameWinUI(sf::RenderWindow& renderWindow, cLevelPlatformsList& platformList)
+cGameWinUI::cGameWinUI(sf::RenderWindow& renderWindow, cLevelPlatformsList& platformList, cEditorToolbarUI editorToolbar)
 	: mRenderWindow(renderWindow)
-	, mReturnToMenuButton(platformList)
+	, mReturnToMenuButton(platformList, editorToolbar)
 	, mText(cApplicationManager::GetInstance().GetFont(), "YOU WIN!", 10U)
 {
 	mText.setFillColor(sf::Color::Black);

@@ -15,6 +15,9 @@
 class cEditorToolbarUI {
 public:
     cEditorToolbarUI(sf::RenderWindow& window, cEditorDrawTool& _DrawTool, cLevelPlatformsList& platformsList, cFileInterface& fileInterface);
+    void OpenToolbar();
+    void CloseToolbar();
+
     void Update();
     void Draw();
 private:
@@ -34,7 +37,7 @@ private:
     cLoadButton mLoadButton;
 
     // Toolbar Window
-    sf::RenderWindow mToolbarWindow;
+    sf::RenderWindow* mToolbarWindow;
 
     // Background Image
     sf::Texture mBackgroundTexture;

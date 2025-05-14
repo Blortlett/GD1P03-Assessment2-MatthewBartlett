@@ -1,6 +1,7 @@
 #pragma once
 #include "cApplicationManager.h"
 #include "cReturnToMainMenu.h"
+#include "cEditorToolbarUI.h"
 #include "cGameManager.h"
 
 class cGameWinUI
@@ -17,7 +18,7 @@ private:
 	cReturnToMainMenu mReturnToMenuButton;
 
 public:
-	cGameWinUI(sf::RenderWindow& renderWindow, cLevelPlatformsList& platformList);
+	cGameWinUI(sf::RenderWindow& renderWindow, cLevelPlatformsList& platformList, cEditorToolbarUI editorToolbar);
 	~cGameWinUI() {}
 	void Update();
 };

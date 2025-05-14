@@ -1,9 +1,9 @@
 #include "cPauseMenu.h"
 
-cPauseMenu::cPauseMenu(sf::RenderWindow& window, cLevelPlatformsList& platformList)
+cPauseMenu::cPauseMenu(sf::RenderWindow& window, cLevelPlatformsList& platformList, cEditorToolbarUI& editorToolbar)
 	: mMenuTitleText(cApplicationManager::GetInstance().GetFont(), "PAUSED", 7U)
 	, mWindow(window)
-	, mMainMenuButton(platformList)
+	, mMainMenuButton(platformList, editorToolbar)
 {
 	mMenuTitleText.setCharacterSize(70);
 	sf::Vector2f titlePosition = sf::Vector2f(sf::Vector2f(1366, 768) / 2.0f);

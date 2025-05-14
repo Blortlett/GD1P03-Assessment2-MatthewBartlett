@@ -1,9 +1,10 @@
 #include "cReturnToMainMenu.h"
 
-cReturnToMainMenu::cReturnToMainMenu(cLevelPlatformsList& platformsList)
+cReturnToMainMenu::cReturnToMainMenu(cLevelPlatformsList& platformsList, cEditorToolbarUI& editorToolbar)
 	: cButtonUI(sf::Vector2f(1366 / 2, (768 / 2) + 90), sf::Vector2f(300, 100))
 	, mText(cApplicationManager::GetInstance().GetFont(), "MAIN MENU", 10U)
 	, mPlatformsList(platformsList)
+	, mEditorUI(editorToolbar)
 {
 	// Center text
 	mText.setPosition(mPosition);
@@ -18,6 +19,7 @@ cReturnToMainMenu::~cReturnToMainMenu()
 
 void cReturnToMainMenu::OnButtonClick()
 {
+	mEditorUI.CloseToolbar();
 	// Delete Active Level
 	mPlatformsList.ClearList();
 	cApplicationManager::GetInstance().ResetLevelProgress();
