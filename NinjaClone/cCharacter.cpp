@@ -67,20 +67,22 @@ void cCharacter::OnCollision(sf::Vector2f direction)
 { // Handle collision differently depending on direction
 	if (direction.x < 0.0f)
 	{
-		// Collision on the left
-		mVelocity.x = 1.0f;
+		// Collision on the right
+		if (!mIsWallsliding)
+			mVelocity.x = .4f;
 		SetWallsliding();
 	}
 	else if (direction.x > 0.0f)
 	{
-		// Collision on the right
-		mVelocity.x = -1.0f;
+		// Collision on the left
+		if (!mIsWallsliding)
+			mVelocity.x = -.4f;
 		SetWallsliding();
 	}
 	if (direction.y < 0.0f)
 	{
 		// Collision on the bottom
-		mVelocity.y = 0.0f;
+		mVelocity.y = 2.f;
 		if (!mIsGrounded)
 			cAudioPlayer::GetInstance().SFXPlayLandFall();
 		mIsGrounded = true;
@@ -90,6 +92,41 @@ void cCharacter::OnCollision(sf::Vector2f direction)
 	{
 		// Collision on the top
 		mVelocity.y = 0.0f;
+	}
+}
+
+void cCharacter::OnPhysicsCollision(sf::Vector2f direction, sf::Vector2f& velocityTransfer)
+{
+	// Handle collision differently depending on direction
+	if (direction.x < 0.0f)
+	{
+		// Collision on the right
+		
+		velocityTransfer.x = mVelocity.x;
+		mVelocity.x *= .5f;
+		SetWallsliding();
+	}
+	else if (direction.x > 0.0f)
+	{
+		// Collision on the left
+		velocityTransfer.x = mVelocity.x;
+		mVelocity.x *= .5f;
+		SetWallsliding();
+	}
+	if (direction.y < 0.0f)
+	{
+		// Collision on the bottom
+		mVelocity.y -= velocityTransfer.y * .004f;
+		velocityTransfer.y = mVelocity.y;
+		//if (!mIsGrounded)
+			//cAudioPlayer::GetInstance().SFXPlayLandFall();
+		mIsGrounded = true;
+		mPlayerAnimator.EndFall();
+	}
+	if (direction.y > 0.0f)
+	{
+		// Collision on the top
+		velocityTransfer.y = mVelocity.y;
 	}
 }
 
@@ -109,7 +146,7 @@ void cCharacter::SetWallsliding()
 	if (!mIsGrounded)
 	{
 		if (!mIsTouchingWall)
-			cAudioPlayer::GetInstance().SFXPlayLandFall();
+			//cAudioPlayer::GetInstance().SFXPlayLandFall();
 		mIsTouchingWall = true;
 		if (mVelocity.y > 0)
 		{

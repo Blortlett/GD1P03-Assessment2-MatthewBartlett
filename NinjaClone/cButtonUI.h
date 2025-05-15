@@ -6,7 +6,7 @@ class cButtonUI {
 protected:
     sf::RectangleShape mButtonShape;
     sf::Color mDefaultColor = sf::Color(100, 100, 100);
-    sf::Color mHoverColor = sf::Color(150, 150, 150);
+    sf::Color mHoverColor = sf::Color(180, 180, 180);
     sf::Color mClickColor = sf::Color(80, 80, 80);
     bool isPressed;
     bool isHovered;

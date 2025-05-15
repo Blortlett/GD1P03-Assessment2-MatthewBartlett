@@ -6,7 +6,7 @@ cGameWinUI::cGameWinUI(sf::RenderWindow& renderWindow, cLevelPlatformsList& plat
 	, mText(cApplicationManager::GetInstance().GetFont(), "YOU WIN!", 10U)
 {
 	mText.setFillColor(sf::Color::Black);
-	mText.setCharacterSize(42);
+	mText.setCharacterSize(260);
 	mText.setPosition(mTitlePosition);
 	mText.setOrigin(mText.getGlobalBounds().size / 2.0f);
 }

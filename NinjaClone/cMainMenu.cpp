@@ -29,7 +29,7 @@ cMainMenu::cMainMenu(sf::RenderWindow& renderWindow, cFileInterface& fileInterfa
 	// set text
 	mText.setFont(mTitleFont);
 	mText.setFillColor(sf::Color::Black);
-	mText.setCharacterSize(42);
+	mText.setCharacterSize(300);
 	mText.setPosition(mTitlePosition);
 	mText.setOrigin(mText.getGlobalBounds().size / 2.0f);
 }

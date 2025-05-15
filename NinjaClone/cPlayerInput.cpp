@@ -7,7 +7,7 @@ cPlayerInput::cPlayerInput()
 
 bool cPlayerInput::IsJumpInputPressed() const
 {
-    return sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space);
+    return sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W);
 }
 
 bool cPlayerInput::IsMoveLeftInputPressed() const

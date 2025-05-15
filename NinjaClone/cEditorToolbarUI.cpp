@@ -4,14 +4,14 @@
 cEditorToolbarUI::cEditorToolbarUI(sf::RenderWindow& window, cEditorDrawTool& _DrawTool, cLevelPlatformsList& platformsList, cFileInterface& fileInterface)
 	: mMainWindow(window), UserDrawTool(_DrawTool)
 	, mToolbarWindow(nullptr)
-	, mButtonRectangleTool(sf::Vector2f(15.0f, 15.0f), sf::Vector2f(25.0f, 25.0f), _DrawTool)
-	, mButtonSpawnPointTool(sf::Vector2f(55.0f, 15.0f), sf::Vector2f(25.0f, 25.0f), _DrawTool)
-	, mButtonLevelExitTool(sf::Vector2f(95.0f, 15.0f), sf::Vector2f(25.0f, 25.0f), _DrawTool)
-	, mButtonLevelKeyTool(sf::Vector2f(135.0f, 15.0f), sf::Vector2f(25.0f, 25.0f), _DrawTool)
-	, mButtonEnemyMineTool(sf::Vector2f(15.0f, 50.0f), sf::Vector2f(25.0f, 25.0f), _DrawTool)
-	, mButtonBouncySquareTool(sf::Vector2f(55.0f, 50.0f), sf::Vector2f(25.0f, 25.0f), _DrawTool)
-	, mSaveButton(sf::Vector2f(15.0f, 226.0f), sf::Vector2f(25.0f, 25.0f), fileInterface, platformsList)
-	, mLoadButton(sf::Vector2f(45.0f, 226.0f), sf::Vector2f(25.0f, 25.0f), fileInterface, platformsList)
+	, mButtonRectangleTool((sf::Vector2f(15.0f, 15.0f) + mButtonOffset), sf::Vector2f(25.0f, 25.0f), _DrawTool)
+	, mButtonSpawnPointTool((sf::Vector2f(55.0f, 15.0f) + mButtonOffset), sf::Vector2f(25.0f, 25.0f), _DrawTool)
+	, mButtonLevelExitTool((sf::Vector2f(95.0f, 15.0f) + mButtonOffset), sf::Vector2f(25.0f, 25.0f), _DrawTool)
+	, mButtonLevelKeyTool((sf::Vector2f(135.0f, 15.0f) + mButtonOffset), sf::Vector2f(25.0f, 25.0f), _DrawTool)
+	, mButtonEnemyMineTool((sf::Vector2f(15.0f, 50.0f) + mButtonOffset), sf::Vector2f(25.0f, 25.0f), _DrawTool)
+	, mButtonBouncySquareTool((sf::Vector2f(55.0f, 50.0f) + mButtonOffset), sf::Vector2f(25.0f, 25.0f), _DrawTool)
+	, mSaveButton((sf::Vector2f(15.0f, 226.0f) + mButtonOffset), sf::Vector2f(25.0f, 25.0f), fileInterface, platformsList)
+	, mLoadButton((sf::Vector2f(230, 226.0f) - mButtonOffset), sf::Vector2f(25.0f, 25.0f), fileInterface, platformsList)
 {
 	// load image
 	mBackgroundTexture.loadFromFile("Assets/Sprites/UI/Toolbar/ToolbarBackground.png");

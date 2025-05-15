@@ -24,6 +24,7 @@ private:
     cEditorDrawTool& UserDrawTool;
     sf::RenderWindow& mMainWindow;
 
+    sf::Vector2f mButtonOffset = { 25.f , 0 };
     // Tool Buttons - Level Objects
     cRectPlatformToolButton mButtonRectangleTool;
     cToolButtonSpawnPoint mButtonSpawnPointTool;

@@ -20,7 +20,7 @@ public:
 	bool CheckCollideWithPlayer(cPlayerCharacter& playerCharacter);
 	bool CheckCollideWithPoint(sf::Vector2f point);
 
-	void Update();
+	void Update(float _DeltaSeconds);
 	void Draw(sf::RenderWindow& window);
 
 	sf::Vector2f GetPosition();

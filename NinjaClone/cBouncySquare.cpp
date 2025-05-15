@@ -20,12 +20,14 @@ cBouncySquare::~cBouncySquare()
 
 bool cBouncySquare::CheckCollideWithPlayer(cPlayerCharacter& playerCharacter)  // got rid of cPlatformList's mCollisionDirection
 {
-	sf::Vector2f collisionDirection;
+	sf::Vector2f vfCollisionDirection;
+	sf::Vector2f vfCollisionVelocity = mVelocity;
 	// Check platform collision with player
-	if (mCollider.CheckCollision(playerCharacter.GetCollider(), collisionDirection, 0.0f))
+	if (mCollider.CheckCollision(playerCharacter.GetCollider(), vfCollisionDirection, 1.f))
 	{
 		// If collision, tell player object:
-		playerCharacter.OnCollision(collisionDirection);
+		playerCharacter.OnPhysicsCollision(vfCollisionDirection, vfCollisionVelocity);
+		mVelocity = vfCollisionVelocity;
 		return true;
 	}
 	return false;
@@ -38,10 +40,16 @@ bool cBouncySquare::CheckCollideWithPoint(sf::Vector2f point)
 	return mCollider.CheckCollisionPoint(newPoint);
 }
 
-void cBouncySquare::Update()
+void cBouncySquare::Update(float _DeltaSeconds)
 {
-	mVelocity = (mCollider.GetPosition() - mPosition) / 2.f;
-	mCollider.MoveColliderPosition(mCollider.GetPosition() - mVelocity);
+	// Add fricition
+	mVelocity = mVelocity * .999f;
+
+	mVelocity = (mVelocity - ((mCollider.GetPosition() - mPosition) * _DeltaSeconds) * 1000.f);
+	// Update position based on current velocity
+    mCollider.MoveColliderPosition(mCollider.GetPosition() + (mVelocity * _DeltaSeconds));
+    // Sync the visual shape with the collider's position
+	mRectShape.setPosition(mCollider.GetPosition());
 }
 
 void cBouncySquare::Draw(sf::RenderWindow& window)

@@ -37,8 +37,8 @@ private:
 	sf::Font mGameFont;
 
 	// Level names
-	const std::string mLevelNames[5] = { "Level1" , "Level2", "Level3", "Level4", "Level5" };
-	const int mMaxLevel = 5;	//////// mLevelNames.Size() wants to fuck me around
+	const std::string mLevelNames[9] = { "Level1" , "Level2", "Level3", "Level4", "Level5", "Level6", "Level7", "Level8", "Level9" };
+	const int mMaxLevel = 9;	//////// mLevelNames.Size() wants to fuck me around
 
 	int mLevelCount = 0;
 

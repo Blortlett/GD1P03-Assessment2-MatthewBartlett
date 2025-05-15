@@ -21,7 +21,7 @@ void cGameManager::GameTick()
     RefreshDeltaTime();
     //Draw Platforms
     mPlatformsList.DrawPlatforms(mGameWindow, mDeltaSeconds);
-    mPlatformsList.CheckCollisions(mPlayerCharacter);
+    mPlatformsList.CheckCollisions(mPlayerCharacter, mDeltaSeconds);
     //Draw Enemies
     mPlatformsList.DrawEnemies(mGameWindow, mDeltaSeconds);
     mPlatformsList.CheckEnemyCollisions(mPlayerCharacter);

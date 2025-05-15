@@ -6,7 +6,7 @@ cAnimationRunning::cAnimationRunning()
     mTotalFrames = sf::Vector2u(4, 1);
     mFrameSize = sf::Vector2i(345, 256);
     LoadSpriteSheet("Assets/Sprites/StickmanRun.png");
-    mFrameDuration = 0.15f;
+    mFrameDuration = 0.13f;
     mAnimationTime = 0.0f;
     mCurrentFrame = sf::Vector2u(0, 0);
 }

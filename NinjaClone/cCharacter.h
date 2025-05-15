@@ -62,6 +62,7 @@ public:
 	void DrawDebug(sf::RenderWindow& renderWindow);
 	bool IsGrounded() const { return mIsGrounded; }
 	void OnCollision(sf::Vector2f direction);
+	void OnPhysicsCollision(sf::Vector2f direction, sf::Vector2f& velocityTransfer);
 
 	void MovePlayerCharacterPosition(sf::Vector2f position);
 	void KillVelocity();

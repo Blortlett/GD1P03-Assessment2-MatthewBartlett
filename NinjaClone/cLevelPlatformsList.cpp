@@ -97,7 +97,7 @@ void cLevelPlatformsList::DrawEnemies(sf::RenderWindow& window, float deltaTime)
 	}
 }
 
-void cLevelPlatformsList::CheckCollisions(cPlayerCharacter& playerCharacter)
+void cLevelPlatformsList::CheckCollisions(cPlayerCharacter& playerCharacter, float deltaTime)
 {
 	// Check player collision with all level platforms
 	bool isColliding = false;
@@ -110,7 +110,7 @@ void cLevelPlatformsList::CheckCollisions(cPlayerCharacter& playerCharacter)
 	for (size_t i = 0; i < mBouncySquareList.size(); ++i) {
 		if (mBouncySquareList[i]->CheckCollideWithPlayer(playerCharacter)) // didnt wanna chuck in the same collision direction
 			isColliding = true;
-		mBouncySquareList[i]->Update();
+		mBouncySquareList[i]->Update(deltaTime);
 	}
 
 	// Ensure player is not grounded if touching no platforms

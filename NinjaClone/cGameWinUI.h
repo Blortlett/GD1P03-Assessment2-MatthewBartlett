@@ -11,10 +11,10 @@ private:
 	sf::RenderWindow& mRenderWindow;
 	// Title
 	sf::Text mText;
-	sf::Vector2f mTitlePosition = sf::Vector2f(1366 / 2, (768 / 2) - 150);
+	sf::Vector2f mTitlePosition = sf::Vector2f(1366 / 2, (768 / 2) - 240);
 	// Buttons
 	sf::Vector2f mButtonSize = sf::Vector2f(300, 100);
-	sf::Vector2f mReturnToMenuButtonPosition = sf::Vector2f(1366 / 2, 300);
+	sf::Vector2f mReturnToMenuButtonPosition = sf::Vector2f(1366 / 2, 420);
 	cReturnToMainMenu mReturnToMenuButton;
 
 public:

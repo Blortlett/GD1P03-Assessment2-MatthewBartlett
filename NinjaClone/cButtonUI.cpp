@@ -12,9 +12,9 @@ cButtonUI::cButtonUI(sf::Vector2f position, sf::Vector2f size)
     mButtonShape.setOrigin(mSize / 2.0f);
 
     // Set default colors
-    mDefaultColor = sf::Color(100, 100, 100);  // Gray
-    mHoverColor = sf::Color(150, 150, 150);    // Lighter gray
-    mClickColor = sf::Color(80, 80, 80);       // Darker gray
+    //mDefaultColor = sf::Color(100, 100, 100);  // Gray
+    //mHoverColor = sf::Color(150, 150, 150);    // Lighter gray
+    //mClickColor = sf::Color(80, 80, 80);       // Darker gray
 
     mButtonShape.setFillColor(mDefaultColor);
     isPressed = false;

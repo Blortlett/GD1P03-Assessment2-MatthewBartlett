@@ -18,6 +18,11 @@ cAudioPlayer::cAudioPlayer()
 	LandFallSound = new sf::Sound(LandFallBuffer);
 	PickupKeySound = new sf::Sound(PickupKeyBuffer);
 
+	ExplosionSound->setVolume(40.f);
+	JumpSound->setVolume(35.f);
+	LandFallSound->setVolume(65.f);
+	PickupKeySound->setVolume(30.f);
+	
 
 	// Music
 	MenuMusic.openFromFile("Assets/Audio/Music/DavidKBD - InterstellarPack - 01 - Interstellar.ogg");
@@ -26,7 +31,23 @@ cAudioPlayer::cAudioPlayer()
 	MusicLevel3.openFromFile("Assets/Audio/Music/DavidKBD - InterstellarPack - 04 - Horsehead Nebula.ogg");
 	MusicLevel4.openFromFile("Assets/Audio/Music/DavidKBD - InterstellarPack - 05 - Forgotten Station.ogg");
 	MusicLevel5.openFromFile("Assets/Audio/Music/DavidKBD - InterstellarPack - 06 - Hope on the Horizon.ogg");
+	MusicLevel6.openFromFile("Assets/Audio/Music/DavidKBD - InterstellarPack - 07 - Electric Firework.ogg");
+	MusicLevel7.openFromFile("Assets/Audio/Music/DavidKBD - InterstellarPack - 08 - Synth Kobra.ogg");
+	MusicLevel8.openFromFile("Assets/Audio/Music/DavidKBD - InterstellarPack - 09 - Spiral of Plasma.ogg");
 	MusicEditor.openFromFile("Assets/Audio/Music/Gymnopedie No.1.ogg");
+
+	MenuMusic.setLooping(true);
+	MusicLevel1.setLooping(true);
+	MusicLevel2.setLooping(true);
+	MusicLevel3.setLooping(true);
+	MusicLevel4.setLooping(true);
+	MusicLevel5.setLooping(true);
+	MusicLevel6.setLooping(true);
+	MusicLevel7.setLooping(true);
+	MusicLevel8.setLooping(true);
+	MusicLevel9.setLooping(true);
+	MusicEditor.setLooping(true);
+
 	PlayMenuMusic();
 }
 
@@ -72,7 +93,7 @@ void cAudioPlayer::PlayEditorMusic()
 	if (IsMusicMuted) return; // Dont bother if music is muted
 	StopMusic();
 	CurrentMusic = &MusicEditor;
-	CurrentMusic->setVolume(700.f);
+	CurrentMusic->setVolume(MusicVolume * 16);
 	CurrentMusic->play();
 }
 
@@ -95,8 +116,15 @@ void cAudioPlayer::PlayLevelMusic()
 		case 3: CurrentMusic = &MusicLevel3; break;
 		case 4: CurrentMusic = &MusicLevel4; break;
 		case 5: CurrentMusic = &MusicLevel5; break;
+		case 6: CurrentMusic = &MusicLevel6; break;
+		case 7: CurrentMusic = &MusicLevel7; break;
+		case 8: CurrentMusic = &MusicLevel8; break;
+		case 9: CurrentMusic = &MusicEditor; break;
 	}
-	CurrentMusic->setVolume(MusicVolume);
+	if (LevelCount == 9)
+		CurrentMusic->setVolume(MusicVolume * 16);
+	else
+		CurrentMusic->setVolume(MusicVolume);
 	CurrentMusic->play();
 }
 

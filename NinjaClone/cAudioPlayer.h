@@ -17,6 +17,10 @@ private:
 	sf::Music MusicLevel3;
 	sf::Music MusicLevel4;
 	sf::Music MusicLevel5;
+	sf::Music MusicLevel6;
+	sf::Music MusicLevel7;
+	sf::Music MusicLevel8;
+	sf::Music MusicLevel9;
 	sf::Music MusicEditor;
 
 	// Sound Effects
@@ -32,7 +36,7 @@ private:
 	sf::Sound* LandFallSound;
 
 	// Volumes / mutes
-	float MusicVolume = 70.f;
+	float MusicVolume = 30.f;
 	float SFXVolume = 90.f;
 	bool IsMusicMuted = false;
 	bool IsSFXMuted = false;

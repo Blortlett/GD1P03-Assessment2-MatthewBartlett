@@ -25,7 +25,7 @@ public:
 	void AddBouncySquare(cBouncySquare* bouncySquare);
 	void DrawPlatforms(sf::RenderWindow& window, float deltaTime);
 	void DrawEnemies(sf::RenderWindow& window, float deltaTime);
-	void CheckCollisions(cPlayerCharacter& playerCharacter);
+	void CheckCollisions(cPlayerCharacter& playerCharacter, float deltaTime);
 	void TryDeletePlatform(sf::Vector2f pointCollision);
 	void CheckEnemyCollisions(cPlayerCharacter& playerCharacter);
 	void ClearList();
