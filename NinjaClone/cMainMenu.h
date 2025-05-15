@@ -1,3 +1,14 @@
+/***********************************************************************
+Bachelor of Software Engineering
+Media Design School
+Auckland
+New Zealand
+(c) [2025] Media Design School
+File Name : [cMainMenu]
+Description : [cMainMenu encapsulates the main menu UI to be displayed on load / return to main menu]
+Author : [Matthew Bartlett]
+Mail : [matthewbartlett@mds.ac.nz]
+**************************************************************************/
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "cPlayButtonUI.h"

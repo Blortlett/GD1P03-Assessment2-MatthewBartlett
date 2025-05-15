@@ -1,3 +1,14 @@
+/***********************************************************************
+Bachelor of Software Engineering
+Media Design School
+Auckland
+New Zealand
+(c) [2025] Media Design School
+File Name : [cEditorToolbarUI]
+Description : [cEditorToolbarUI provied an open/closeable menu UI system for the player to interact with while building levels]
+Author : [Matthew Bartlett]
+Mail : [matthewbartlett@mds.ac.nz]
+**************************************************************************/
 #include "cEditorToolbarUI.h"
 
 

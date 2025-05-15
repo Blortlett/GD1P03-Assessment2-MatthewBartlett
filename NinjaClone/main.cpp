@@ -1,3 +1,14 @@
+/***********************************************************************
+Bachelor of Software Engineering
+Media Design School
+Auckland
+New Zealand
+(c) [2025] Media Design School
+File Name : [main.cpp]
+Description : [Application start point]
+Author : [Matthew Bartlett]
+Mail : [matthewbartlett@mds.ac.nz]
+**************************************************************************/
 #include "cApplicationManager.h"
 #include "cMainMenu.h"
 #include "cGameManager.h"

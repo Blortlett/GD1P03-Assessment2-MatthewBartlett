@@ -1,3 +1,14 @@
+/***********************************************************************
+Bachelor of Software Engineering
+Media Design School
+Auckland
+New Zealand
+(c) [2025] Media Design School
+File Name : [cResumeButton]
+Description : [cResumeButton provides a button for the player to push to resume a paused game]
+Author : [Matthew Bartlett]
+Mail : [matthewbartlett@mds.ac.nz]
+**************************************************************************/
 #include "cResumeButton.h"
 
 cResumeButton::cResumeButton()

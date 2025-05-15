@@ -1,3 +1,14 @@
+/***********************************************************************
+Bachelor of Software Engineering
+Media Design School
+Auckland
+New Zealand
+(c) [2025] Media Design School
+File Name : [cPlayerCharacter]
+Description : [cPlayerCharacter inherits from cCharacter. This class is responsible for input handling and giving the player a character to control to play thru the game]
+Author : [Matthew Bartlett]
+Mail : [matthewbartlett@mds.ac.nz]
+**************************************************************************/
 #pragma once
 #include "cPlayerInput.h"
 #include "cCharacter.h"

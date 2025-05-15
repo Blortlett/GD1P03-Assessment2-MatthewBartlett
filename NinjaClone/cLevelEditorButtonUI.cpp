@@ -1,3 +1,14 @@
+/***********************************************************************
+Bachelor of Software Engineering
+Media Design School
+Auckland
+New Zealand
+(c) [2025] Media Design School
+File Name : [cLevelEditorButtonUI]
+Description : [cLevelEditorButtonUI provides a button for the player to push to start the level editor from the main menu]
+Author : [Matthew Bartlett]
+Mail : [matthewbartlett@mds.ac.nz]
+**************************************************************************/
 #include "cLevelEditorButtonUI.h"
 
 cLevelEditorButtonUI::cLevelEditorButtonUI(sf::Vector2f position, sf::Vector2f size, cGameManager& gameManager, cFileInterface& fileInterface, cEditorToolbarUI& editorToolbar)

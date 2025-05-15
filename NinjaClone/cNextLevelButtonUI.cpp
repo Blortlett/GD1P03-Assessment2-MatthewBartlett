@@ -1,3 +1,14 @@
+/***********************************************************************
+Bachelor of Software Engineering
+Media Design School
+Auckland
+New Zealand
+(c) [2025] Media Design School
+File Name : [cNextLevelButtonUI]
+Description : [cNextLevelButtonUI provides a button for the player to push to continue to the next level after completing a level]
+Author : [Matthew Bartlett]
+Mail : [matthewbartlett@mds.ac.nz]
+**************************************************************************/
 #include "cNextLevelButtonUI.h"
 #include "cGameManager.h"
 

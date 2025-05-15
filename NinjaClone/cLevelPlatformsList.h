@@ -1,3 +1,14 @@
+/***********************************************************************
+Bachelor of Software Engineering
+Media Design School
+Auckland
+New Zealand
+(c) [2025] Media Design School
+File Name : [cLevelPlatformsList]
+Description : [cLevelPlatformsList has a terrible name and stores level data for each level. When loading a new level, this class clears data and reloads new level data to be displayed]
+Author : [Matthew Bartlett]
+Mail : [matthewbartlett@mds.ac.nz]
+**************************************************************************/
 #pragma once
 #include "cPlatformRect.h"
 #include "cPlatformLevelStart.h"

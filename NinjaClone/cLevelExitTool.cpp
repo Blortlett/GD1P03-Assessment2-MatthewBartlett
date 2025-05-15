@@ -1,3 +1,14 @@
+/***********************************************************************
+Bachelor of Software Engineering
+Media Design School
+Auckland
+New Zealand
+(c) [2025] Media Design School
+File Name : [cLevelExitTool]
+Description : [cLevelExitTool allows placing the level exit in a level structure]
+Author : [Matthew Bartlett]
+Mail : [matthewbartlett@mds.ac.nz]
+**************************************************************************/
 #include "cLevelExitTool.h"
 
 cLevelExitTool::cLevelExitTool(cLevelPlatformsList& levelPlatformList)

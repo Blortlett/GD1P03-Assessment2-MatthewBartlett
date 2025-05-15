@@ -1,3 +1,14 @@
+/***********************************************************************
+Bachelor of Software Engineering
+Media Design School
+Auckland
+New Zealand
+(c) [2025] Media Design School
+File Name : [cFileInterface]
+Description : [This class loads and saves levels for use in the level editor and when playing each level]
+Author : [Matthew Bartlett]
+Mail : [matthewbartlett@mds.ac.nz]
+**************************************************************************/
 #pragma once
 #include <Windows.h>
 #include <ShObjIdl.h>

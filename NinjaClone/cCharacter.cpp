@@ -1,3 +1,14 @@
+/***********************************************************************
+Bachelor of Software Engineering
+Media Design School
+Auckland
+New Zealand
+(c) [2025] Media Design School
+File Name : [cCharacter]
+Description : [cCharacter is a base class only inherited by cPlayerCharacter. This class contains physics and other player movement variables and functions]
+Author : [Matthew Bartlett]
+Mail : [matthewbartlett@mds.ac.nz]
+**************************************************************************/
 #include "cCharacter.h"
 
 cCharacter::cCharacter(

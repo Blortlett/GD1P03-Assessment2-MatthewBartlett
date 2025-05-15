@@ -1,3 +1,14 @@
+/***********************************************************************
+Bachelor of Software Engineering
+Media Design School
+Auckland
+New Zealand
+(c) [2025] Media Design School
+File Name : [cRaycaster]
+Description : [This class I tried to play around with raycasting and gave up... for now >:) ]
+Author : [Matthew Bartlett]
+Mail : [matthewbartlett@mds.ac.nz]
+**************************************************************************/
 #pragma once
 #include "SFML/Graphics.hpp"
 #include "cBoxCollider.h"

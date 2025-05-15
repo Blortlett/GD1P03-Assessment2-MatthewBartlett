@@ -1,3 +1,14 @@
+/***********************************************************************
+Bachelor of Software Engineering
+Media Design School
+Auckland
+New Zealand
+(c) [2025] Media Design School
+File Name : [cDebugWidget]
+Description : [cDebugWidget should be attatched to game objects with colliders. Collider should be passed in to the constructor of the debugWidget and this class will draw your collider out for you]
+Author : [Matthew Bartlett]
+Mail : [matthewbartlett@mds.ac.nz]
+**************************************************************************/
 #include "cDebugWidget.h"
 
 cDebugWidget::cDebugWidget(cBoxCollider& boxCollider)

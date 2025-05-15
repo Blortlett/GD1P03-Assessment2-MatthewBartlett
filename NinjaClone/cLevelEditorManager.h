@@ -1,3 +1,14 @@
+/***********************************************************************
+Bachelor of Software Engineering
+Media Design School
+Auckland
+New Zealand
+(c) [2025] Media Design School
+File Name : [cLevelEditorManager]
+Description : [cLevelEditorManager manages the level editor tool manager and toolbar]
+Author : [Matthew Bartlett]
+Mail : [matthewbartlett@mds.ac.nz]
+**************************************************************************/
 #pragma once
 #include "cEditorDrawTool.h"
 #include "cEditorToolbarUI.h"

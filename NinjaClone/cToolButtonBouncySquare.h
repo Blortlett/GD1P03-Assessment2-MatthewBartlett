@@ -1,4 +1,14 @@
-#pragma once
+/***********************************************************************
+Bachelor of Software Engineering
+Media Design School
+Auckland
+New Zealand
+(c) [2025] Media Design School
+File Name : [cToolButtonBouncySquare]
+Description : [cToolButtonBouncySquare when instantiated allows the player to click a button to select the bouncy square tool in the level editor]
+Author : [Matthew Bartlett]
+Mail : [matthewbartlett@mds.ac.nz]
+**************************************************************************/#pragma once
 #include "cButtonUI.h"
 #include "cEditorDrawTool.h"
 

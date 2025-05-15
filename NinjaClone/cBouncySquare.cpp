@@ -1,3 +1,14 @@
+/***********************************************************************
+Bachelor of Software Engineering
+Media Design School
+Auckland
+New Zealand
+(c) [2025] Media Design School
+File Name : [cBouncySquare]
+Description : [This class provides a bouncy platform the player jump on to get a jump boost and launch high in the air]
+Author : [Matthew Bartlett]
+Mail : [matthewbartlett@mds.ac.nz]
+**************************************************************************/
 #include "cBouncySquare.h"
 
 cBouncySquare::cBouncySquare(sf::Vector2f position)

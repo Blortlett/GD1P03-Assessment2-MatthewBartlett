@@ -1,3 +1,14 @@
+/***********************************************************************
+Bachelor of Software Engineering
+Media Design School
+Auckland
+New Zealand
+(c) [2025] Media Design School
+File Name : [cBaseDrawTool]
+Description : [This class is inherited by all draw tools. Provides functions to be called by the cEditorDrawTool (the manager class)]
+Author : [Matthew Bartlett]
+Mail : [matthewbartlett@mds.ac.nz]
+**************************************************************************/
 #pragma once
 #include "cPlatformRect.h"
 #include <SFML/Graphics.hpp>

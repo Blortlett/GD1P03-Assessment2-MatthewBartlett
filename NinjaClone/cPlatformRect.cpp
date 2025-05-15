@@ -1,3 +1,14 @@
+/***********************************************************************
+Bachelor of Software Engineering
+Media Design School
+Auckland
+New Zealand
+(c) [2025] Media Design School
+File Name : [cPlatformLevelStart]
+Description : [This class provides the basic platform piece used as ground/walls in all levels]
+Author : [Matthew Bartlett]
+Mail : [matthewbartlett@mds.ac.nz]
+**************************************************************************/
 #include "cPlatformRect.h"
 
 cPlatformRect::cPlatformRect(sf::FloatRect bounds)

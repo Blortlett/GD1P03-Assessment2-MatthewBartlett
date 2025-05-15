@@ -1,3 +1,14 @@
+/***********************************************************************
+Bachelor of Software Engineering
+Media Design School
+Auckland
+New Zealand
+(c) [2025] Media Design School
+File Name : [cEmptyPlatformTool]
+Description : [cEmptyPlatformTool allows having an empty mouse in the editor]
+Author : [Matthew Bartlett]
+Mail : [matthewbartlett@mds.ac.nz]
+**************************************************************************/
 #pragma once
 #include "cPlatformRect.h"
 #include "cBaseDrawTool.h"

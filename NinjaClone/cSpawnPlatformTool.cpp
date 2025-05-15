@@ -1,3 +1,14 @@
+/***********************************************************************
+Bachelor of Software Engineering
+Media Design School
+Auckland
+New Zealand
+(c) [2025] Media Design School
+File Name : [cSpawnPlatformTool]
+Description : [Spawn platform tool allows placing spawnpoints in a level structure]
+Author : [Matthew Bartlett]
+Mail : [matthewbartlett@mds.ac.nz]
+**************************************************************************/
 #include "cSpawnPlatformTool.h"
 
 cSpawnPlatformTool::cSpawnPlatformTool(cLevelPlatformsList& levelPlatformList)

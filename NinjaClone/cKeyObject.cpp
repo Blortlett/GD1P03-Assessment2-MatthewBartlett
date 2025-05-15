@@ -1,3 +1,14 @@
+/***********************************************************************
+Bachelor of Software Engineering
+Media Design School
+Auckland
+New Zealand
+(c) [2025] Media Design School
+File Name : [cKeyObject]
+Description : [This class provides a key for the player to collect before the door will open.]
+Author : [Matthew Bartlett]
+Mail : [matthewbartlett@mds.ac.nz]
+**************************************************************************/
 #include "cKeyObject.h"
 
 cKeyObject::cKeyObject(sf::Vector2f position)

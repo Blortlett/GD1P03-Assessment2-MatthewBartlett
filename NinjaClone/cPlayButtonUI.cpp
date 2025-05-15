@@ -1,3 +1,14 @@
+/***********************************************************************
+Bachelor of Software Engineering
+Media Design School
+Auckland
+New Zealand
+(c) [2025] Media Design School
+File Name : [cPlayButtonUI]
+Description : [cPlayButtonUI provides a button for the player to push to start the game from the main menu]
+Author : [Matthew Bartlett]
+Mail : [matthewbartlett@mds.ac.nz]
+**************************************************************************/
 #include "cPlayButtonUI.h"
 
 cPlayButtonUI::cPlayButtonUI(sf::Vector2f position, sf::Vector2f size, cFileInterface& fileInterface, cGameManager& gameManager)

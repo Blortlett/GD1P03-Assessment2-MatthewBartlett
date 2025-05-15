@@ -1,3 +1,14 @@
+/***********************************************************************
+Bachelor of Software Engineering
+Media Design School
+Auckland
+New Zealand
+(c) [2025] Media Design School
+File Name : [cEnemyMineTool]
+Description : [cEnemyMineTool allows placing mines in a level structure]
+Author : [Matthew Bartlett]
+Mail : [matthewbartlett@mds.ac.nz]
+**************************************************************************/
 #include "cEnemyMineTool.h"
 
 cEnemyMineTool::cEnemyMineTool(cLevelPlatformsList& levelPlatformList)

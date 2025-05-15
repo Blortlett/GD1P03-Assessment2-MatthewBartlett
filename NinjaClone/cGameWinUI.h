@@ -1,3 +1,14 @@
+/***********************************************************************
+Bachelor of Software Engineering
+Media Design School
+Auckland
+New Zealand
+(c) [2025] Media Design School
+File Name : [cGameWinUI]
+Description : [cGameWinUI encapsulates the game win UI to be displayed on game complete]
+Author : [Matthew Bartlett]
+Mail : [matthewbartlett@mds.ac.nz]
+**************************************************************************/
 #pragma once
 #include "cApplicationManager.h"
 #include "cReturnToMainMenu.h"

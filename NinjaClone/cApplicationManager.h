@@ -1,3 +1,14 @@
+/***********************************************************************
+Bachelor of Software Engineering
+Media Design School
+Auckland
+New Zealand
+(c) [2025] Media Design School
+File Name : [cApplicationManager]
+Description : [This singleton class handles global variables and loads in textures for other classes - mostly UI stuff]
+Author : [Matthew Bartlett]
+Mail : [matthewbartlett@mds.ac.nz]
+**************************************************************************/
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <string>

@@ -1,3 +1,14 @@
+/***********************************************************************
+Bachelor of Software Engineering
+Media Design School
+Auckland
+New Zealand
+(c) [2025] Media Design School
+File Name : [cBoxCollider]
+Description : [This class should be stored as a member of any object you wish to have collisions]
+Author : [Matthew Bartlett]
+Mail : [matthewbartlett@mds.ac.nz]
+**************************************************************************/
 #include "cBoxCollider.h"
 
 cBoxCollider::cBoxCollider(sf::FloatRect bounds)
